@@ -1,0 +1,31 @@
+Model,Metric_name,Numeric_rule,Symbol,Lower,Upper,Level,Description,Units
+BCG,p_cc_lpi,>40 (35-45),>,35,45,2,Percent coral cover (LPI),%
+BCG,p_cm_demo,<10 (5-15),<,5,15,2,Percent coral mortality (DEMO),%
+BCG,p_lcc_demo,>30 (20-40),>,20,40,2,Percent live coral cover (DEMO),%
+BCG,p_lcrbc_demo,>30 (25-35),>,25,35,2,"Percent live cover of large, reef-building coral species (DEMO)",%
+BCG,p_bts_lpi,<30 (20-40),<,20,40,3,Bare substrate and turf with sediment cover (LPI),%
+BCG,p_cc_lpi,>20 (15-25),>,15,25,3,Percent coral cover (LPI),%
+BCG,t_cratt1234_lpi,>2 (1-3),>,1,3,3,"Non-tolerant coral (attibute I, II, III, IV taxa) richness (LPI)",n
+BCG,t_cr_lpi,>4 (3-5),>,3,5,3,Total coral richness (LPI),n
+BCG,p_oc_demo,>20 (15-25),>,15,25,3,Percent live Orbicella cover (DEMO),%
+BCG,p_bts_lpi,<40 (30-50),<,30,50,4,Bare substrate and turf with sediment cover (LPI),%
+BCG,p_cc_lpi,>15 (10-20),>,10,20,4,Percent coral cover (LPI),%
+BCG,p_cratt1234,>5 (0-10),>,0,10,4,"Non-tolerant coral (attibute I, II, III, IV taxa) cover (LPI)",%
+BCG,p_oc_demo,>2.5 (0-5),>,0,5,4,Percent live Orbicella cover (DEMO),%
+BCG,p_oc_lpi,>2.5 (0-5),>,0,5,4,Percent live Orbicella cover (LPI),%
+BCG,sa_lcc_demo,>2000 (1000-3000),>,1000,3000,4,Live coral cover (surface area 3-D DEMO),cm�/m�
+BCG,t_mlcol_demo,>7.5 (5-10),>,5,10,4,Density of medium or large colonies (D>20cm) in the transect (DEMO),n
+BCG,p_cc_lpi,>5 (2-8),>,2,8,5,Percent coral cover (LPI),%
+BCG,t_col_demo,>1 (1-2),>,1,2,5,Density of colonies (DEMO),colony/m�
+BCG,t_cratt1234,>1 (0-2),>,0,2,5,"Non-tolerant coral (attibute I, II, III, IV taxa) richness",n
+BSAT,p_cc_lpi,>20 (15-25),>,15,25,3,Percent coral cover (LPI),%
+BSAT,p_oac_lpi,>6 (2-10),>,2,10,3,Percent live Orbicella and Acropora cover (LPI),%
+BSAT,t_cratt45,>2 (1-3),>,1,3,3,"Non-tolerant coral (attribute IV, V taxa) richness (LPI)",n
+BSAT,p_bts_lpi,<40 (30-50),<,30,50,3,Bare substrate and turf with sediment cover (LPI),%
+BSAT,p_cc_lpi,>10 (5-15),>,5,15,4,Percent coral cover (LPI),%
+BSAT,p_oac_lpi,>1 (0-2),>,0,2,4,Percent live Orbicella and Acropora cover (LPI),%
+BSAT,t_cratt45,>1.5 (0-3),>,0,3,4,"Non-tolerant coral (attribute IV, V taxa) richness (LPI)",n
+BSAT,p_bts_lpi,<50 (40-60),<,40,60,4,Bare substrate and turf with sediment cover (LPI),%
+BSAT,p_cc_lpi,>4 (0-8),>,0,8,5,Percent coral cover (LPI),%
+BSAT,t_cratt45,>1 (0-2),>,0,2,5,"Non-tolerant coral (attribute IV, V taxa) richness (LPI)",n
+BSAT,p_bts_lpi,<60 (50-70),<,50,70,5,Bare substrate and turf with sediment cover (LPI),%

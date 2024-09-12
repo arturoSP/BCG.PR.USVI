@@ -1,0 +1,280 @@
+FinalID,ReefBuildingSpecies,CommonEnglish,Type,OrbicellaAcropora,BCG Attribute,RedListCategory,DepthRange_m,DepthCategory,LifeHistoryStrategy,Darling etal 2012 Life History Group,origReefBuilding,ReproPattern_Mode,ReproPattern,ReproMode,YearlyGametogenesis,AnnualGametogeneses,SpawningBroodingEvents,SpawningBroodingSeason,GrowthForm,OLD_Morphology,MorphologyIndex,GrowthRate_cm_yr,GrowthRate_code,MeanSize,Susc3stars,SedimentSusceptibility,SedSuscCode,SedBCG_DELETE,BleachingSusceptibility,BleachSuscCode,BleachBCG_DELETE,DiseaseSusceptibility,DiseaseSuscCode,DiseaseBCG_DELETE,PATHOGENICDISEASES,GEOGRAPHICDISTRIBUTION,OBSERVATIONS_COMMENTS
+<UNKNOWN>,,<UNKNOWN>,None,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Acropora cervicornis,X,staghorn coral,Scleractinian,OrbAcrp,3,Critically endangered,0 - 20,Shallow,C,1 - Competitive,X,H - S,H,S,1,1,1-Feb,SU,BR,"branching, fragile",4,abr-37,Very fast,Large - Very large,7,**,LoMod,2-Mar,**,LoMod,03-abr,***,HiMod,03-abr,WBD - BBD - WPX - RBD - GAN - CCI - OTH,Wider Caribbean except Bermuda,"Endangered species (ESA-IUCN). Two conspicuous morphologies in the Caribbean, this one has thin, long branches, frequent lateral branching and fast growth. Good recovery reported for many localities but still impacted by WBD outbreaks"
+Acropora palmata,X,elkhorn coral,Scleractinian,OrbAcrp,4,Critically endangered,0 - 20,Shallow,C,1 - Competitive,X,H - S,H,S,1,1,1-Feb,SU,BR-CR,branching,4,2.5 - 20,Very fast,Large - Very large,9,***,HiMod,03-abr,***,HiMod,4-May,***,HiMod,4-May,WBD - WPX - CCI - GAN - OTH,Wider Caribbean except Bermuda,"Endangered species (ESA-IUCN). Recovering is benn slow in most localities. Still affected by WBD-like signs, algae overgorwth and damselfishand fireworm predation"
+Acropora prolifera,X,fused staghorn,Scleractinian,OrbAcrp,4,,0 - 10,Shallow,C,,X,H - S,H,S,1,1,1-Feb,SU,BR,,4,Jul-32,Very fast,Large - Very large,6,**,LoMod,2-Mar,**,LoMod,3,**,LoMod,2,WBD - CCI - OTH,Wider Caribbean except Bermuda,"Hybrid taxon between A. cervicornis and A.palmata. Mophology depends on which parental species donated the egg or sperm. Dense, finger-like, short branches form compact colonies that seem more resistant to WBD-like infections and damselfish colonization."
+Acropora sp.,,Thick staghorn coral,Scleractinian,OrbAcrp,,,0 - 10,Shallow,C,,,H - S,H,S,1,1,1-Feb,SU,BR,,,ago-25,Very fast,Large - Very large,6,**,LoMod,2-Mar,**,LoMod,03-abr,**,LoMod,2-Mar,WBD - BBD - RBD - CCI - OTH,Central and southern Caribbean,"Needs taxonomic verification. This thick growth form have been observed growing side by side with the thin, commom A. cervicornis. Common in the southern Caribbean"
+Agaricia,,,Scleractinian,,,,,Broad,W,2 - Weedy,,,,B,1,1,,,,based on species within genus,1,,Slow,,10,,High,,,High,,,LoMod,,,,
+Agaricia agaricites,,Low relief lettuce coral,Scleractinian,,4,Least concern,0 - 50,Broad,W,2 - Weedy,,G - MP - B,G,B,1,1,>6,SP-SU-FA,SM-CR,encrusting or hemispherical sheets,1,0.08 -0.2,Very Slow,Small,10,****,High,5,****,High,4-May,**,LoMod,2-Mar,WPD - RBD - DSD - CCI,Wider Caribbean except Bermuda,"Submassive, crustose colonies."
+Agaricia fragilis,,Fragile saucer coral,Scleractinian,,,Data deficient,Oct-50,Broad,W,2 - Weedy,,? - B,,B,1,1,>1,SU-FA?,CR-FO,plate,1,?,?,Small,8,***,HiMod,03-abr,****,High,5,*,Low,1,WPD - BBD - RBD,Wider Caribbean except Bermuda,"Small, dark-colored, round/oval plates with low ridges and long valleys with tiny calices."
+Agaricia grahamae,,Dimpled sheet coral,Scleractinian,,,Least concern,30 - 80?,Deep,W,,,? - B,,B,1,1,?,?,PL-CR,based on species within genus,1,?,?,Large - Very large,8,****,High,5,***,HiMod,4-May,*,Low,1,WPD - OTH,Wider Caribbean except Bermuda,Needs genetic verification - mesophotic deep coral
+Agaricia humilis,,Low relief lettuce coral,Scleractinian,,4,Least concern,0 - 25,,W,2 - Weedy,,G - MP- B,G,B,1,1,>6,SP-SU-FA,PL-CR,encrusting,1,?,Very Slow,Small - Medium,10,****,High,5,****,High,4-May,**,LoMod,2,WPD - CCI - RBD -DSD,Wider Caribbean except Bermuda,"Small, massive-crustose colonies with reticulated high ridges and closed valleys with few calices"
+Agaricia lamarcki,,Whitestar sheet coral,Scleractinian,,3,Vulnerable,Oct-80,Broad,W,2 - Weedy,,G - B,G,B,1,1,>1,SU-FA,PL-CR,plate,1,0.4 - 0.6,Slow,Large - Very large,10,****,High,5,****,High,5,**,LoMod,2-Mar,WPD - RBD - OTH,Wider Caribbean except Bermuda,"Wide depth distribution, from 10 to 70 m depth"
+Agaricia spp,,,Scleractinian,,,,,Broad,W,2 - Weedy,,,,B,1,1,,,,based on species within genus,1,,Slow,,10,,High,,,High,,,LoMod,,,,
+Agaricia tenuifolia,,Thin leaf lettuce coral,Scleractinian,,,Near threatened,0 - 20,Shallow,W,2 - Weedy,,? - B,,B,1,1,>1,SP-SU-FA,FO-BL,,3,0.8,Slow,Medium - Large,7,**,LoMod,2-Mar,****,High,5,*,Low,1-Feb,WPD - CCI,Central and Western Caribbean,"One of 3 bifacial agaricids. Thin corallum forn large wide and vertical colonies that can monopolize extensive habitats. Most common in north-central, south central and western Caribbean."
+Agaricia undata,,Scroll plate coral,Scleractinian,,,Data deficient,20 - 80?,Deep,W,,,? - B,,B,1,1,?,?,PL-CR,,,?,?,Large - Very large,8,****,High,5,***,HiMod,4-May,*,Low,1-Feb,WPD - OTH,Wider Caribbean except Bermuda,Mesophotic species
+Agelas citrina,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Agelas clathrodes,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Agelas conifera,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Agelas dispar,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Agelas sceptrum,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Agelas spp.,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Agelas sventres,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Aiolochroia crassa,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Aliger gigas,,Queen conch,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Amphimedon caribica,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Amphimedon compressa,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Anemone spp.,,Anemone,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Antillogorgia acerosa,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Antillogorgia americana,,Gorgonians,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Aplysina archeri,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Aplysina cauliformis,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Aplysina fistularis,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Aplysina fulva,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Aplysina insularis,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Articulate coralline algae,,CCA,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Articulate coralline algae (mixed),,CCA,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ascidian spp.,,Ascidian,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Asparagopsis taxiformis,,Red sea plume,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Bare substrate,,,Bare_TurfWSed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Biemna caribea,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Briareum asbestinum,,Corky sea finger,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Callyspongia plicifera,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Callyspongia vaginalis,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Caulerpa spp.,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cca,,CCA,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cca (total),,CCA,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Chondrilla caribensis,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cinachyrella kuekenthali,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cladocora arbuscula,,Tube coral,Scleractinian,,4,Least concern,20-Mar,Shallow,C,,,H - S,H,S,1,1,1-Feb,SU-FA,BR,,2,?,?,Small - Medium,4,*,Low,1-Jan,**,LoMod,3-Jan,*,Low,1-Jan,WPD,Wider Caribbean except Bermuda,"Short branching polyps, associated with soft bottoms and seagrasses"
+Clathria spp.,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cliona,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cliona caribbaea,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cliona delitrix,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cliona spp,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cliothosa delitrix,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Coelocarteria bartschi,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Colpophyllia amaranthus,,Brain coral,Scleractinian,,,Least concern,20-May,Shallow,S,,,H - S,H,S,1,1,1-Feb,SU-FA?,BO-MA-CR,,,0.3 - 1.1,Slow,Medium - Large,9,***,HiMod,3,***,HiMod,4-Jan,***,HiMod,4,BBD - WPD - RBD- OTH - SCTLD,Wider Caribbean except Bermuda ??,Probably restricted distribution. Common in north and southern Caribbean
+Colpophyllia breviserialis,,Brain coral,Scleractinian,,,,20-May,Shallow,S,,,H - S,H,S,1,1,1-Feb,SU-FA,BO-MA-CR,,,?,Slow,Medium - Large,10,***,HiMod,3,***,HiMod,03-abr,****,High,4-May,BBD - RBD - WPD - DSD - CCI - SCTLD,Wider Caribbean except Bermuda,Needs taxonomic verification (genetic).Low abundances and mixed morphology colonies with C.natans type common.
+Colpophyllia natans,X,Boulder brain coral,Scleractinian,,3,Least concern,ene-25,MidDepth,S,4 - Stress Tolerant,X,H - S,H,S,1,1,1-Feb,SU-FA,BO-MA-CR,brain - domes or encrusting plates,2,0.3 - 1.1,Slow,Medium - Large,10,***,HiMod,3-Jan,***,HiMod,03-abr,****,High,4-May,BBD - WPD - DSD -RBD - GAN - CCI - SCTLD,Wider Caribbean except Bermuda,Large boulder and crustose coralla
+Cribrochalina vasculum,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cyanobacteria,,Cyanobacteria,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cyanobacteria (total),,Cyanobacteria,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cyanophyta,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cyanophyta spp,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Dendrogyra cylindrus,X,Pillar coral,Scleractinian,,3,Vulnerable,ene-20,Shallow,G,1 - Competitive,X,G - S,G,S,1,1,1,SU,CO-CR,"branching, encrusting base with cylindrical pillars up to 2m height",3,0.5 - 1.8,Slow,Large - Very large,6,*,Low,1-Feb,**,LoMod,3,***,HiMod,4-May,WPD - CYBD - BBD - GAN - OTH - SCTLD,Wider Caribbean except Panama and Bermuda,Threatened species.
+Desmapsamma anchorata,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Desmapsamma spp.,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Diadema antillarum,,Spiny urchin,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Diadema antillarum ascensionis,,Spiny urchin,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Dichocoenia stellaris,,Uniserial elliptical,Scleractinian,,,Data deficient,23-Oct,Shallow,G,,,? - B,,B,>1,,?,SU-FA,SM-CR,,,0.2,Very Slow,Medium,8,**,LoMod,2-Mar,***,HiMod,03-abr,***,HiMod,4,WPD - BBD,Wider Caribbean,Needs Taxonomic verification
+Dichocoenia stokesii,,Elliptical star coral,Scleractinian,,4,Vulnerable,20-May,Shallow,G,4 - Stress Tolerant,,G - S,G,S,1,1,1-Feb,SU-FA,SM-CR,"massive, spherical, mound to encrusting",2,0.2,Very Slow,Medium,9,**,LoMod,2-Mar,***,HiMod,03-abr,****,High,4-May,BBD - WPD - SCTLD,Wider Caribbean,Small to mediun sized (40cm) colonies with elongated calices and wide coenosteum. Typically orange-yellow or pale.
+Dictyonella funicularis,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Dictyota,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Dictyota spp,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Dictyota spp.,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Diploria,X,,Scleractinian,,,,,MidDepth,S,4 - Stress Tolerant,,H - S,H,S,1,1,1-Feb,SU-FA,BO-MA-CR,based on species within genus,2,0.3 - 0.75,Slow,Medium - Large,9,,LoMod,,,HiMod,,,High,,,,
+Diploria labyrinthiformis,X,Grooved brain coral,Scleractinian,,3,Least concern,25-Mar,MidDepth,S,4 - Stress Tolerant,,H - S,H,S,1,1,1-Feb,SU-FA,BO-MA-CR,brain - hemisphere,2,0.3 - 0.75,Slow,Medium - Large,9,**,LoMod,2-Mar,***,HiMod,03-abr,****,High,4-May,BBD-WPD-CYBD-RBD-CCI-GAN-OTH-SCTLD,Wider Caribbean,"Mostly round hemispherical colonies with wide ridges and ambulacra, and deep narrow valleys. Mostly orange-yellow"
+Diploria spp,X,,Scleractinian,,,,,MidDepth,S,4 - Stress Tolerant,,H - S,H,S,1,1,1-Feb,SU-FA,BO-MA-CR,based on species within genus,2,0.3 - 0.75,Slow,Medium - Large,9,,LoMod,,,HiMod,,,High,,,,
+Ectyoplasia ferox,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Encrusting gorgonian,,encrusting gorgonian,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Erythropodium caribaeorum,,encrusting gorgonian,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Eudistoma spp.,,Eudistoma,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Eunicea flexuosa,,Gorgonians,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Eunicea pallida,,Gorgonians,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Eunicea spp.,,Gorgonian,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Eunicea succinea,,Gorgonian,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Eunicea tourneforti,,Knobby candelabra,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Eusmilia fastigiata,,Smooth flower coral,Scleractinian,,3,Least concern,23-May,MidDepth,G,4 - Stress Tolerant,,G - S,G,S,1,1,1,SU,BR,"flower, hemisphere",3,0.7,Slow,Medium,8,**,LoMod,2-Mar,***,HiMod,4-May,***,HiMod,4-Jan,WPD - BBD - CCI - SCTL,Wider Caribbean except Bermuda,"Typical faceoloid (Flower-like) colony, with separate, large calices calices and intratentacular division. Tan to yellow."
+Eusmilia fastigiata f. flagellata,,Smooth flower coral,Scleractinian,,,Least concern,15-May,Shallow,G,,,G - S,G,S,1,1,1-Feb,SU,BR,,,0.7,Slow,Medium,8,**,LoMod,2-Mar,***,HiMod,4-May,***,HiMod,4-Jan,WPD - CCI,Caribbean,"Meandroid, ellongated calices with several mouths that could be the early stages of intratentacular budding."
+Favia fragum,,Golfball coral,Scleractinian,,5,Least concern,0 - 10,Shallow,S,4 - Stress Tolerant,,H - B,H,B,7-Oct,Multi,12,year-around,SM-CR,,2,0.5,Slow,Very Small,5,*,Low,1-Feb,***,HiMod,03-abr,*,Low,1-Jan,BBD - WPD - DSD - OTH,Wider Caribbean,"Round small corallum, abundant in shallow, protected (back reef) habitats"
+Galaxaura spp.,,Galaxaura,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gaps/holes,,,Bare_TurfWSed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Goreaugyra memorialis,,Deep Columnar Maze coral,Scleractinian,,,Least concern,> 30,Deep,W,,,?,,,_,,_,_,CO,,,_,_,_,,_,,_,_,,_,_,,_,_,Only specimen found in the Bahamas,The only existing specimen is a short column with wide ambulacra and deep valleys on the side. The top morphology and calical structure is similar to M. meandrites. Specimen collected in deep waters in the Bahamas.
+Gorgonacea plumes/rods/whips,,Gorgonians,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gorgonia ventalina,,Sea fan,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gorgonians,,Gorgonians,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gracilaria spp.,,Gracilaria,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Halimeda,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Halimeda spp,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Halimeda spp.,,Halimeda,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Helioseris cucullata,,Sunray lettuce coral,Scleractinian,,3,Least concern,5 - 50?,Broad,W,,,? - B,,B,?,,?,?,PL-CR,,1,?,?,Small - Medium,8,****,High,5,***,HiMod,4-May,*,Low,1-Jan,WPD - OTH,Wider Caribbean except Bermuda,"A slightly different form called ""formae contracta"" has been described for some localities."
+Iotrochota arenosa,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Iotrochota birotulata,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ircinia campana,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ircinia felix,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ircinia spp.,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ircinia spp. brown,,Ircinia,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ircinia strobilina,,Bumpy ball sponge,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Isophyllastrea rigida,,Rough cactus coral,Scleractinian,,2,Least concern,23-May,Shallow,W,,,H - B,H,B,1-Jan,1,>1,SU-FA,SM-CR,hemispherical domes,2,0.3,Very Slow,Small,5,***,HiMod,03-abr,*,Low,1-Feb,*,Low,1-Feb,BBD - WPD - OTH,Wider Caribbean except Bermuda,These two are considered to belong to a single genus: Isophyllastrea
+Isophyllia multiflora,,Sinuos cactus coral,Scleractinian,,,Least concern,20-Oct,Shallow,W,,,?,,,?,,?,?,SM-CR,,,?,Very Slow,Small,,**,LoMod,3,?,,?,?,,,?,Caribbean ??,Rare growth form with closed valleys. Needs taxonomic verification.
+Isophyllia sinuosa,,Sinuos cactus coral,Scleractinian,,2,Least concern,20-May,Shallow,W,2 - Weedy,,H - B,H,B,1,1,>1,SP-SU,SM-CR,hemispherical domes,2,0.5,Slow,Small,4,**,LoMod,2-Mar,*,Low,1-Feb,*,Low,1-Feb,BBD - WPD - OTH,Wider Caribbean,These two are considered to belong to a single genus: Isophyllastrea
+Jania spp.,,Jania,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Lebrunia danae,,Lebrunia neglecta,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Lebrunia neglecta,,Lebrunia neglecta,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Leptoseris cailleti,,Foliose lettuce coral,Scleractinian,,,Least concern,35 - 80?,Deep,W,,,? - ?,,,?,,?,?,FO-BL,,,?,?,Small - Medium,,**,LoMod,2-Mar,****,High,5-Jan,?,,,?,Wider Caribbean ???,Mesophotic to deep water coral
+Lobophora,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Lobophora spp,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Lobophora spp.,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Macro other calcareous,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Macro other fleshy,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Macroalgae spp.,,Unknown,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Madracis,,,Scleractinian,,,,,Broad,W,2 - Weedy,,H - B,H,B,1,1,>1,SP-SU-FA,,based on species within genus,3,,Slow,Small - Medium,5,,HiMod,,,Low,,,Low,,,,
+Madracis asperula,,Deep yellow pencil coral,Scleractinian,,,Data deficient,30 - 150,Deep,W,,,?,,,?,,?,?,BR,,,2,Fast,Small,,?,,0,*,Low,1,?,,?,?,Caribbean ??,Needs taxonomic verification. Deep reef and mesophotic coral comunities
+Madracis auretenra,,Yellow pencil coral,Scleractinian,,4,Least concern,ene-30,MidDepth,W,,,H - B,H,B,1,1,>1,SP-SU-FA,BR,branching,3,0.7 - 2.4,Fast,Medium - Very Large,5,*,Low,1-Feb,**,LoMod,2-Mar,**,LoMod,1-Feb,WPD - OTH,Wider Caribbean,"Long, thing pale to yellow branches. Incorrectlky clasified as M. mirabilis."
+Madracis carmabi,,Ten ray finger coral,Scleractinian,,,Data deficient,> 30,Deep,W,,,H - B,H,B,1-Jan,1,>1,SP-SU-FA,BR,,,?,Slow,Small - Medium,,**,LoMod,3,*,Low,1,?,,,?,Curacao and southern Caribbean only??,"Short, brown or olive green rounded branches, smaller colonies than M. formosa"
+Madracis decactis,,Ten ray star coral,Scleractinian,,3,Least concern,May-50,Broad,W,2 - Weedy,,H - B,H,B,1,1,>1,SP-SU-FA,BR-SM,encrusting,3,?,Slow,Small - Medium,4,**,LoMod,3-Jan,*,Low,1-Feb,*,Low,1-Feb,WPD - OTH,Wider Caribbean,"Short, green-gray nobby branches. Wide depth distribution"
+Madracis formosa,,Eight-ray star coral,Scleractinian,,,Least concern,15 - 30,MidDepth,W,2 - Weedy,,H - B,H,B,1,1,>1,SP-SU-FA,BR,,3,?,Slow,Smalll - Large,4,**,LoMod,3,*,Low,1-Feb,*,Low,1,WPD - OTH,Wider Caribbean,"Long, chocolate brown sometimes flatten branches, yellow calices. Dee pslopes and sandy areas"
+Madracis myriaster,,Deep yellow pencil coral,Scleractinian,,,,30 - 150,Deep,W,,,?,,,?,,?,?,BR,,,?,?,Small,,?,,,*,Low,1-Jan,?,,?,?,Caribbean ??,Deep reef and Mesophotic coral communities
+Madracis pharensis,,Ten ray massive coral,Scleractinian,,,Least concern,1-Oct,Broad,W,2 - Weedy,,H - B,H,B,1,1,>1,SP-SU-FA,CR-SM,,1,?,Very Slow,Small,,***,HiMod,4-Jan,*,Low,1,?,,,?,Wider Caribbean except Bermuda,"Needs taxonomic verification. Taxon with zooxanthelae in deep, exposed habitats."
+Madracis pharensis f luciphogous,,Ten ray crustose coral,Scleractinian,,,Least concern,30-May,MidDepth,W,,,H - B,H,B,1,1,>1,SP-SU-FA,SM-CR,,,?,Very slow,Small,5,***,HiMod,4-Jan,*,Low,1-Feb,*,Low,1,WPD-OTH,Wider Caribbean except Bermuda,Taxon without zooxanthellae
+Madracis pharensis f. luciphylla,,Ten ray massive coral,Scleractinian,,,Least concern,Oct-50,Broad,W,,,H - B,H,B,1,1,>1,SP-SU-FA,CR-SM,,,?,Very Slow,Small,,***,HiMod,4,*,Low,1,?,,0,?,Wider Caribbean except Bermuda,"Needs taxonomic verification. Taxon with zooxanthelae in deep, exposed habitats."
+Madracis senaria,,Six-ray star coral,Scleractinian,,,Least concern,23-Oct,MidDepth,W,,,H - B,H,B,1,1,>1,SP-SU-FA,CR-SM,"based on photos, dome or encrusting",2,?,Slow,Small - Medium,5,***,HiMod,4-May,*,Low,1-Feb,*,Low,1-Feb,WPD - GAN,Wider Caribbean except Bermuda,"Semi criptic, submassive colonies with five exerted primary septa that are distinctive, diagnostic traits"
+Madracis spp,,,Scleractinian,,,,,Broad,W,2 - Weedy,,H - B,H,B,1,1,>1,SP-SU-FA,,based on species within genus,3,,Slow,Small - Medium,5,,HiMod,,,Low,,,Low,,,,
+Magnoliophyta,,,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Magnoliophyta spp,,,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Manicina areolata,,Rose coral,Scleractinian,,5,Least concern,ene-20,Shallow,W,2 - Weedy,,H - B,H,B,1,1,>1,SP-SU,SM,,2,0.3 - 1.2,Slow,Small,4,*,Low,1-Feb,**,LoMod,3,*,Low,1,WPD - OTH,Wider Caribbean except Bermuda,"Lives on sediment areas, like Thallasia beds."
+Manicina mayori,,Rose coral,Scleractinian,,,Least concern,20-Oct,Shallow,W,,,H - B,H,B,?,,?,?,SM-CR,,,0.3 - 1.2,Slow,Small,,**,LoMod,2-Mar,**,LoMod,3-Jan,?,,,?,??,Needs genetic and more ecological data
+Martensia pavonia,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Meandrina,,Maze coral,Scleractinian,,,,30-May,MidDepth,W,,,MP - B,,B,?,,?,?,SM,based on species within genus,2,?,Very Slow,Small,6,**,LoMod,3-Jan,**,LoMod,3,**,LoMod,2,WPD - BBD,Bermuda,"This is probably a different, endemic species. Needs taxonomic verification"
+Meandrina danae,,Butterprint rose coral,Scleractinian,,,Least concern,30-Oct,MidDepth,W,,,MP - S,,S,1,1,1-Feb,SU-FA,SM,"based on photos, crenulaled",2,?,Very Slow,Very Small,3,*,Low,1-Feb,*,Low,1-Feb,*,Low,1,WPD,Wider Caribbean except Bermuda,Confused with M. brasiliensis which is endemic to Brazil
+Meandrina jacksoni,,White valley maze coral,Scleractinian,,4,,25-Mar,MidDepth,W,4 - Stress Tolerant,,G - S,G,S,1,1,1-Feb,SU-FA,SM-MA-CR-PL,,2,0.1- 0.3,Very Slow,Medium,7,**,LoMod,2-Mar,***,HiMod,4-Jan,**,LoMod,3,BBD - WPD - RBD- SCTLD,Wider Caribbean except Bermuda,"Recently described. Crustose/plate coralla, wide, pale valleys and low ridges"
+Meandrina meandrites,,Maze coral,Scleractinian,,4,Least concern,1-Mar,Broad,W,4 - Stress Tolerant,,MP - B,,B,1,1,>1,SU-FA,MS-SM-PL-CO,brain - hemisphere and plate,2,0.1 - 0.3,Very Slow,Medium,8,**,LoMod,2-Mar,***,HiMod,4-Jan,***,HiMod,4,BBD - WPD - SCTLD,Wider Caribbean except Bermuda,Thick septa and deep narrow valleys - Possibly not in Bermuda since the taxon there is diferent
+Meandrina spp,,Maze coral,Scleractinian,,,,30-May,MidDepth,W,,,MP - B,,B,?,,?,?,SM,based on species within genus,2,?,Very Slow,Small,6,**,LoMod,3,**,LoMod,3,**,LoMod,2,WPD - BBD,Bermuda,"This is probably a different, endemic species. Needs taxonomic verification"
+Millepora,,,Scleractinian,,,,,Broad,C,,,G - B,G,B,,,,,,based on typical species within genus,3,,Slow,,,,,,,High,,,,,,,
+Millepora alcicornis,,Branching fire hydrocoral,Scleractinian,,5,Least concern,ene-40,Broad,C,,,G - B,G,B,?,,?,?,BR-CR,branching,3,0.2-0.75,Slow,Medium-Very Large,8,**,LoMod,2-Mar,****,High,5,**,LoMod,2,WPD - OTH - GAN,Wider Caribbean,Hydrozoan
+Millepora complanata,,Blade fire hydrocoral,Scleractinian,,3,Least concern,Feb-40,Broad,C,,,G - B,G,B,?,,?,?,PL-CR,branching,3,0.3 - 0.8,Slow,Large - Very large,8,**,LoMod,2-Mar,****,High,5,**,LoMod,03-abr,BBD - WPD - OTH,Wider Caribbean,Hydrozoan
+Millepora spp,,,Scleractinian,,,,,Broad,C,,,G - B,G,B,,,,,,based on typical species within genus,3,,Slow,,,,,,,High,,,,,,,
+Millepora squarrosa,,Box fire hydrocoral,Scleractinian,,,Least concern,15-May,Shallow,W,,,G - B,G,B,?,,?,?,SM-CR,"based on photos, dome or encrusting",2,2.24,Fast,Small - Medium,,***,HiMod,4-May,****,High,5,?,,,?,Central and outhern Caribbean,Hydrozoan
+Millepora striata,,Striated fire hydrocoral,Scleractinian,,,Endangered,15-May,Shallow,C,,,G - B,G,B,?,,?,?,BR,,,0,Slow,Medium-Large,,***,HiMod,4-May,***,HiMod,4-May,?,,,?,Western Caribbean Only ??,"Hydrozoan, restricted distribution to the western Caribbean"
+Monanchora arbuscula,,Red-white marbled sponge,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Montastraea cavernosa,X,Great star coral,Scleractinian,,5,Least concern,Mar-90,Broad,S,4 - Stress Tolerant,,G - S,G,S,1,1,1,SU,BO-SM-CR,boulder,2,0.2 - 1.1,Slow,Medium - Large,5,*,Low,1-Feb,**,LoMod,3,**,LoMod,2-Mar,BBD-WPD-DSD-CYBD-CCI-GAN-RBD-OTH-SCTLD-IMS,Wider Caribbean,Wide depth distibution.
+Montastraea nsp.,,Large polyped star coral,Scleractinian,,,,30-Oct,MidDepth,S,,,G - S,G,S,1,1,1,SU,BO-SM-CR,,,0.2 - 0.7,Slow,Medium - Large,5,*,Low,1-Feb,**,LoMod,2,**,LoMod,2-Mar,BBD - WPD - DSD - OTH - SCTLD - IMS,Wider Caribbean except Bermuda,"Under study. Morphometric, ecological and behavioral data indicates is different from small polyped M. cavernosa"
+Montastrea faveolata,X,Orbicella faveolata,Scleractinian,OrbAcrp,4,Endangered,ene-25,MidDepth,G,3 - Intermediate,X,H - S,H,S,1,1,2-Mar,SU-FA,BO-MA-SM-CR,"mound with head or sheets, with smooth versions having keels or bumps.",2,0.5 - 1.2,Slow,Medium - Very Large,10,**,LoMod,3,****,High,4-May,****,High,4-May,BBD-CYBD-WPD-DSD-RBD-CCI-GAN-OTH-SCTDL-IMS,Wider Caribbean,Recently reclassified into a different family. Threatened species (ESA-IUCN)
+Muricea atlantica,,Gorgonian,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Muriceopsis flavida,,Bottle-brush coral,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Mussa angulosa,,Atlantic mushroom coral,Scleractinian,,4,Least concern,25-May,MidDepth,W,,,H - B,H,B,?,,>1,?,BR-SM,,2,?,Very slow,Medium - Large,5,**,LoMod,1-Feb,*,Low,1-Feb,**,LoMod,1-Feb,WPD - OTH - SCTLD,Wider Caribbean except Bermuda,Large polyps growing in a faceoloid growth form. Intratentacular division. Multicolored.
+Mycale (mycale) laevis,alternate representation,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Mycale laevis,alternate representation,Mycale (Mycale) laevis,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Mycetophyllia,,,Scleractinian,,,,,MidDepth,W,,,H - B,H,B,02-abr,Multi,>2,,,based on species within genus,1,,Slow,,5,,LoMod,,,Low,,,LoMod,,,,
+Mycetophyllia aliciae,,Knooby cactus coral,Scleractinian,,4,Least concern,Oct-50,Broad,W,,,H - B,H,B,02-abr,Multi,>2,WI-SP,PL-CR,fleshy encrusting,1,?,Slow,Medium - Large,5,**,LoMod,2-Mar,*,Low,1-Feb,**,LoMod,2-Mar,WPD - OTH - SCTLD,Wider Caribbean except Bermuda,"Shallow, wide valleys, discontinuous ridges."
+Mycetophyllia danaana,,Deep valley cactus coral,Scleractinian,,,Least concern,30-Oct,MidDepth,W,,,H - B,H,B,02-abr,Multi,>2,WI-SP,PL-CR-SM,,1,?,Slow,Small - Medium,6,***,HiMod,03-abr,*,Low,1-Feb,**,LoMod,1-Feb,WPD,Wider Caribbean,"Deep and narrow valleys, continuous, wide ridges"
+Mycetophyllia ferox,,Rough cactus coral,Scleractinian,,4,Vulnerable,25-May,MidDepth,W,2 - Weedy,,H - B,H,B,02-abr,Multi,>2,FA-WI,PL-CR,fleshy encrusting,1,?,Slow,Small - Medium,7,**,LoMod,2-Mar,**,LoMod,3,***,HiMod,2-Mar,BBD - WPD - OTH - SCTLD,Wider Caribbean except Bermuda,"Medium sizes plates with narrow ridges acros whole colony, opne and closed valleys"
+Mycetophyllia lamarckiana,,Ridged cactus coral,Scleractinian,,,Least concern,30-Oct,MidDepth,W,,,H - B,H,B,02-abr,Multi,>2,WI-SP,PL-CR,"plates, mounds hemispheres",1,?,Slow,Small - Medium,6,***,HiMod,03-abr,*,Low,1-Feb,**,LoMod,2,WPD - RBD,Wider Caribbean except Bermuda,"Deep and wide valleys, discontinuous, wide ridges"
+Mycetophyllia reesi,,Ridgeless cactus coral,Scleractinian,,,Data deficient,20 - 60,Deep,W,,,?,,,?,,?,,PL,"based on photos, flat plates",1,?,Slow,Medium - Large,4,**,LoMod,1-Feb,*,Low,1-Feb,*,Low,1-Feb,WPD - OTH,Wider Caribbean,Deep water species. Flat plates with no ridges across corallum.
+Mycetophyllia spp,,,Scleractinian,,,,,MidDepth,W,,,H - B,H,B,02-abr,Multi,>2,,,based on species within genus,1,,Slow,,5,,LoMod,,,Low,,,LoMod,,,,
+Neofibularia nolitangere,,Do-not-touch-me sponge,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Neopetrosia proxima,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Neopetrosia spp.,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Neopetrosia spp. smooth,,Neopetrosia,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Niphates amorpha,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Niphates caribica,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Niphates digitalis,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Niphates erecta,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+No Coral Observed,,,None,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+No Species,,,None,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Oculina diffusa,,Diffuse ivory coral,Scleractinian,,5,Least concern,25-Feb,MidDepth,W,,,G - S,G,S,?,,?,?,BR-CR,branching,3,1.2 - 2.2,Fast,Small - Medium,4,*,Low,1,**,LoMod,3,*,Low,1,WPD - OTH,Wider Caribbean,Can form large thickets in protected habitats
+Oculina robusta,,Robust ivory coral,Scleractinian,,,Data deficient,30-Oct,MidDepth,W,,,G - S,G,S,?,,>1,?,BR-CR,,,?,?,Small,,*,Low,1,***,HiMod,03-abr,?,,,?,Florida - Eastern coast US,More common in temperated environments - azooxanthellated
+Oculina valeciennesi,,Small ivory coral,Scleractinian,,,,20-May,Shallow,W,,,G - S,G,S,?,,?,?,BR,,,?,?,Small,,*,Low,1,***,HiMod,03-abr,?,,,?,Wider Caribbean except Bermuda,Restricted to the cnetral and southern Caribbean
+Oculina varicosa,,Large ivory coral,Scleractinian,,,Vulnerable,20-May,Shallow,W,,,G - S,G,S,?,,?,SU-FA?,BR-CR,,,?,?,Small - Medium,,*,Low,1,**,LoMod,3,?,,,?,Wider Caribbean,"Short, thick branches and small colonies."
+Orbicella,X,,Scleractinian,OrbAcrp,4,,,MidDepth,G,,X,H - S,H,S,1,1,2-Mar,SU-FA,BO-MA-SM-CR,based on species within genus,2,,Slow,Medium - Very Large,9,,LoMod,,,High,,,High,,,,
+Orbicella annularis,X,Lobed star coral,Scleractinian,OrbAcrp,4,,ene-25,MidDepth,G,4 - Stress Tolerant,X,H - S,H,S,1,1,2-Mar,SU-FA,CO-BO-SM,"columns with upward growth on top, sides usually senescent",3,0.4 - 1.4,Slow,Medium - Very Large,9,*,Low,2,****,High,4-May,****,High,4-May,BBD-CYBD-WPD-DSD-RBD-CCI-GAN-OTH-SCTLD,Wider Caribbean except Bermuda,Recently reclassified into a different family. Threatened species (ESA-IUCN)
+Orbicella annularis complex,X,Lobed star coral,Scleractinian,OrbAcrp,4,,ene-25,MidDepth,G,4 - Stress Tolerant,X,H - S,H,S,1,1,2-Mar,SU-FA,CO-BO-SM,same as species,3,0.4 - 1.4,Slow,Medium - Very Large,9,*,Low,2,****,High,4-May,****,High,4-May,BBD-CYBD-WPD-DSD-RBD-CCI-GAN-OTH-SCTLD,Wider Caribbean except Bermuda,Recently reclassified into a different family. Threatened species (ESA-IUCN)
+Orbicella faveolata,X,Mountainous star coral,Scleractinian,OrbAcrp,4,Endangered,ene-25,MidDepth,G,3 - Intermediate,X,H - S,H,S,1,1,2-Mar,SU-FA,BO-MA-SM-CR,"mound with head or sheets, with smooth versions having keels or bumps.",2,0.5 - 1.2,Slow,Medium - Very Large,10,**,LoMod,3,****,High,4-May,****,High,4-May,BBD-CYBD-WPD-DSD-RBD-CCI-GAN-OTH-SCTDL-IMS,Wider Caribbean,Recently reclassified into a different family. Threatened species (ESA-IUCN)
+Orbicella franksi,X,Boulder star coral,Scleractinian,OrbAcrp,4,,Oct-45,Broad,G,3 - Intermediate,X,H - S,H,S,1,1,2-Mar,SU-FA,BO-MA-SM-CR,boulder,2,0.15 - 0.6,Slow,Medium - Very Large,8,**,LoMod,3,***,HiMod,4-May,***,HiMod,4,BBD-CYBD-WPD-DSD-GAN-CCI-OTH-SCTLD-IMS,Wider Caribbean,Recently reclassified into a different family. Threatened species (ESA-IUCN)
+Orbicella spp,X,,Scleractinian,OrbAcrp,4,,,MidDepth,G,,X,H - S,H,S,1,1,2-Mar,SU-FA,BO-MA-SM-CR,based on species within genus,2,,Slow,Medium - Very Large,9,,LoMod,,,High,,,High,,,,
+Other spp,,,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Palythoa,,,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Palythoa caribaeorum,,Encrusting colonial anemone,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Palythoa spp,,,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Panulirus argus,,Caribbean spiny lobster,Non-Coral,,,Least concern,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Petrosia (petrosia) pellasarca,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Petrosia (petrosia) weinbergi,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Petrosia pellasarca,alternate representation,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Peysonnellia,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Peyssonnelia spp.,,Peyssonnelia,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Plakortis spp.,,Plakortis,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Plexaura homomalla,,Black sea rod,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Plexaura kuekenthali,,Gorgonians,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Plexaura kukenthali,,Plexaura kuekenthali,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Porifera,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Porifera spp,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Porites,,,Scleractinian,,4,,,Shallow,W,,,,,B,,,,,,based on species within genus,2,,,,5,,HiMod,,,LoMod,,,Low,,,,
+Porites astreoides,,Mustard hill coral,Scleractinian,,5,Least concern,ene-50,Broad,W,2 - Weedy,,MP - B,,B,2-Jul,Multi,>5,SP-SU-FA,CR-SM-PL,"encrusting, domes",2,0.19 - 1.4,Slow,Medium,6,***,HiMod,03-abr,*,Low,1-Feb,**,LoMod,2-Mar,BBD - RBD - WPD - CCI - OTH,Wider Caribbean,Wide depth distribution and colormorphs
+Porites branneri,,Blue crust coral,Scleractinian,,,Near threatened,0 - 5,Shallow,W,,,0,,,?,,?,?,SM-CR,mound,2,?,Slow,Very Small - Small,6,***,HiMod,4,**,LoMod,3,*,Low,1-Feb,WPD,Central Caribbean,"Common small crustose, smooth, bluish species found in shalow, exposed habitats of central Caribbean. P. branneri is endemic to Brazil. Under study."
+Porites colonensis,,Honeycom plate coral,Scleractinian,,,Data deficient,20-May,Shallow,W,,,? - B,,B,?,,?,?,PL-CR-SM,,1,?,Slow,Small,,***,HiMod,1-Feb,*,Low,1-Feb,?,,,?,Endemic to south-west Caribbean,"Submassive, and thin plates. Dark brown or olive green with bright calices"
+Porites divaricata,,Thin finger coral,Scleractinian,,5,Least concern,0 - 15,Shallow,W,,,G - B,G,B,?,,?,SP-SU-FA,BR,branching,3,?,Fast,Medium - Very Large,4,*,Low,1-Feb,**,LoMod,3,*,Low,1,WPD - OTH,Wider Caribbean except Bermuda,"Short, thin, dichotomous branches, back and lagoonal reefs and seagrass habtats and sometimes found in front reef slopes. Yellow tan and grey colorations."
+Porites furcata,,Branching finger coral,Scleractinian,,4,Least concern,01-dic,Shallow,W,2 - Weedy,,G - B,G,B,2-May,Multi,>2,SP-SU-FA,BR,branching,3,0.9 - 5.3,Fast,Medium - Very Large,4,*,Low,1-Feb,**,LoMod,3,*,Low,1-Feb,WPD,Wider Caribbean except Bermuda,"Thinner branches than P. porites, dichotomous and long. Back lagoonal habitats and slopes."
+Porites nsp.,,Blue crust coral,Scleractinian,,,,0 - 5,Shallow,W,,,0,,,?,,?,?,SM-CR,,,?,Slow,Very Small - Small,6,***,HiMod,4,**,LoMod,3,*,Low,1-Feb,WPD,Central Caribbean,"Common small crustose, smooth, bluish species found in shalow, exposed habitats of central Caribbean. P. branneri is endemic to Brazil. Under study."
+Porites porites,,Clubtip finger coral,Scleractinian,,4,Least concern,ene-30,MidDepth,W,2 - Weedy,,G - MP - B,G,B,2-May,Multi,>2,SP-SU-FA,BR,branching,3,0.8 - 3.3,Fast,Medium - Very Large,6,*,Low,1-Feb,***,HiMod,4-May,**,LoMod,2-Mar,WPD - OTH,Wider Caribbean,"Thick, long or short branches"
+Porites spp,,,Scleractinian,,4,,,Shallow,W,,,,,B,,,,,,based on species within genus,2,,,,5,,HiMod,,,LoMod,,,Low,,,,
+Prosuberites laughlini,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Pseudodiploria clivosa,X,Knobby brain coral,Scleractinian,,5,,0 - 5,Shallow,S,4 - Stress Tolerant,X,H - S,H,S,1,1,1-Feb,SU-FA,CR-SM,brain - domes or encrusting,2,0.3 - 1.0,Slow,Medium - Large,5,*,Low,1-Feb,*,Low,2,***,HiMod,2-Mar,BBD-WPD-DSD-GAN-OTH-SCTLD,Wider Caribbean,"Shallow water mostly. Crustose to submassive colonies with irregular, bumpy surface"
+Pseudodiploria strigosa,X,Symmetrical brain coral,Scleractinian,,5,,ene-30,MidDepth,S,4 - Stress Tolerant,X,H - S,H,S,1,1,1-Feb,SU-FA,BO-MA-CR,brain - plates to domes,2,0.33 - 1.0,Slow,Medium - Large,6,**,LoMod,2-Mar,*,Low,2,***,HiMod,2-Mar,BBD-WPD-CYBD-DSD-RBD-CCI-GAN-OTH-SCTLD,Wider Caribbean,"Crustose, platy and hemispherical meandroid colonies. Narrow ridges and eep valleys, no ambulacra."
+Pseudoplexaura flagellosa,,Porous sea rod,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Pterogorgia spp.,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ptilocaulis walpersii,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ramicrusta spp.,,Ramicrusta,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Recently dead coral,,Unknown,Bare_TurfWSed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Reef overhang,,Unknown,Bare_TurfWSed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Rhodactis osculifera,,Gorgonian,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Rhodophyta cru,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Rhodophyta cru.,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Rhodophyta cru. spp,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ricordea florida,,Gorgonian,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Rubble,,Unknown,Bare_TurfWSed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Rugosity (m),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Sand,,Unknown,Bare_TurfWSed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Sand and rubble,,Unknown,Bare_TurfWSed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Sargassum hystrix,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Scleractinia,,,Scleractinian,,,,,,,,,,,,,,,,,general coral form,2,,,,,,,,,,,,,,,,
+Scleractinia spp,,,Scleractinian,,,,,,,,,,,,,,,,,general coral form,2,,,,,,,,,,,,,,,,
+Scolymia,,,Scleractinian,,,,,MidDepth,W,,,H - B,H,B,,,,,SM-SP,hemisphere,2,,Slow,Very Small,3,,Low,,,Low,,,Low,,,,
+Scolymia cubensis,,Solitary disk corals,Scleractinian,,4,Least concern,25-May,MidDepth,W,,,H - B,H,B,1,1,>1,SU-FA,SM-SP,,2,?,Slow,Very Small,4,*,Low,1,**,LoMod,1-Feb,*,Low,1-Feb,WPD,Wider Caribbean,"Small, single polyps in criptic areas of the reef. Multicolored."
+Scolymia lacera,,Solitary disk corals,Scleractinian,,4,Least concern,30-Oct,MidDepth,W,,,H - B,H,B,?,,?,?,SM-SP,,2,?,Very slow,Very Small - Small,3,*,Low,1,*,Low,1,*,Low,1,WPD,Wider Caribbean except Bermuda,"Largest, singke polyp species in the Caribbean. Fleshy polyps up to 15-20 cm in diameter. Multiple coloration"
+Scolymia nsp.,,Solitary red coral,Scleractinian,,,,> 20m,Deep,W,,,H - B,H,B,?,,?,?,SM-SP,,,?,Very slow,Very Small,,*,Low,1,*,Low,1-Feb,?,,,?,North Gulf of Mexico ??,Under study. Only observed in the Flower Gardens
+Scolymia spp,,,Scleractinian,,,,,MidDepth,W,,,H - B,H,B,,,,,SM-SP,hemisphere,2,,Slow,Very Small,3,,Low,,,Low,,,Low,,,,
+Scolymia wellsi,,solitary disk corals,Scleractinian,,,Data deficient,15 - 35,MidDepth,W,,,H - B,H,B,1,1,>1,?,SM-SP,,,?,Very slow,Very Small,,*,Low,1,*,Low,1-Feb,?,,,?,Eastern Caribbean ??,"Endemic to Brazil, presence in Caribbean needs Taxonomic verification"
+Scopalina ruetzleri,,lumpy encrusting sponge,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Siderastrea,,,Scleractinian,,,,,,,,,,,,,,,,,based on species within genus,2,,Slow,,5,,Low,,,LoMod,,,Low,,,,
+Siderastrea radians,,Lesser starlet coral,Scleractinian,,5,Least concern,0 - 5,Shallow,W,2 - Weedy,,G - B,G,B,2-May,,>2,SP-SU-FA?,CR-SM,"encrusting, occasionally domes",2,0.15 - 1.8,Slow,Very small - Small,4,*,Low,1,**,LoMod,3,*,Low,1-Feb,BBD - DSD - WPD,Wider Caribbean,"Small, crustose and round colonies in shallow water habitats"
+Siderastrea siderea,X,Massive starlet coral,Scleractinian,,5,Least concern,ene-50,Broad,S,4 - Stress Tolerant,,G - S,G,S,1,1,1,SU,CR-BO-SM,boulder,2,0.2 - 0.9,Slow,Medium - Large,8,**,LoMod,1-Feb,***,HiMod,03-abr,***,HiMod,4,BBD - DSD - WPD -RBD - CCI - OTH - SCTLD,Wider Caribbean,Wide depth and habitat distribution
+Siderastrea spp,,,Scleractinian,,,,,,,,,,,,,,,,,based on species within genus,2,,Slow,,5,,Low,,,LoMod,,,Low,,,,
+Siderastrea stellata,,Lesser starlet coral,Scleractinian,,,Data deficient,25-May,MidDepth,C,,,?,,,?,,?,?,CR-SM,,,?,Slow,Small,4,*,Low,1-Feb,**,LoMod,2-Mar,*,Low,1,WPD - GAN,Endemic to Brasil ???,Needs Taxonomic verification
+Smenospongia aurea,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Smenospongia conulosa,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Solenastrea,,,Scleractinian,,,,,Shallow,S,,,,,,,,,,,based on species within genus,2,,Slow,,6,,LoMod,,,LoMod,,,LoMod,,,,
+Solenastrea bournoni,,Smooth star coral,Scleractinian,,5,Least concern,20-Mar,Shallow,S,,,G - S,G,S,?,,?,SU-FA,MA-BO,boulder,2,0.9,Slow,Medium - Large,6,**,LoMod,2-Mar,**,LoMod,3,**,LoMod,2,BBD - WPD - DSD - OTH - SCTLD,Wider Caribbean except Bermuda,"Round, hemispherical medium sized colonies. Brownish to green coloration."
+Solenastrea hyades,,Knobby star coral,Scleractinian,,,Least concern,25-Oct,MidDepth,S,,,? - B,,B,?,,?,SU-FA?,SM,,,0.2,Very Slow,Small - Medium,,**,LoMod,1-Feb,?,,?,?,,?,?,Wider Caribbean except Bermuda,"limited distribution, murky environments, small corallum"
+Solenastrea spp,,,Scleractinian,,,,,Shallow,S,,,,,,,,,,,based on species within genus,2,,Slow,,6,,LoMod,,,LoMod,,,LoMod,,,,
+Spirastrella coccinea,,Encrusting sponge,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Spirastrella hartmani,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Sponge sp.,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Sponge spp.,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Stephanocoenia intersepta,,Blushing star coral,Scleractinian,,5,Least concern,May-35,Broad,G,4 - Stress Tolerant,,G - S,G,S,1,1,1-Feb,SU,MA-CR,boulder,2,0.1 - 2,Slow-fast,Medium - Large,10,****,High,5,****,High,5,**,LoMod,2-Mar,WPD - DSD - RBD - CCI - OTH - SCTLD,Wider Caribbean,"Common but not highly abundant in northern Caribbean. Abundant in western and southern Caribbean. Small to medium sized colonies with smooth surface, deep, poligonal calices and tan to greenish coloration."
+Stylaster roseus,,Rose lace coral,Scleractinian,,,,Mar-50,Broad,W,,,G - B,G,B,?,,?,?,BR,,,0,Slow,Small,,*,Low,1-Feb,***,HiMod,4-May,?,,,?,Wider Caribbean except Bermuda,Hydrozoan
+Stypopodium spp.,,Stypopodium,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Svenzea cristinae,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Svenzea zeai,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Topsentia ophiraphidites,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Trididemnum solidum,,Ascidian,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Tubastraea aurea,,Orange Cup Coral,Scleractinian,,,,30-May,MidDepth,W,,,H - B,H,B,?,,?,?,CR,,,?,?,Small,,****,High,5,_,,_,*,Low,1,WPD - OTH,Wider Caribbean except Bermuda,"Uncertain taxonomi status, being called T. coccinea but evidence of genetic, morphometric differences exist (Weil unpub)"
+Tubastraea coccinea,,Orange cup coral,Scleractinian,,6,,25-Mar,MidDepth,W,,,H - B,H,B,?,,>3,SP-SU-FA,CR,low branching,3,?,?,Small,,****,High,5,_,,_,*,Low,1,WPD,Wider Caribbean except Panama and Bermuda,Uncertain taxonomic status. Caribbean taxon (T. aurea) Genetic verification needed to separate from T. coccinea
+Tubastraea micranthus,,Green cup coral,Scleractinian,,,,Oct-40,Broad,W,,,? - B,,B,?,,?,?,CR,,,?,?,Medium,,***,HiMod,4-May,_,,_,?,,1,?,Northern Gulf of Mexico - Hispaniola,"Invasive species, mostly in northern gulf of Mexico, Dominican Republic"
+Turf (mixed),,,Bare_TurfWSed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Turf (mixed) with sediment,,,Bare_TurfWSed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Turf algae free of sediment,,,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Turf algae with sediment,,,Bare_TurfWSed,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Udotea spp.,,Udotea,Algae,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Undaria agaricites,,Low relief lettuce coral,Scleractinian,,,Least concern,0 - 50,Broad,W,,,G - MP - B,G,B,1,1,>6,SP-SU-FA,SM-CR,,,0.08 -0.2,Very Slow,Small,10,****,High,5,****,High,4-May,**,LoMod,2-Mar,WPD - RBD - DSD - CCI,Wider Caribbean except Bermuda,"Submassive, crustose colonies."
+Undaria crassa,,Lettuce coral,Scleractinian,,,Least concern,15-Mar,Shallow,W,,,? - B,,B,1,1,?,?,FO-BL,,,?,?,Small,,***,HiMod,03-abr,****,High,5,?,,,?,Western Caribbean,Needs taxonomic verification. Posibly endemic to south central America and Colombia
+Undaria crenata,,Lettuce coral,Scleractinian,,,,15-Feb,Shallow,W,,,? - B,,B,1,1,?,?,FO-BL,,,?,?,Small,,***,HiMod,03-abr,****,High,5,?,,,?,Western Caribbean,Needs taxonomic varification. Posibly endemic to south central America
+Undaria danae,,Bifacial lettuce coral,Scleractinian,,,,15-Feb,Shallow,W,,,? - B,,B,1,1,>1,SU-FA?,SM-FO,,,0.8 - 1.16,Slow,Medium - Large,7,**,LoMod,2-Mar,***,HiMod,4-May,**,LoMod,2,WPD - BBD -RBD,Wider Caribbean except Bermuda,"Thick bifacial blades with a foliose/plate base. Abundant in well exposed, deeper (12-25m) habitats."
+Undaria humilis,,Low relief lettuce coral,Scleractinian,,,Least concern,0 - 25,,W,,,G - MP- B,G,B,1,1,>6,SP-SU-FA,PL-CR,,,?,Very Slow,Small - Medium,10,****,High,5,****,High,4-May,**,LoMod,2,WPD - CCI - RBD -DSD,Wider Caribbean except Bermuda,"Small, massive-crustose colonies with reticulated high ridges and closed valleys with few calices"
+Undaria purpurea,,Lettuce coral,Scleractinian,,,Least concern,15-Feb,Shallow,W,,,H - B,H,B,1,1,>1,SU-FA?,PL-CR,,,?,Very Slow,Medium,8,****,High,5,***,HiMod,03-abr,*,Low,1,WPD - RBD,Wider Caribbean except Bermuda,Reticulated ridges and closed valleys with few mouths inside.
+Undaria pusilla,,Small criptic lettuce coral,Scleractinian,,,,0 - 10,Shallow,W,,,? - B,,B,1,1,>1,SU-FA?,CR-FO,,,?,Slow,Very Small,9,****,High,5,****,High,5,*,Low,1,WPD,Western and Central Caribbean,"Small, cryptic thin crusts with low ridges, short valleys and small calices. In shallow, well exposed habitats"
+Undaria tenuifolia,,Thin leaf lettuce coral,Scleractinian,,,Near threatened,0 - 20,Shallow,W,,,? - B,,B,1,1,>1,SP-SU-FA,FO-BL,,,0.8,Slow,Medium - Large,7,**,LoMod,2-Mar,****,High,5,*,Low,1-Feb,WPD - CCI,Central and Western Caribbean,"One of 3 bifacial agaricids. Thin corallum forn large wide and vertical colonies that can monopolize extensive habitats. Most common in north-central, south central and western Caribbean."
+Verongula reiswigi,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Verongula rigida,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Verongula spp.,,Sponges,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Xestospongia muta,,Caribbean barrel sponge,Non-Coral,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

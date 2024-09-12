@@ -1,0 +1,25 @@
+Model,Metric_name,Numeric_rule,Symbol,Lower,Upper,Level,Description,Unit
+Fish,T_Taxa,>=20 (15-25),>=,15,25,2,Richness is high – valid taxa only,n
+Fish,T_RareEndemic,>=1,>=,1,,2,"Rare, endemic and special species (Attribute I)",n
+Fish,T_HSensitive,>=1 (0-2),>=,0,2,2,Highly sensitive taxa (Attribute II),n
+Fish,P_Sensitive,>=50 (45-55),>=,45,55,2,"Proportion of all senstive taxa (Attribute I, II, and III)",%
+Fish,T_Biomass_PR,>=65 (51-79),>=,50,80,2,Puerto Rico – Total biomass – valid taxa only,g/m²
+Fish,T_Biomass_Fl,>=65 (50-80),>=,51,79,2,Florida – Total biomass – valid taxa only,g/m²
+Fish,T_LGroupers,>=1 (0-1),>=,0,1,2,Large groupers (Epinephelus and Mycteroperca) present,n
+Fish,T_LPredators,>=1 (0-2),>=,0,2,2,Large predators present,n
+Fish,T_Piscivore,>=20,>=,20,,2,Abundant piscivore individuals,n
+Fish,T_Taxa,>=15 (10 - 20),>=,10,20,3,Richness moderate to high – valid taxa only,n
+Fish,T_Sensitive,>=6 (4 – 8),>=,4,8,3,"Sensitive taxa (Attributes I, II, and III) are a small to moderate proportion of fish species richness",n
+Fish,T_Biomass_PR,>=35 (30–40),>=,30,40,3,Puerto Rico – Total fish biomass is moderate to high – valid taxa only,g/m²
+Fish,T_Biomass_Fl,>=37 (32-42),>=,32,42,3,Florida – Total fish biomass is moderate to high – valid taxa only,g/m²
+Fish,T_Piscivore,>=1,>=,1,,3,Presence of snappers or other piscivores,n
+Fish,T_Parrotfish,>=1 (0-2),>=,0,2,3,Presence of large parrotfish,n
+Fish,P_Damselfish,<25 (20-30),<,20,30,3,Damselfish individuals are not dominant,%
+Fish,T_Groupers,>=1,>=,1,,3,"Groupers present (Dermatolepis, Epinephelus, Mycteroperca, and Cephalopholis)",n
+Fish,T_Taxa,>=9 (4-14),>=,4,14,4,Richness low to moderate – valid taxa only,n
+Fish,T_Sensitive,>=3 (1-5),>=,1,5,4,"Some sensitive taxa (Attributes I, II, and III)",n
+Fish,T_Biomass_PR,>=11 (7-15),>=,7,15,4,Puerto Rico – Low or higher – valid taxa only,g/m²
+Fish,T_Biomass_Fl,>=6.2 (4-8.4),>=,4,8.4,4,Florida – Low or higher – valid taxa only,g/m²
+Fish,T_Taxa,>=5 (2-8),>=,2,8,5,Sparse – valid taxa only,n
+Fish,T_Biomass_PR,>=2 (1-3),>=,1,3,5,Puerto Rico – Very low – valid taxa only,g/m²
+Fish,T_Biomass_Fl,>=2 (1-3),>=,1,3,5,Florida – Very low – valid taxa only,g/m²

@@ -1,0 +1,70 @@
+---
+format:
+  html: 
+    theme: litera
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Web-based application to calculate the Fish Biological Condition Gradient (BCG) for coral reefs of Puerto Rico and the U.S. Virgin Islands
+
+### Introduction
+
+::: {layout-ncol="2"}
+The Biological Condition Gradient (BCG) is a conceptual framework (Figure 1) that describes how biological attributes of aquatic ecosystems (i.e., biological condition) are expected to change along a gradient of increasing anthropogenic stress ([Davies and Jackson, 2006](https://doi.org/10.1016/j.ecolind.2022.108805){target="_blank"}). Since 2012 the US Environmental Protection Agency (EPA) and a group of scientific coral reef experts have collaborated to develop a BCG model for the coral reefs of Puerto Rico and the U.S. Virgin Islands (USVI)(USEPA, 2021). For the fish BCG model, the levels and rules are described in [Bradley et al., 2020](https://doi.org/10.1016/j.marpolbul.2020.111387){target="_blank"}.
+
+![Figure 1. Conceptual model of the biological condition gradient. Taken from Davies and Jackson, 2006.](BCG_model.jpg){width="401"}
+:::
+
+**BCG Levels** are standardized descriptions of biological condition related to assemblage structure, function, and sensitivity to stressors ([Santavy et al., 2022b](https://doi.org/10.1016/j.ecolind.2022.108576){target="_blank"}). *BCG Level 1* (Table 1) describes an assemblage that occurs when human disturbance is entirely or almost entirely absent. This is an undisturbed condition as naturally occurs. *Level 1* conditions are rarely observable in any aquatic environment, especially given ubiquitous stressors introduced by global phenomena such as climate change and atmospheric deposition. *Level 6* conditions assemblages have severely altered structure and function compared to natural expectations. The actual fish BCG model interprets Caribbean reef conditions from BCG *Level 3* to *Level 6*. Expert-derived numeric rules form the basis. BCG *Level 1* wasn't expected in Puerto Rico or the USVI due to habitat destruction and fishing pressure. No *Level 2* conditions were observed; however, conceptual *Level 2* rules were proposed based on historical descriptions.
+
+![Table 1. Narrative rules for fish BCG Levels in Puerto Rico coral reefs](narrative_rules.png){width="75%"}
+
+To facilitate the use of the BCG model, a web-based application was developed, which consist of a friendly user interface that allows managers and stakeholders to quickly calculate BCG levels once the field data is made available. For using the fish BCG model in areas outside Puerto Rico and the US Virgin Islands, caution is advised due to varying environmental and fishing pressures. While the model showed promising results in the Florida Keys, discrepancies in biomass metrics suggest the need for location-specific adjustments of model rules, especially considering jurisdictional differences in fishing pressure [(Bradley et al., 2020)](https://doi.org/10.1016/j.marpolbul.2020.111387){target="_blank"}.
+
+### How to use this app
+
+1.  Upload your data
+
+The input data for the fish BCG App must be formatted in the web app **BCG DataFormatter** and accessible [here](https://drive.google.com/drive/folders/1eisQOkwNLkZh-QOZwfMFq8BeWVAiCGRS?usp=drive_link){target="_blank"}. This web has specific instructions on how to prepare the data. Once the data has been formatted, load the file through the fish BCG app file browser in the `Upload your data` tab. The data will be previewed so you can verify that it is the correct information. Then, you must identify the data column that includes the source of temporal variation (e.g., year, month) and spatial variation (e.g., Region, subregion, site).
+
+2.  Quality control
+
+After the file is uploaded, running a quality control test on the data from the Quality control tab is recommended. The most critical validation offered by this tool is to verify that all the species reported in the file have BGC attributes and other ecological traits recognized in the [master list](https://drive.google.com/drive/folders/1NK-roMmX4expx41YB1n3LS23rr94RWgf?usp=sharing){target="_blank"}. If species are not included in the master list, it is recommended to **request** <url of issues in final GitHub repository> their inclusion to the App administrator before continuing with the analysis. Other quality control evaluations are the spelling of species names, duplicate sample names, and empty samples.
+
+The validation of scientific names not included in the master list is verified in [WoRMS](https://marinespecies.org/){target="_blank"}. This procedure may take a few minutes. Please be patient and do not start the BCG analysis before the quality control test is finished.
+
+3.  BGC analysis
+
+Go to the BCG results tab to start the analysis; the results are summarized in a table for the sources of spatial and temporal variation indicated in step 1. If several sample units were taken as replicates for each source of variation, averages between the samples will be estimated. The details of the BCG analysis (i.e., application of rules to each site) can be downloaded in `.csv` format for further analysis. In addition to the table, the sites are represented in an interactive map, with colored markers indicating the biological condition of each site.
+
+4.  Other ecological indicators
+
+In addition to the BCG results, this application processes information of interest to describe the fish assemblages. This information is presented in the "Other indicators" tab, specifically: vulnerable species, invasive species, and size-structured abundance distribution for each species.
+
+### Citation
+
+Bradley, P., Jessup, B., Pittman, S. J., Jeffrey, C. F. G., Ault, J. S., Carrubba, L., et al. (2020). Development of a reef fish biological condition gradient model with quantitative decision rules for the protection and restoration of coral reef ecosystems. Marine Pollution Bulletin, 159, 111387. doi: [https://doi.org/10.1016/j.marpolbul.2020.111387](https://doi.org/10.1016/j.marpolbul.2020.111387){target="_blank"}.
+
+Davies, S. P., & Jackson, S. K. (2006). The biological condition gradient: a descriptive model for interpreting change in aquatic ecosystems. Ecological Applications, 16(4), 1251-1266. [doi:https://doi.org/10.1890/1051-0761(2006)016\[1251:TBCGAD\]2.0.CO;2](https://doi.org/10.1890/1051-0761(2006)016%5B1251:TBCGAD%5D2.0.CO;2){target="_blank"}.
+
+USEPA (U.S. Environmental Protection Agency). 2021. The Biological Condition Gradient (BCG) for Puerto Rico and U.S. Virgin Islands Coral Reefs. EPA 822-R-21-007. U.S. Environmental Protection Agency, Office of Water/Office of Science and Technology, Washington, D.C
+
+Santavy, D.L., Jackson, S.K., Jessup, B., Gerritsen, J., Rogers, C., Fisher, W.S., et al. (2022). A biological condition gradient for coral reefs in the US Caribbean Territories: Part I. Coral narrative rules. *Ecological Indicators* 138, 108805. doi: [https://doi.org/10.1016/j.ecolind.2022.108805](https://doi.org/10.1016/j.ecolind.2022.108805){target="_blank"}.
+
+Santavy, D.L., Jackson, S.K., Jessup, B., Horstmann, C., Rogers, C., Weil, E., et al. (2022). A biological condition gradient for Caribbean coral reefs: Part II. Numeric rules using sessile benthic organisms. Ecological Indicators 135, 108576. doi: [https://doi.org/10.1016/j.ecolind.2022.108576](https://doi.org/10.1016/j.ecolind.2022.108576){target="_blank"}.
+
+### Funded by
+
+![](epa.png){width="10%"}![](noaa.jpeg){width="11%"}
+
+### Developed by
+
+![](upr.png){width="10%"}![CCRI-UPR](ccri.png){width="5%"}
+
+This online App was built with [Shiny](https://shiny.rstudio.com/){target="_blank"} and [R](https://www.r-project.org/){target="_blank"}, is hosted at [Shinyapps.io](https://www.shinyapps.io){target="_blank"}, and developed in [github](https://github.com/edlinguerra/BCG_Coral){target="_blank"}. Design and codes by [Edlin Guerra Castro](https://edlinguerra.github.io/){target="_blank"} and [Arturo Sánchez Porras](https://arturosp.github.io/){target="_blank"}
+
+Version 0.1.0 (2024/15/04)
