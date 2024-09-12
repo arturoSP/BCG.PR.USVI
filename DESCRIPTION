@@ -1,10 +1,13 @@
 Package: BCG.PR.USVI
-Title: Provides Accessible Offline Use To All The BCG Apps Developed For PR And USVI
-Version: 0.0.0.9000
+Title: Offline Access To All BCG Apps Developed For PR And USVI
+Version: 0.1.0
 Authors@R: 
-    person("Arturo", "Sanchez-Porras", , "sp.arturo@gmail.com", 
+    c(person("Arturo", "Sanchez-Porras", , "sp.arturo@gmail.com", 
            role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0002-1691-286X"))
+           comment = c(ORCID = "0000-0002-1691-286X")),
+      person("Edlin", "Guerra-Castro",
+           role = "aut", email = "edlinguerra@gmail.com",
+                    comment = c(ORCID = "0000-0003-3529-4507")))
 Description: Facilitates the access to PR and USVI BCG WebApps without the need of using their online versions directly, thus avoiding the number of users restriction and allowing for working with multiple simultaneous users.
 Depends: R (>= 3.5.0), shiny
 License: MIT + file LICENSE
