@@ -2,13 +2,31 @@
 % Please edit documentation in R/BCG_Format.R
 \name{BCG_Formatter}
 \alias{BCG_Formatter}
+\alias{BCGFormatter}
 \title{Function to call the BCG do-it-all formatter}
 \usage{
 BCG_Formatter()
 }
 \value{
-Calls the app for using the BCG Formatter
+Executes the app for using the BCG Formatter.
 }
 \description{
-Function to call the BCG do-it-all formatter
+Executes the shinyapp for the BCG formatter. The app will try to adapt your
+data from LPI, BSAT and Fish surveys to the templates that are used by the
+models apps. It takes the user step by step in the consolidation of data and
+then retuns an \code{.xlsx} file that can be readily used.
+}
+\examples{
+if(interactive()){
+  BCG_Formatter()
+}
+
+
+}
+\seealso{
+\code{\link[=BCG_Benthic]{BCG_Benthic()}}
+\code{\link[=BCG_Fish]{BCG_Fish()}}
+}
+\author{
+Arturo Sanchez-Porras
 }

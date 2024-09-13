@@ -1,3 +1,4 @@
+# Load required packages
 library(rio)
 library(shiny)
 library(dplyr)
@@ -8,6 +9,8 @@ library(shinycssloaders)
 library(leaflet)
 library(DT)
 library(capture)
+
+# Load required helper functions
 source("utils.R")
 source("QualityControl.R")
 source("BSAT_Model.R")

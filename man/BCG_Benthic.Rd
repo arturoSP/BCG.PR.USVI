@@ -2,13 +2,31 @@
 % Please edit documentation in R/BCG_Benthic.R
 \name{BCG_Benthic}
 \alias{BCG_Benthic}
-\title{Function to call the Benthic BCG model}
+\alias{BCGBenthic}
+\title{Function to call the BCG Benthic model}
 \usage{
 BCG_Benthic()
 }
 \value{
-Calls the app for using the Benthic model
+Executes the app for using the BCG Benthic model.
 }
 \description{
-Function to call the Benthic BCG model
+Executes the shinyapp for the BCG Benthic model. The app will take your data,
+asses its quality, and then calculate the BCG level for the temporal and
+spatial scales that were selected by the user. Additional metrics include
+endangered and invasive species.
+}
+\examples{
+if(interactive()){
+  BCG_Benthic()
+}
+
+
+}
+\seealso{
+\code{\link[=BCG_Fish]{BCG_Fish()}}
+\code{\link[=BCG_Formatter]{BCG_Formatter()}}
+}
+\author{
+Arturo Sanchez-Porras
 }

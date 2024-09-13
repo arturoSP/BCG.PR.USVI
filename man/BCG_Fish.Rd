@@ -2,13 +2,31 @@
 % Please edit documentation in R/BCG_Fish.R
 \name{BCG_Fish}
 \alias{BCG_Fish}
-\title{Function to call the Fish BCG model}
+\alias{BCGFish}
+\title{Function to call the BCG Fish model}
 \usage{
 BCG_Fish()
 }
 \value{
-Calls the app for using the Fish model
+Executes the app for using the BCG Fish model.
 }
 \description{
-Function to call the Fish BCG model
+Executes the shinyapp for the BCG Fish model. The app will take your data,
+asses its quality, and then calculate the BCG level for the temporal and
+spatial scales that were selected by the user. Additional metrics include
+endangered and invasive species.
+}
+\examples{
+if(interactive()) {
+  BCG_Fish()
+}
+
+
+}
+\seealso{
+\code{\link[=BCG_Benthic]{BCG_Benthic()}}
+\code{\link[=BCG_Formatter]{BCG_Formatter()}}
+}
+\author{
+Arturo Sanchez-Porras
 }

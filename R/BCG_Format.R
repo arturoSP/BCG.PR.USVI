@@ -1,9 +1,33 @@
 #' Function to call the BCG do-it-all formatter
 #'
-#' @return Calls the app for using the BCG Formatter
+#' Executes the shinyapp for the BCG formatter. The app will try to adapt your
+#' data from LPI, BSAT and Fish surveys to the templates that are used by the
+#' models apps. It takes the user step by step in the consolidation of data and
+#' then retuns an \code{.xlsx} file that can be readily used.
 #'
-#' @import shiny
+#' @return Executes the app for using the BCG Formatter.
+#'
+#' @author Arturo Sanchez-Porras
+#'
+#' @seealso
+#' [BCG_Benthic()]
+#' [BCG_Fish()]
+#'
+#' @aliases BCGFormatter
+#'
 #' @export
+#' @import DT
+#' @import shiny
+#' @import reactlog
+#' @import rfishbase
+#' @import dplyr
+#' @import shinycssloaders
+#'
+#' @examples
+#' if(interactive()){
+#'   BCG_Formatter()
+#' }
+#'
 #'
 
 BCG_Formatter <- function(){
