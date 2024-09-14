@@ -14,6 +14,7 @@ Description: Facilitates the access to PR and USVI BCG WebApps without the need
 Depends: R (>= 3.5.0), DT, shiny
 Imports: capture, dplyr, leaflet, rio, plotly, reactlog, rfishbase, 
     shinycssloaders, stringr, tidyr, worrms, remotes
+Remotes: dreamRs/capture
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
