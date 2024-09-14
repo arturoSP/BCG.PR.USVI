@@ -1,3 +1,10 @@
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
+if (!requireNamespace("capture", quietly = TRUE)) {
+  remotes::install_github("dreamRs/capture")
+}
+
 # Load required packages
 library(rio)
 library(shiny)
