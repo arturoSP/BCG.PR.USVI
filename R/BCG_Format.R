@@ -21,6 +21,7 @@
 #' @import rfishbase
 #' @import dplyr
 #' @import shinycssloaders
+#' @importFrom purrr map2
 #'
 #' @examples
 #' if(interactive()){

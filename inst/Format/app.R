@@ -1,6 +1,5 @@
 # Load packages and helper files ----
 library(DT)
-library(reactlog)
 library(rfishbase)
 library(dplyr)
 library(shinycssloaders)

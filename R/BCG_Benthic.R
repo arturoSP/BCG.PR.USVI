@@ -29,6 +29,7 @@
 #' @import bslib
 #' @import shinyFeedback
 #' @import waiter
+#' @importFrom purrr map
 #'
 #' @examples
 #' if(interactive()){
