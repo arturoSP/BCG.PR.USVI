@@ -26,6 +26,9 @@
 #' @import rio
 #' @import capture
 #' @import worrms
+#' @import bslib
+#' @import shinyFeedback
+#' @import waiter
 #'
 #' @examples
 #' if(interactive()){

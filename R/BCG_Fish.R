@@ -28,6 +28,9 @@
 #' @import plotly
 #' @import rfishbase
 #' @import worrms
+#' @import bslib
+#' @import shinyFeedback
+#' @import waiter
 #'
 #' @examples
 #' if(interactive()) {

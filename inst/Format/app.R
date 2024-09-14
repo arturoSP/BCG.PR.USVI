@@ -142,7 +142,7 @@ ui <- fluidPage(
       span("When you are ready, hit the \"Save\" button:"),
       actionButton("wideFishSave", "Save", width = "100%"),
       h3("This is your data:"),
-      withSpinner(DTOutput("wideFishFinal"), type = 4),
+      withSpinner(DT::DTOutput("wideFishFinal"), type = 4),
       textOutput("wideFishNA"),
       br(),
       actionButton("page_SWFish_SCol", "Back"),
@@ -174,7 +174,7 @@ ui <- fluidPage(
       span("When you are ready, hit the \"Save\" button:"),
       actionButton("wideFishSaveTwoSheets", "Save", width = "100%"),
       h3("This is your data:"),
-      withSpinner(DTOutput("wideFishFinalTwoSheets"), type = 4),
+      withSpinner(DT::DTOutput("wideFishFinalTwoSheets"), type = 4),
       br(),
       actionButton("page_WFTwoSheets_SCol", "Back"),
       actionButton("page_WFTwoSheets_DlBCG", "Continue")
@@ -213,7 +213,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("longFishSave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DTOutput("longFishFinal"), type = 4) # ,
+        withSpinner(DT::DTOutput("longFishFinal"), type = 4) # ,
       ),
       br(),
       actionButton("page_LFish_SCol", "Back"),
@@ -257,7 +257,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("wideMobSave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DTOutput("wideMobFinal"), type = 4)
+        withSpinner(DT::DTOutput("wideMobFinal"), type = 4)
       ),
       br(),
       actionButton("page_WMob_SMob", "Back"),
@@ -278,7 +278,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("longMobSave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DTOutput("longMobFinal"), type = 4)
+        withSpinner(DT::DTOutput("longMobFinal"), type = 4)
       ),
       br(),
       actionButton("page_LMob_SMob", "Back"),
@@ -321,7 +321,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("wideLPISave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DTOutput("wideLPIFinal"), type = 4)
+        withSpinner(DT::DTOutput("wideLPIFinal"), type = 4)
       ),
       br(),
       actionButton("page_WLPI_SLPI", "Back"),
@@ -342,7 +342,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("longLPISave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DTOutput("longLPIFinal"), type = 4)
+        withSpinner(DT::DTOutput("longLPIFinal"), type = 4)
       ),
       br(),
       actionButton("page_LLPI_SLPI", "Back"),
@@ -415,7 +415,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("wideDEMOSave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DTOutput("wideDEMOFinal"), type = 4)
+        withSpinner(DT::DTOutput("wideDEMOFinal"), type = 4)
       ),
       br(),
       actionButton("page_WDEMO_SDEMO", "Back"),
@@ -444,7 +444,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("longDEMOSave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DTOutput("longDEMOFinal"), type = 4)
+        withSpinner(DT::DTOutput("longDEMOFinal"), type = 4)
       ),
       br(),
       actionButton("page_LDEMO_SDEMO", "Back"),
@@ -955,7 +955,7 @@ server <- function(input, output, session) {
     }
   )
 
-  output$wideFishFinal <- renderDT(wideFishTable())
+  output$wideFishFinal <- DT::renderDataTable(wideFishTable())
 
   ### Present a warning if the selections didn't match ----
   wFishNA <- eventReactive(
@@ -1014,7 +1014,7 @@ server <- function(input, output, session) {
     }
   )
 
-  output$wideFishFinalTwoSheets <- renderDT(wideFishTableTwoSheets())
+  output$wideFishFinalTwoSheets <- DT::renderDataTable(wideFishTableTwoSheets())
 
   ## Long fish ----
   ### Find the length column ----
@@ -1133,7 +1133,7 @@ server <- function(input, output, session) {
     }
   )
 
-  output$longFishFinal <- renderDT(longFishTable())
+  output$longFishFinal <- DT::renderDataTable(longFishTable())
 
   ### download Long Fish button ----
   output$DownloadLongFish <- downloadHandler(
@@ -1243,7 +1243,7 @@ server <- function(input, output, session) {
     }
   )
 
-  output$wideMobFinal <- renderDT(wideMobTable())
+  output$wideMobFinal <- DT::renderDataTable(wideMobTable())
 
   ## Long format ----
   ### Meters completed ----
@@ -1300,7 +1300,7 @@ server <- function(input, output, session) {
     }
   )
 
-  output$longMobFinal <- renderDT(longMobTable())
+  output$longMobFinal <- DT::renderDataTable(longMobTable())
 
   # LPI species in BCG corals ----
   ## Upload the data and check it ----
@@ -1404,7 +1404,7 @@ server <- function(input, output, session) {
     }
   )
 
-  output$wideLPIFinal <- renderDT(wideLPITable())
+  output$wideLPIFinal <- DT::renderDataTable(wideLPITable())
 
   ## Long format ----
   ### Meters completed ----
@@ -1461,7 +1461,7 @@ server <- function(input, output, session) {
     }
   )
 
-  output$longLPIFinal <- renderDT(longLPITable())
+  output$longLPIFinal <- DT::renderDataTable(longLPITable())
 
   # DEMO species in BCG corals ----
   ## Upload the data and check it ----
@@ -1587,7 +1587,7 @@ server <- function(input, output, session) {
     }
   )
 
-  output$wideDEMOFinal <- renderDT(wideDEMOTable())
+  output$wideDEMOFinal <- DT::renderDataTable(wideDEMOTable())
 
   ## Long format ----
   ### Meters completed ----
@@ -1739,7 +1739,7 @@ server <- function(input, output, session) {
     }
   )
 
-  output$longDEMOFinal <- renderDT(longDEMOTable())
+  output$longDEMOFinal <- DT::renderDataTable(longDEMOTable())
 
 
   # Download final file for BCG ----

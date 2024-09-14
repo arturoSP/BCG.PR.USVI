@@ -18,7 +18,6 @@
 #' @export
 #' @import DT
 #' @import shiny
-#' @import reactlog
 #' @import rfishbase
 #' @import dplyr
 #' @import shinycssloaders

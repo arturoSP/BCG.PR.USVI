@@ -29,7 +29,7 @@ ui <- fluidPage(
   theme = bslib::bs_theme(bootswatch = "litera"),
   shinyFeedback::useShinyFeedback(),
   waiter::use_waiter(),
-  
+
   navlistPanel(
     id = "tabset",
     selected = "Preface and guide of use",
@@ -45,7 +45,7 @@ ui <- fluidPage(
              ),
     tabPanel("Upload your data",
              fluidRow(br()),
-             
+
              fluidRow(column(4,
                              fileInput("WorkFile",
                                        "Load the data",
@@ -54,16 +54,16 @@ ui <- fluidPage(
                                        multiple = FALSE)
                              )
                       ),
-             
+
              fluidRow(hr()),
-             
+
              fluidRow(column(12,
                              h4("Data"),
-                             dataTableOutput("headData")
+                             DT::dataTableOutput("headData")
                              )
                       ),
              fluidRow(hr()),
-             
+
              fluidRow(column(4,
                              uiOutput("inputYear")
                              ),
@@ -78,7 +78,7 @@ ui <- fluidPage(
                              )
                       ),
              ),
-    
+
     tabPanel("Quality control",
              fluidRow(br()),
              fluidRow(column(12,
@@ -93,11 +93,11 @@ ui <- fluidPage(
                       ),
              fluidRow(br(),
                       column(12,
-                             withSpinner(dataTableOutput("Misspell"),
+                             withSpinner(DT::dataTableOutput("Misspell"),
                                                          type = 4))
                       ),
              fluidRow(hr()),
-             
+
              fluidRow(column(12,
                              textOutput("NotRecognized"),
                              textOutput("NumericDate"),
@@ -105,12 +105,12 @@ ui <- fluidPage(
                              )
                       )
              ),
-    
+
     tabPanel("BCG Results",
              fluidRow(br()),
              fluidRow(column(8,
                              h4("BCG levels"),
-                             withSpinner(dataTableOutput("Metrics"),
+                             withSpinner(DT::dataTableOutput("Metrics"),
                                          type = 4)),
                       column(4,
                              br(),
@@ -126,7 +126,7 @@ ui <- fluidPage(
                                               "Download map")
                              )
                       ),
-             
+
              fluidRow(column(12,
                              br(),
                              div(id = "map1",
@@ -141,11 +141,11 @@ ui <- fluidPage(
              fluidRow(br()),
              fluidRow(column(4,
                              h4("Vulnerable species"),
-                             withSpinner(dataTableOutput("ThreatSp"),
+                             withSpinner(DT::dataTableOutput("ThreatSp"),
                                          type = 4)),
                       column(4,
                              h4("Invasive species"),
-                             withSpinner(dataTableOutput("InvasiveSp"),
+                             withSpinner(DT::dataTableOutput("InvasiveSp"),
                                          type = 0)),
                       column(4,
                              downloadButton("DownloadVulnerable",
@@ -169,20 +169,20 @@ ui <- fluidPage(
 
 # Server logic ----
 server <- function(input, output, session) {
-  
+
   # Get the data ---------
-  # Store the data to show it to the user 
+  # Store the data to show it to the user
   MetricData <- reactive({
     req(input$WorkFile)
-    import(input$WorkFile$datapath) 
+    import(input$WorkFile$datapath)
   })
-  
+
   cNames <- reactive({
     req(input$WorkFile)
     colnames(MetricData())
   })
-  
-  output$headData <- renderDT(MetricData(),
+
+  output$headData <- DT::renderDataTable(MetricData(),
                               options = list(pageLength = 10,
                                              lengthMenu = c(5, 10, 25),
                                              scrollX = TRUE,
@@ -190,7 +190,7 @@ server <- function(input, output, session) {
                               rownames = FALSE,
                               style = "default"
                               )
-  
+
   # Ask for the names of columns containing temporal and spatial dimensions
   output$inputYear <- renderUI({
     req(input$WorkFile)
@@ -200,26 +200,26 @@ server <- function(input, output, session) {
     req(input$WorkFile)
     selectInput("InputSite", "Spatial factor", character(), choices = NULL)
   })
-  
+
   observeEvent(MetricData(), {
-    updateSelectInput(session, 
-                      "InputYear", 
+    updateSelectInput(session,
+                      "InputYear",
                       choices = temporalValues[temporalValues %in% cNames()]
     )
-    
-    updateSelectInput(session, 
-                      "InputSite", 
+
+    updateSelectInput(session,
+                      "InputSite",
                       choices = spatialValues[spatialValues %in% cNames()]
     )
-    
+
   })
-  
+
   # Read the number of years in the data
   numYear <- reactive({
     req(input$InputYear)
     unique(MetricData()[[input$InputYear]])
   })
-  
+
   output$nYear <- renderText({
     if(is.numeric(numYear())){
       paste("Number of temporal units:", "\n", length(numYear()))
@@ -227,54 +227,54 @@ server <- function(input, output, session) {
       paste("Error:\nTemporal factor must be numeric")
     }
   })
-  
+
   colYear <- reactive({
     input$InputYear
   })
-  
+
   # Read the number of sites in the data
   numSite <- reactive({
     req(input$InputSite)
     unique(MetricData()[[input$InputSite]])
   })
-  
+
   output$nSite <- renderText({
     paste("Number of spatial units:", "\n", length(numSite()))
   })
-  
+
   colSite <- reactive({
     input$InputSite
   })
-  
+
   # Read the number of transects in the data
   numTransect <- reactive({
     req(input$WorkFile)
     unique(MetricData()$PRIMARY_SAMPLE_UNIT)
   })
-  
+
   output$nTransect <- renderText({
     paste("Number of sampling units:", "\n", length(numTransect()))
   })
-  
+
   colTransect <- reactive({
     #input$InputTransect
     "PRIMARY_SAMPLE_UNIT"
   })
-  
+
   # Quality control ------------------------------
   # print a table with the rownames and data that is not registered in the MasterList
   Misspelling <- eventReactive(input$quality, {
     F_Misspelling_2(F_Misspelling_1(MetricData()))
   })
-  
-  output$Misspell <- renderDT(Misspelling(),
+
+  output$Misspell <- DT::renderDataTable(Misspelling(),
                               options = list(pageLength = 5,
                                              lengthMenu = c(5, 10, 25),
                                              scrollX = T,
                                              searching = F),
                               rownames = F,
-                              style = "default") 
-  
+                              style = "default")
+
   output$DownloadQuality <- downloadHandler(
     filename = function() {
       paste0("BCGFish_Quality_", Sys.Date(), ".csv")
@@ -283,17 +283,17 @@ server <- function(input, output, session) {
       write.csv(Misspelling(), file, row.names = F)
     }
   )
-  
+
   ## Warnings for the user ----
   # number of species that are not in the  master list
-  NotRecognized <- eventReactive(req(input$quality), 
+  NotRecognized <- eventReactive(req(input$quality),
                                  label = "SpeciesNotInList",
                                  {
                                    F_NotRecognized(Misspelling())
                                  }
   )
   output$NotRecognized <- renderText(NotRecognized())
-  
+
   NumericDate <- eventReactive(req(input$quality),
                                label = "DateNotNumeric",
                                {
@@ -301,7 +301,7 @@ server <- function(input, output, session) {
                                }
   )
   output$NumericDate <- renderText(NumericDate())
-  
+
   EmptySpecies <- eventReactive(req(input$quality),
                                 label = "EmptySpeciesName",
                                 {
@@ -309,26 +309,26 @@ server <- function(input, output, session) {
                                 }
   )
   output$EmptySpecies <- renderText(EmptySpecies())
-  
+
   # Compute the results ----
   mData <- reactive({
     req(input$WorkFile)
     F_tSamp(MetricData())
   })
-  
+
   M_Result <- reactive({
     req(input$WorkFile)
     M_Fish_1(mData(), colTransect(), colSite(), colYear())
   })
-  
+
   DefinLevel <- reactive({
     req(input$WorkFile)
     M_Fish_2(M_Result(), MetricData(), colSite(), colYear())
   })
-  
-  output$Metrics <- renderDT(
+
+  output$Metrics <- DT::renderDataTable(
     tryCatch({
-      DefinLevel()  |> 
+      DefinLevel()  |>
         `colnames<-`(c(str_to_sentence(colSite()), str_to_sentence(colYear()), "Level"))
     },
     error = function(e){
@@ -342,17 +342,17 @@ server <- function(input, output, session) {
     rownames = F,
     style = "default"
   )
-  
+
   output$Download <- downloadHandler(
     filename = function() {
       paste0("BCGFish_Metrics_", Sys.Date(), ".csv")
     },
     content = function(file) {
-      write.csv(M_Result() |> 
-                  `colnames<-`(c(str_to_sentence(colSite()), str_to_sentence(colYear()), 
+      write.csv(M_Result() |>
+                  `colnames<-`(c(str_to_sentence(colSite()), str_to_sentence(colYear()),
                                  "Model", "Metric_name", "MCalc", "Numeric_rule", "Symbol",
                                  "Lower", "Upper", "Level", "Description", "Units", "MemberValue",
-                                 "Membership")), 
+                                 "Membership")),
                 file, row.names = F)
     }
   )
@@ -361,17 +361,17 @@ server <- function(input, output, session) {
       paste0("BCGFish_Results_", Sys.Date(), ".csv")
     },
     content = function(file) {
-      write.csv(DefinLevel() |> 
+      write.csv(DefinLevel() |>
                   `colnames<-`(c(str_to_sentence(colSite()), str_to_sentence(colYear()), "Level")),
                 file, row.names = F)
     }
   )
-  
+
   # Print a map with the location of the sampling sites ----
   coord <- reactive({
     F_map(MetricData(), colSite(), colYear(), DefinLevel())
   })
-  
+
   mapa1 <- reactive({
     tryCatch({
       F_MapParam(coord())
@@ -379,22 +379,22 @@ server <- function(input, output, session) {
     error = function(e){
       message("There was an error, contact admin.")
     })
-  })    
+  })
   output$map <- renderLeaflet(mapa1())
-  
+
   userMap <- reactive({
     mapa1() %>%
       setView(lng = input$map_center$lng,
               lat = input$map_center$lat,
               zoom = input$map_zoom)
   })
-  
+
   # Other indicators ----
   ThreatSp <- reactive({
     F_threatSp(MetricData(), colSite(), colYear())
   })
-  
-  output$ThreatSp <- renderDT(tryCatch({
+
+  output$ThreatSp <- DT::renderDataTable(tryCatch({
     ThreatSp()
   },
   error = function(e){
@@ -411,11 +411,11 @@ server <- function(input, output, session) {
                  searching = F),
   rownames = F,
   style = "default")
-  
+
   Invasive <- reactive({
       F_invasiveSp(MetricData(), colSite(), colYear())
     })
-  output$InvasiveSp <- renderDT(tryCatch({
+  output$InvasiveSp <- DT::renderDataTable(tryCatch({
     Invasive()},
     error = function(e){
       return(NULL)
@@ -425,14 +425,14 @@ server <- function(input, output, session) {
       return(NULL)
       message("Select temporal and/or spatial factors.")
     }
-  ), 
+  ),
   options = list(pageLength = 5,
                  lengthMenu = c(5, 10, 25),
                  scrollX = T,
                  searching = F),
   rownames = F,
   style = "default")
-  
+
   VulnerableLabel <- reactive({
     tryCatch({
       ifelse(is.null(ThreatSp()), "", "Vulnerable species")
@@ -443,16 +443,16 @@ server <- function(input, output, session) {
     })
   })
   output$vulnerableDATA <- renderText({VulnerableLabel()})
-  
+
   InvasiveLabel <- reactive({
     tryCatch({
-      ifelse(is.null(Invasive()), "", "Invasive species")  
+      ifelse(is.null(Invasive()), "", "Invasive species")
     },
     error = function(e){
       return(paste(" "))
       message("Select temporal and/or spatial factors.")
     })
-    
+
   })
   output$invasiveDATA <- renderText({InvasiveLabel()})
 
@@ -464,7 +464,7 @@ server <- function(input, output, session) {
       write.csv(ThreatSp(), file, row.names = F)
     }
   )
-  
+
   output$DownloadInvasive <- downloadHandler(
     filename = function() {
       paste0("BCGFish_InvasiveSpp_", Sys.Date(), ".csv")
@@ -473,12 +473,12 @@ server <- function(input, output, session) {
       write.csv(Invasive(), file, row.names = F)
     }
   )
-  
+
   LenWei <- reactive({
     req(input$WorkFile)
     F_LenWei(mData(), colSite(), colYear())
   })
-  
+
   AvailableSp <- reactive({
     req(input$WorkFile)
     F_PlotParams(LenWei(), "Species")
@@ -487,7 +487,7 @@ server <- function(input, output, session) {
     req(input$WorkFile)
     selectInput("histSp", "Species available to plot", choices = AvailableSp())
   })
-  
+
   AvailableTime <- reactive({
     req(input$WorkFile)
     F_PlotParams(LenWei(), "Temporal")
@@ -496,7 +496,7 @@ server <- function(input, output, session) {
     req(input$WorkFile)
     selectInput("histTime", "Times available to plot", choices = AvailableTime())
   })
-  
+
   AvailableSpatial <- reactive({
     req(input$WorkFile)
     F_PlotParams(LenWei(), "Spatial")
@@ -505,25 +505,25 @@ server <- function(input, output, session) {
     req(input$WorkFile)
     selectInput("histSpatial", "Sites available to plot", choices = AvailableSpatial())
   })
-  
+
   selSp <- reactive({
     input$histSp
   })
-  
+
   selTm <- reactive(
     input$histTime
   )
-  
+
   selSpt <- reactive(
     input$histSpatial
   )
 
   p1 <- reactive({
     p1 <- pl_hist(LenWei(), selSp(), selTm(), selSpt())
-    
+
     return(p1)
   })
-  
+
   output$LenWei <- renderPlotly(
     tryCatch({p1()},
              error = function(e){
@@ -539,8 +539,8 @@ server <- function(input, output, session) {
                message("Not enough data.")
              })
     )
-  
-  
+
+
 }
 
 # Run the app ----

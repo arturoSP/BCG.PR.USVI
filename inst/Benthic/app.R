@@ -68,11 +68,11 @@ ui <- fluidPage(
 
              fluidRow(column(12,
                              h4(textOutput("lpiDATA")),
-                             dataTableOutput("headLPI"),
+                             DT::dataTableOutput("headLPI"),
                              h4(textOutput("demoDATA")),
-                             dataTableOutput("headDEMO"),
+                             DT::dataTableOutput("headDEMO"),
                              h4(textOutput("mobDATA")),
-                             dataTableOutput("headMOB")
+                             DT::dataTableOutput("headMOB")
                              )
                       ),
              fluidRow(hr()),
@@ -103,7 +103,7 @@ ui <- fluidPage(
                              downloadButton("DownloadQuality", "Download data"))),
              fluidRow(br(),
                       column(12,
-                             withSpinner(dataTableOutput("Misspell"), type = 4))),
+                             withSpinner(DT::dataTableOutput("Misspell"), type = 4))),
              fluidRow(hr()),
 
              fluidRow(column(12,
@@ -114,7 +114,7 @@ ui <- fluidPage(
                              hr(),
                              textOutput("EmptyTransect"),
                              textOutput("LPI100"),
-                             dataTableOutput("Not100")
+                             DT::dataTableOutput("Not100")
                              )
                       )
             ),
@@ -123,7 +123,7 @@ ui <- fluidPage(
              fluidRow(br()),
              fluidRow(column(8,
                              h4("BCG/BSAT levels"),
-                             withSpinner(dataTableOutput("Metrics"), type = 4)),
+                             withSpinner(DT::dataTableOutput("Metrics"), type = 4)),
                       column(4,
                              br(),
                              downloadButton("Download", "Download metrics"),
@@ -147,16 +147,16 @@ ui <- fluidPage(
              fluidRow(br()),
              fluidRow(column(12,
                              h4("Other ecological indicators"),
-                             withSpinner(dataTableOutput("OtherInd"), type = 4))
+                             withSpinner(DT::dataTableOutput("OtherInd"), type = 4))
                       ),
              fluidRow(hr()),
 
              fluidRow(column(4,
                              h4(textOutput("vulnerableDATA")),
-                             withSpinner(dataTableOutput("ThreatSp2"), type = 0)),
+                             withSpinner(DT::dataTableOutput("ThreatSp2"), type = 0)),
                       column(4,
                              h4(textOutput("invasiveDATA")),
-                             withSpinner(dataTableOutput("InvasiveSp2"), type = 0)),
+                             withSpinner(DT::dataTableOutput("InvasiveSp2"), type = 0)),
                       column(4,
                              downloadButton("DownloadOther", "Download additional metrics"),
                              br(),br(),
@@ -223,7 +223,7 @@ server <- function(input, output, session) {
   output$mobDATA <- renderText({MobLabel()})
 
 
-  output$headLPI <- renderDT(TableList()[[1]],
+  output$headLPI <- DT::renderDataTable(TableList()[[1]],
                            options = list(pageLength = 5,
                                           lengthMenu = c(5, 10, 25),
                                           scrollX = T,
@@ -231,7 +231,7 @@ server <- function(input, output, session) {
                            rownames = F,
                            style = "default"
                            )
-  output$headDEMO <- renderDT(DemoData(),
+  output$headDEMO <- DT::renderDataTable(DemoData(),
                               options = list(pageLength = 5,
                                              lengthMenu = c(5, 10, 25),
                                              scrollX = T,
@@ -239,7 +239,7 @@ server <- function(input, output, session) {
                               rownames = F,
                               style = "default"
                               )
-  output$headMOB <- renderDT(TableList()[[2]],
+  output$headMOB <- DT::renderDataTable(TableList()[[2]],
                              options = list(pageLength = 5,
                                             lengthMenu = c(5, 10, 25),
                                             scrollX = T,
@@ -345,7 +345,7 @@ server <- function(input, output, session) {
       M_BCG_2(M_Result())
     }
   })
-  output$Metrics <- renderDT(
+  output$Metrics <- DT::renderDataTable(
     tryCatch({
       DefinLevel() %>%
         `colnames<-`(c(str_to_sentence(colSite()), str_to_sentence(colYear()), "Level"))
@@ -396,7 +396,7 @@ server <- function(input, output, session) {
     }
   })
 
-  output$OtherInd <- renderDT(tryCatch({
+  output$OtherInd <- DT::renderDataTable(tryCatch({
     otherInd()
   },
   error = function(e){
@@ -424,7 +424,7 @@ server <- function(input, output, session) {
     }
   })
 
-  output$ThreatSp2 <- renderDT(tryCatch({
+  output$ThreatSp2 <- DT::renderDataTable(tryCatch({
     ThreatSp2()
   },
   error = function(e){
@@ -450,7 +450,7 @@ server <- function(input, output, session) {
       F_invasiveSp_2(Samp(), colSite(), colYear())
     }
   })
-  output$InvasiveSp2 <- renderDT(tryCatch({
+  output$InvasiveSp2 <- DT::renderDataTable(tryCatch({
     Invasive2()},
     error = function(e){
       return(NULL)
@@ -524,7 +524,7 @@ server <- function(input, output, session) {
     F_Misspelling_2(F_Misspelling_1(Samp()))
   })
 
-  output$Misspell <- renderDT(Misspelling(),
+  output$Misspell <- DT::renderDataTable(Misspelling(),
                                      options = list(pageLength = 5,
                                                     lengthMenu = c(5, 10, 25),
                                                     scrollX = T,
@@ -587,7 +587,7 @@ server <- function(input, output, session) {
                             return(tempA)
                             }
                           )
-  output$Not100 <- renderDataTable(
+  output$Not100 <- DT::renderDataTable(
     tryCatch({
       Not100() %>%
         transmute(Year = as.integer(Year),

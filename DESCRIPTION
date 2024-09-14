@@ -12,8 +12,8 @@ Description: Facilitates the access to PR and USVI BCG WebApps without the need
     of using their online versions directly, thus avoiding the number of users 
     restriction and allowing for working with multiple simultaneous users.
 Depends: R (>= 3.5.0), DT, shiny
-Imports: capture, dplyr, leaflet, rio, plotly, reactlog, rfishbase, 
-    shinycssloaders, stringr, tidyr, worrms, remotes
+Imports: capture, dplyr, leaflet, rio, plotly, rfishbase, waiter, readr, readxl,
+    shinycssloaders, stringr, tidyr, worrms, remotes, shinyFeedback, bslib, tools
 Remotes: dreamRs/capture
 License: MIT + file LICENSE
 Encoding: UTF-8
