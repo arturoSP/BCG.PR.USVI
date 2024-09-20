@@ -1,3 +1,4 @@
 ^BCG\.PR\.USVI\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^data/.*\.xlsx$
