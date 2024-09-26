@@ -4,12 +4,12 @@
 Rls <- import("./www/Rules.csv")
 
 # Invasive species list ----
-InvSpp <- import("./www/invasive_spp.csv") |> 
+InvSpp <- import("./www/invasive_spp.csv") |>
   transmute(FinalID = Species, Invasive = TRUE)
 
 # Masterlist ----
-MstLst <- import("./www/FishMasterList.csv") |> 
-  left_join(InvSpp, by = "FinalID") 
+MstLst <- import("./www/FishMasterList.csv") |>
+  left_join(InvSpp, by = "FinalID")
 
 # Possible names for the spatial variables -----
 spatialValues <- c("REGION",
@@ -45,24 +45,24 @@ temporalValues <- c("YEAR",
 # finds out the quantity of records for threatened species
 F_threatSp <- function(Samp, colSite, colYear) {
   Samp[[colSite]] <- as.character(Samp[[colSite]])
-  ThreatSp2 <- Samp |> 
-    left_join(MstLst, by = c("SCIENTIFIC_NAME" = "FinalID")) |> 
-    mutate(CVE = paste(Samp[[colSite]], Samp[[colYear]], sep = "___"))  |> 
+  ThreatSp2 <- Samp |>
+    left_join(MstLst, by = c("SCIENTIFIC_NAME" = "FinalID")) |>
+    mutate(CVE = paste(Samp[[colSite]], Samp[[colYear]], sep = "___"))  |>
     filter(RedListCategory == "VU" | RedListCategory == "EN" |
              RedListCategory == "CR" | RedListCategory == "EW" |
-             RedListCategory == "EX") |> 
-    group_by(CVE, SCIENTIFIC_NAME) |> 
-    reframe(Status = RedListCategory) |> 
-    unique() |> 
-    ungroup() |> 
+             RedListCategory == "EX") |>
+    group_by(CVE, SCIENTIFIC_NAME) |>
+    reframe(Status = RedListCategory) |>
+    unique() |>
+    ungroup() |>
     transmute(Site = str_extract(CVE, ".*(?=___)"),
               Year = str_extract(CVE, "(?<=___)[[:digit:]]*"),
               `Vulnerable species` = SCIENTIFIC_NAME,
               Status)
-  
+
   if(dim(ThreatSp2)[1] > 0){
-    ThreatSp2 <- ThreatSp2 |> 
-      arrange(Site, Year) |> 
+    ThreatSp2 <- ThreatSp2 |>
+      arrange(Site, Year) |>
       setNames(c(str_to_sentence(colSite), str_to_sentence(colYear),
                  "Vulnerable species", "Status"))
       return(ThreatSp2)
@@ -70,7 +70,7 @@ F_threatSp <- function(Samp, colSite, colYear) {
     ThreatSp2[1,1] <- "There are no records"
     return(ThreatSp2)
   }
-  
+
 }
 
 ## F_invasiveSp ----
@@ -78,7 +78,7 @@ F_threatSp <- function(Samp, colSite, colYear) {
 F_invasiveSp <- function(Samp, colSite, colYear) {
   Samp[[colSite]] <- as.character(Samp[[colSite]])
   InvasiveSp2 <- Samp %>%
-    left_join(InvSpp, by = c("SCIENTIFIC_NAME" = "FinalID")) |> 
+    left_join(InvSpp, by = c("SCIENTIFIC_NAME" = "FinalID")) |>
     mutate(CVE = paste(Samp[[colSite]], Samp[[colYear]], sep = "___")) %>%
     filter(Invasive == T) %>%
     group_by(CVE, SCIENTIFIC_NAME) %>%
@@ -88,7 +88,7 @@ F_invasiveSp <- function(Samp, colSite, colYear) {
     transmute(Site = str_extract(CVE, ".*(?=___)"),
               Year = str_extract(CVE, "(?<=___)[[:digit:]]*"),
               `Invasive species` = SCIENTIFIC_NAME)
-  
+
   if(dim(InvasiveSp2)[1] > 0){
     InvasiveSp2 %>%
       arrange(Site, Year) %>%
@@ -98,7 +98,7 @@ F_invasiveSp <- function(Samp, colSite, colYear) {
     InvasiveSp2[1,1] <- "There are no records"
     return(InvasiveSp2)
   }
-  
+
 }
 
 # The map ----
@@ -111,9 +111,9 @@ F_invasiveSp <- function(Samp, colSite, colYear) {
 # prepare the data that will be mapped
 F_map <- function(Samp, colSite, colYear, tLevel){
   Samp[[colSite]] <- as.character(Samp[[colSite]])
-  map1 <- Samp |> 
+  map1 <- Samp |>
     group_by(Samp[[colSite]], Samp[[colYear]]) %>%
-    summarise(LAT = mean(LAT_DEGREES, na.rm = T), 
+    summarise(LAT = mean(LAT_DEGREES, na.rm = T),
               LNG = mean(LON_DEGREES, na.rm = T)) %>%
     ungroup() %>%
     mutate(`Samp[[colYear]]` = as.character(`Samp[[colYear]]`)) %>%
@@ -123,7 +123,7 @@ F_map <- function(Samp, colSite, colYear, tLevel){
               LAT, LNG, Level,
               Label = paste0("Site: ", Site, ", ", Year, "\nLevel: ", Level)) %>%
     arrange(Site, desc(Year))
-  
+
   return(map1)
 }
 
@@ -159,57 +159,57 @@ F_MapParam <- function(coord) {
     library = "ion",
     markerColor = getColor(coord)
   )
-  
+
   EsriToken <- Sys.getenv("EsriToken")
-  
+
   map1 <- coord %>%
     leaflet() %>%
     addProviderTiles(providers$Esri.NatGeoWorldMap,
                      options = list(apikey = EsriToken)) %>%
     addAwesomeMarkers(lat = coord$LAT, lng = coord$LNG,
                       icon = icons,
-                      popup = coord$Label) 
+                      popup = coord$Label)
   return(map1)
 }
 
 # Function to calculate Maturity and prepare data for use in the app ----
 F_tSamp <- function(MetricData){
-  Samp_species <- MetricData |> 
-    filter(LENGTH > 0) |> 
-    select(SCIENTIFIC_NAME) |> 
-    unique() |> 
+  Samp_species <- MetricData |>
+    filter(LENGTH > 0) |>
+    select(SCIENTIFIC_NAME) |>
+    unique() |>
     pull()
-  
-  Samp_species_list <- sapply(Samp_species, 
-                              rfishbase::maturity, 
+
+  Samp_species_list <- sapply(Samp_species,
+                              rfishbase::maturity,
                               fields = c("Lm"),
-                              simplify = FALSE) |> 
-    lapply(mutate, Lm = ifelse(is.na(Lm), 0, Lm)) 
-    
-  Samp_species_list <- Filter(function(x) nrow(x) > 0, Samp_species_list) |> 
+                              simplify = FALSE) |>
+    lapply(mutate, Lm = ifelse(is.na(Lm), 0, Lm))
+
+  Samp_species_list <- Filter(function(x) nrow(x) > 0, Samp_species_list) |>
     lapply(function(x){
-      x |> 
+      x |>
         summarise(
           Lm = mean(Lm, na.rm = TRUE)
           )
       })
-  
+
   Samp_species_list <- mapply(function(data, name){
-      data |> 
+      data |>
         mutate(SCIENTIFIC_NAME = name)
-    }, Samp_species_list, names(Samp_species_list), SIMPLIFY = FALSE) |> 
-      bind_rows() |> 
+    }, Samp_species_list, names(Samp_species_list), SIMPLIFY = FALSE) |>
+      bind_rows() |>
     filter(Lm > 0)
-  
-  Samp <- left_join(MetricData, Samp_species_list) 
-  
+
+  Samp <- left_join(MetricData, Samp_species_list)
+
   return(Samp)
 }
 
 # group and summarise the data from the user ----
 # this function is necessary for starting the Fish Model
 F_tSamp2 <- function(Samp){
-  Samp <- Samp |> 
+  Samp <- Samp |>
   group_by(PRIMARY_SAMPLE_UNIT,
            SCIENTIFIC_NAME) |>
   summarise(YEAR = nth(YEAR, 1),
@@ -225,12 +225,12 @@ F_tSamp2 <- function(Samp){
             TOTAL_NUMBER = n(),
             TOTAL_BIOMASS = sum(BIOMASS)) |>
   left_join(MstLst, by = c("SCIENTIFIC_NAME" = "FinalID"))
-  
+
   Samp[,"LOCATION"] <- case_when(Samp[,"LOCATION"] == "Florida" ~ "FL",
                                  Samp[,"LOCATION"] == "FLORIDA" ~ "FL",
                                  Samp[,"LOCATION"] == "florida" ~ "FL",
-                                 TRUE ~ "PR")
-  
+                                 TRUE ~ "PR/USVI")
+
   return(Samp)
 }
 
@@ -238,30 +238,30 @@ F_tSamp2 <- function(Samp){
 F_LenWei <- function(Samp, colSite, colYear){
   Samp[[colYear]] <- as.character(Samp[[colYear]])
   Samp[[colSite]] <- as.character(Samp[[colSite]])
-  
-  p1 <- Samp %>% 
-    filter(LENGTH > 0) %>% 
-    transmute(TIME = as.character(.[[colYear]]), 
+
+  p1 <- Samp %>%
+    filter(LENGTH > 0) %>%
+    transmute(TIME = as.character(.[[colYear]]),
               PLACE = as.character(.[[colSite]]),
               SCIENTIFIC_NAME = SCIENTIFIC_NAME,
               Length = LENGTH,
               Biomass = BIOMASS,
               Lm = Lm)
-  
+
   return(p1)
 }
 
 # function to plot an interactive histogram ----
 pl_hist <- function(data, selected, timeSel, spatialSel){
   # filter the data according to the user specifications
-  p1 <- data |> 
-    filter(SCIENTIFIC_NAME %in% selected) |> 
-    filter(TIME %in% timeSel) |> 
+  p1 <- data |>
+    filter(SCIENTIFIC_NAME %in% selected) |>
+    filter(TIME %in% timeSel) |>
     filter(PLACE %in% spatialSel)
-  
+
   # calculate histogram info, used to mark the LengthMaturity line
-  hist_data <- p1 |> 
-    pull(Length) |> 
+  hist_data <- p1 |>
+    pull(Length) |>
     hist(plot = FALSE)
 
   # plot depending of the availability of LengthMaturity data
@@ -269,7 +269,7 @@ pl_hist <- function(data, selected, timeSel, spatialSel){
     p1 %>%
       plot_ly(x = .$Length, type = "histogram",
               #nbinsx = length(hist_data$breaks),
-              name = "Frequency") %>% 
+              name = "Frequency") %>%
       add_trace(type = "scatter", mode = "lines",
                 x = c(mean(p1$Lm), mean(p1$Lm)),
                 y = c(0,max(hist_data$counts)),
@@ -284,14 +284,14 @@ pl_hist <- function(data, selected, timeSel, spatialSel){
     p1 %>%
       plot_ly(x = .$Length, type = "histogram",
               nbinsx = length(hist_data$breaks),
-              name = "Frequency") %>% 
+              name = "Frequency") %>%
       layout(bargap = 0.1,
              xaxis = list(title = "Length"),
              yaxis = list(title = "Count",
                           dtick = 1,
                           tickmode = "auto"))
   }
-  
+
   return(p1)
 }
 
@@ -304,9 +304,9 @@ F_PlotParams <- function(LenWei, type = NULL){
   } else {
     LenWei[,"TIME"]
   }
-  
-  temp <- temp |> 
+
+  temp <- temp |>
     unique()
-  
+
   return(temp)
 }
