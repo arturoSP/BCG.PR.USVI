@@ -197,6 +197,12 @@ f_CheckColumns <- function(C_names, type){
     biomassValues[biomassValues %in% C_names]
   }
 
+  selections <- if(length(selections) <= 1){
+    C_names
+  } else {
+    selections
+  }
+
   return(selections)
 }
 

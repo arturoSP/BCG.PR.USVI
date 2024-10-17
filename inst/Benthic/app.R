@@ -590,11 +590,11 @@ server <- function(input, output, session) {
   output$Not100 <- DT::renderDataTable(
     tryCatch({
       Not100() %>%
-        transmute(Year = as.integer(Year),
-                  Site = Site,
+        transmute(`Temporal factor` = as.integer(Year),
+                  `Spatial factor` = Site,
                   `Sampling unit` = as.character(Transect),
                   `Recorded points` = as.integer(RecordPoints)) %>%
-        arrange(Year, Site, `Sampling unit`)},
+        arrange(`Temporal factor`, `Spatial factor`, `Sampling unit`)},
       error = function(e){
         return(tibble())
         message("Select temporal and/or spatial factors.")

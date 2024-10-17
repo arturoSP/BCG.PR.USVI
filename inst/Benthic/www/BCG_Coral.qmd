@@ -27,7 +27,7 @@ Since 2012 the US Environmental Protection Agency (EPA) and a group of scientifi
 
 1.  Upload your data
 
-    The input data for the BCG App must be uploaded using the `BCG_template.xlsx` file available [here](https://drive.google.com/drive/folders/1eisQOkwNLkZh-QOZwfMFq8BeWVAiCGRS?usp=drive_link){target="_blank"}. In this Excel file, there are specific instructions on how to prepare the data.
+    The input data for the BCG App must be uploaded using the `BCG_template.xlsx` file available [here](https://drive.google.com/drive/folders/1NK-roMmX4expx41YB1n3LS23rr94RWgf){target="_blank"}. In this Excel file, there are specific instructions on how to prepare the data.
 
     Once the data has been arranged in the template, load the file through the file browser in the `Upload your data` tab. You must indicate the type of analysis to be carried out: **BSAT**(Benthic Screening Assessment Tool) or **BCG** (benthic model). The former requires data collected with the Line-Point Intercept (LPI) method. The BCG benthic model needs, in addition to LPI data, demographic data (DEMO) collected on the same LPI transect.
 

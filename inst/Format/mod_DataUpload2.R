@@ -15,7 +15,9 @@ mod_DataUpload2_ui <- function(id){
               multiple = FALSE,
               accept = c(".csv", ".xlsx", ".xls")),
     uiOutput(ns("checkSheet")),
-    fluidRow(withSpinner(DTOutput(ns("InputTable"), width = "100%"),
+    # fluidRow(withSpinner(DTOutput(ns("InputTable"), width = "100%"),
+    #                      type = 4))
+    fluidRow(withSpinner(DT::dataTableOutput(ns("InputTable")),
                          type = 4))
   )
 }
@@ -65,7 +67,8 @@ mod_DataUpload2_server <- function(id){
 
     ## Reactive for reading data ----
     InputDT <- reactive({
-      req(input$GeneralInput, SSheet())
+      #req(input$GeneralInput, SSheet())
+      req(input$GeneralInput)
       if(fileType() == "csv") {
         readr::read_csv(input$GeneralInput$datapath,
                         show_col_types = FALSE) %>%
@@ -87,17 +90,35 @@ mod_DataUpload2_server <- function(id){
       }
     })
 
-    output$InputTable <- renderDT({
+    # output$InputTable <- renderDT({
+    #   tryCatch(
+    #     {
+    #       #head(InputDT())
+    #       InputDT()
+    #     },
+    #     error = function(e) {
+    #       showNotification(paste("Loading... ", e$message), type = "warning")
+    #       NULL
+    #     }
+    #   )
+    # })
+
+    output$InputTable <- DT::renderDataTable({
       tryCatch(
         {
-          head(InputDT())
+          InputDT()
         },
         error = function(e) {
           showNotification(paste("Loading... ", e$message), type = "warning")
           NULL
         }
       )
-    })
+    },
+    options = list(pageLength = 5,
+                   lengthMenu = c(5, 10, 25),
+                   scrollX = T,
+                   searching = F)
+    )
 
     ## get the names of the columns in the selected sheet ----
     columnNames <- reactive({

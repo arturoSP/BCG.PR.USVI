@@ -16,7 +16,9 @@ mod_DataUpload_ui <- function(id){
               accept = c(".csv", ".xlsx", ".xls")),
     uiOutput(ns("checkSheet")),
     tableOutput(ns("hojas")),
-    fluidRow(withSpinner(DTOutput(ns("InputTable"), width = "100%"),
+    # fluidRow(withSpinner(DTOutput(ns("InputTable"), width = "100%"),
+    #                      type = 4))
+    fluidRow(withSpinner(DT::dataTableOutput(ns("InputTable")),
                          type = 4))
     )
 }
@@ -66,7 +68,8 @@ mod_DataUpload_server <- function(id){
 
     ## Reactive for reading data ----
     InputDT <- reactive({
-      req(input$GeneralInput, input$checkSheet)
+      # req(input$GeneralInput, input$checkSheet)
+      req(input$GeneralInput)
       if(fileType() == "csv") {
         readr::read_csv(input$GeneralInput$datapath,
                         show_col_types = FALSE,

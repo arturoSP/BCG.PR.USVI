@@ -29,7 +29,7 @@ To facilitate the use of the BCG model, a web-based application was developed, w
 
 1.  Upload your data
 
-The input data for the fish BCG App must be formatted in the web app **BCG DataFormatter** and accessible [here](https://drive.google.com/drive/folders/1eisQOkwNLkZh-QOZwfMFq8BeWVAiCGRS?usp=drive_link){target="_blank"}. This web has specific instructions on how to prepare the data. Once the data has been formatted, load the file through the fish BCG app file browser in the `Upload your data` tab. The data will be previewed so you can verify that it is the correct information. Then, you must identify the data column that includes the source of temporal variation (e.g., year, month) and spatial variation (e.g., Region, subregion, site).
+The input data for the fish BCG App must be formatted by filling in the template accessible [here](https://drive.google.com/drive/folders/1NK-roMmX4expx41YB1n3LS23rr94RWgf){target="_blank"}, or using the web app [**BCG DataFormatter**](https://ccri-uprm.shinyapps.io/BCG_Formatter/). This web has specific instructions on how to prepare the data. Once the data has been formatted, load the file through the fish BCG app file browser in the `Upload your data` tab. The data will be previewed so you can verify that it is the correct information. Then, you must identify the data column that includes the source of temporal variation (e.g., year, month) and spatial variation (e.g., Region, subregion, site).
 
 2.  Quality control
 
