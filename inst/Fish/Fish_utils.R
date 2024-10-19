@@ -166,9 +166,24 @@ F_MapParam <- function(coord) {
     leaflet() %>%
     addProviderTiles(providers$Esri.NatGeoWorldMap,
                      options = list(apikey = EsriToken)) %>%
-    addAwesomeMarkers(lat = coord$LAT, lng = coord$LNG,
-                      icon = icons,
-                      popup = coord$Label)
+    addAwesomeMarkers(
+      lat = coord$LAT,
+      lng = coord$LNG,
+      icon = icons,
+      popup = coord$Label,
+      clusterOptions = markerClusterOptions(
+        showCoverageOnHover = FALSE,
+        zoomToBoundsOnClick = FALSE,
+        spiderfyOnMaxZoom = TRUE,
+        removeOutsideVisibleBounds = TRUE,
+        spiderLegPolylineOptions = list(
+          weight = 1,
+          color = "#222",
+          opacity = 0.3
+        )
+      )
+    )
+
   return(map1)
 }
 

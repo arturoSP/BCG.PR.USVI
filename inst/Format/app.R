@@ -141,7 +141,7 @@ ui <- fluidPage(
       span("When you are ready, hit the \"Save\" button:"),
       actionButton("wideFishSave", "Save", width = "100%"),
       h3("This is your data:"),
-      withSpinner(DT::DTOutput("wideFishFinal"), type = 4),
+      withSpinner(DT::dataTableOutput("wideFishFinal"), type = 4),
       textOutput("wideFishNA"),
       br(),
       actionButton("page_SWFish_SCol", "Back"),
@@ -173,7 +173,7 @@ ui <- fluidPage(
       span("When you are ready, hit the \"Save\" button:"),
       actionButton("wideFishSaveTwoSheets", "Save", width = "100%"),
       h3("This is your data:"),
-      withSpinner(DT::DTOutput("wideFishFinalTwoSheets"), type = 4),
+      withSpinner(DT::dataTableOutput("wideFishFinalTwoSheets"), type = 4),
       br(),
       actionButton("page_WFTwoSheets_SCol", "Back"),
       actionButton("page_WFTwoSheets_DlBCG", "Continue")
@@ -199,7 +199,9 @@ ui <- fluidPage(
           radioButtons(
             "CodedLongLength",
             "Indicate if your length data is coded (i.e. c0, c1, c2, ...).",
-            choices = c("Yes", "No"),
+            choices = c("Yes (e.g. c0, c1, c2, ...)" = "yes_c",
+                        "Yes (e.g. 0-5, 6-10, 11-15, ...)" = "yes_n",
+                        "No" = "No"),
             selected = "No"
           )
         )
@@ -212,7 +214,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("longFishSave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DT::DTOutput("longFishFinal"), type = 4) # ,
+        withSpinner(DT::dataTableOutput("longFishFinal"), type = 4) # ,
       ),
       br(),
       actionButton("page_LFish_SCol", "Back"),
@@ -256,7 +258,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("wideMobSave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DT::DTOutput("wideMobFinal"), type = 4)
+        withSpinner(DT::dataTableOutput("wideMobFinal"), type = 4)
       ),
       br(),
       actionButton("page_WMob_SMob", "Back"),
@@ -277,7 +279,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("longMobSave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DT::DTOutput("longMobFinal"), type = 4)
+        withSpinner(DT::dataTableOutput("longMobFinal"), type = 4)
       ),
       br(),
       actionButton("page_LMob_SMob", "Back"),
@@ -320,7 +322,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("wideLPISave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DT::DTOutput("wideLPIFinal"), type = 4)
+        withSpinner(DT::dataTableOutput("wideLPIFinal"), type = 4)
       ),
       br(),
       actionButton("page_WLPI_SLPI", "Back"),
@@ -341,7 +343,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("longLPISave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DT::DTOutput("longLPIFinal"), type = 4)
+        withSpinner(DT::dataTableOutput("longLPIFinal"), type = 4)
       ),
       br(),
       actionButton("page_LLPI_SLPI", "Back"),
@@ -414,7 +416,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("wideDEMOSave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DT::DTOutput("wideDEMOFinal"), type = 4)
+        withSpinner(DT::dataTableOutput("wideDEMOFinal"), type = 4)
       ),
       br(),
       actionButton("page_WDEMO_SDEMO", "Back"),
@@ -443,7 +445,7 @@ ui <- fluidPage(
         span("When you are ready, hit the \"Save\" button:"),
         actionButton("longDEMOSave", "Save", width = "100%"),
         h3("This is your data:"),
-        withSpinner(DT::DTOutput("longDEMOFinal"), type = 4)
+        withSpinner(DT::dataTableOutput("longDEMOFinal"), type = 4)
       ),
       br(),
       actionButton("page_LDEMO_SDEMO", "Back"),
@@ -465,7 +467,8 @@ ui <- fluidPage(
 
 # Server logic ----
 server <- function(input, output, session) {
-  options(shiny.maxRequestSize = 10*1024^2) #set limit to 10MB
+  options(shiny.maxRequestSize = 10*1024^2) #set upload limit to 10MB
+
   # Pagination buttons ----
   switch_page <- function(i) {
     updateTabsetPanel(
@@ -1217,7 +1220,7 @@ server <- function(input, output, session) {
   ### Meters completed ----
   output$wideMobMetersC <- renderUI({
     selectInput("wideMobMetersC",
-      "Select a variable for transect lenght:",
+      "Select a variable for transect length:",
       choices = c("None", colNamesWMob())
     )
   })
@@ -1249,7 +1252,7 @@ server <- function(input, output, session) {
   ### Meters completed ----
   output$longMobMetersC <- renderUI({
     selectInput("longMobMetersC",
-      "Select a variable for transect lenght:",
+      "Select a variable for transect length:",
       choices = c("None", colNamesWMob())
     )
   })
@@ -1378,7 +1381,7 @@ server <- function(input, output, session) {
   ### Meters completed ----
   output$wideLPIMetersC <- renderUI({
     selectInput("wideLPIMetersC",
-      "Select a variable for transect lenght:",
+      "Select a variable for transect length:",
       choices = c("None", colNamesWLPI())
     )
   })
@@ -1410,7 +1413,7 @@ server <- function(input, output, session) {
   ### Meters completed ----
   output$longLPIMetersC <- renderUI({
     selectInput("longLPIMetersC",
-      "Select a variable for transect lenght:",
+      "Select a variable for transect length:",
       choices = c("None", colNamesWLPI())
     )
   })
@@ -1510,7 +1513,7 @@ server <- function(input, output, session) {
   ### Meters completed ----
   output$wideDEMOMetersC <- renderUI({
     selectInput("wideDEMOMetersC",
-      "Select a variable for transect lenght:",
+      "Select a variable for transect length:",
       choices = c("None", colNamesWDEMO())
     )
   })
@@ -1593,7 +1596,7 @@ server <- function(input, output, session) {
   ### Meters completed ----
   output$longDEMOMetersC <- renderUI({
     selectInput("longDEMOMetersC",
-      "Select a variable for transect lenght:",
+      "Select a variable for transect length:",
       choices = c("None", colNamesWDEMO())
     )
   })
@@ -1774,7 +1777,7 @@ server <- function(input, output, session) {
           MOBILE_FAUNA = if (!skipMobFlag()) { # not skip Wide Mob
             wideMobTable()
           } else { # skip Wide Mob
-            templateLPI
+            templateMOB
           },
           DEMO = templateDEMO
         )
@@ -1788,7 +1791,7 @@ server <- function(input, output, session) {
           MOBILE_FAUNA = if (!skipMobFlag()) { # not skip Long Mob
             longMobTable()
           } else { # skip long Mob
-            templateLPI
+            templateMOB
           },
           DEMO = templateDEMO
         )
@@ -1804,7 +1807,7 @@ server <- function(input, output, session) {
           MOBILE_FAUNA = if (!skipMobFlag()) { # not skip Wide Mob
             wideMobTable()
           } else { # skip Wide Mob
-            templateLPI
+            templateMOB
           },
           DEMO = if (!skipDEMOFlag()) { # not skip Wide DEMO
             wideDEMOTable()
@@ -1822,7 +1825,7 @@ server <- function(input, output, session) {
           MOBILE_FAUNA = if (!skipMobFlag()) { # not skip Wide Mob
             longMobTable()
           } else { # skip Wide Mob
-            templateLPI
+            templateMOB
           },
           DEMO = if (!skipDEMOFlag()) { # not skip Wide DEMO
             longDEMOTable()
@@ -1834,19 +1837,9 @@ server <- function(input, output, session) {
     }
   })
 
-  ModelShort <- reactive({
-    if (Model() == "BCG Fish") {
-      "FishData_"
-    } else if (Model() == "BSAT (LPI)") {
-      "BSATData_"
-    } else {
-      "BCGData_"
-    }
-  })
-
   output$downloadBCG <- downloadHandler(
     filename = function() {
-      paste0(ModelShort(), Sys.Date(), ".xlsx")
+      paste0(Intro$fileName(), "_formatted.xlsx")
     },
     content = function(file) {
       writexl::write_xlsx(DLData(), file)

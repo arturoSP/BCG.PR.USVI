@@ -1,0 +1,388 @@
+FinalID,CommonEnglish,BCGAttribute,BCGAttributeFl,RedListCategory,Guild,PiscivoreSize,A,B
+Acanthostracion polygonius,Honeycomb cowfish,I,NA,LC,I,NA,NA,NA
+Acanthostracion quadricomis,Scrawled cowfish,I,NA,NA,I,NA,NA,NA
+Carcharhinus limbatus,Blacktip shark,I,NA,VU,P,LP,0.00325,3.28316
+Carcharhinus perezii,Caribbean reef shark,I,NA,NA,P,LP,0.0271,3
+Epinephelus itajara,Atlantic Goliath Grouper,I,NA,VU,P,LP,0.0131,3.056
+Epinephelus morio,Red grouper,I,NA,VU,I,NA,0.0123,3.035
+Epinephelus striatus,Nassau grouper,I,NA,CR,P,LP,0.00649,3.229
+Mycteroperca bonaci,Black grouper,I,NA,NT,P,LP,0.00684,3.205
+Mycteroperca interstitialis,Yellowmouth grouper,I,NA,VU,P,SP,0.0009,3.582
+Mycteroperca tigris,Tiger grouper,I,NA,DD,P,LP,0.01425,3.115
+Mycteroperca venenosa,Yellowfin grouper,I,NA,NT,P,LP,0.00952,3.14
+Scarus coelestinus,Midnight parrotfish,I,NA,DD,H,NA,0.0153,3.062
+Scarus coeruleus,Blue parrotfish,I,NA,LC,H,NA,0.0124,3.111
+Scarus guacamaia,Rainbow parrotfish,I,NA,NT,H,NA,0.0155,3.0629
+Sphyrna mokarran,Great Hammerhead Shark,I,NA,CR,P,LP,0.00123,3.24
+Aetobatus narinari,Spotted eagle ray,II,NA,EN,I,NA,0.00586,3.13
+Aluterus scriptus,Scrawled filefish,II,NA,LC,I,NA,0.823,1.814
+Amblycirrhitus pinos,Redspotted hawkfish,II,NA,LC,Z,NA,0.00257,3.427
+Anisotremus surinamensis,Black margate,II,NA,DD,I,NA,0.067,2.69
+Astrapogon stellatus,Conchfish,II,NA,DD,I,NA,0.017,3.077
+Aulostomus maculatus,Trumpetfish,II,NA,LC,P,SP,0.00396,2.865
+Cantherhines macrocerus,America whitespotted filefish,II,NA,NA,I,NA,0.0156,3.2
+Cantherhines pullus,Orangespotted filefish,II,NA,LC,H,NA,0.0684,2.563
+Caranx crysos,Blue runner,II,NA,LC,P,SP,0.0089,3.11
+Caranx hippos,Crevalle jack,II,NA,LC,P,LP,0.0246,2.90175
+Cephalophilus furcifer,Atlantic creolefish,II,NA,NA,Z,NA,NA,NA
+Chaenopsis limbaughi,Yellowface pikeblenny,II,NA,LC,I,NA,NA,NA
+Chaetodipterus faber,Atlantic spadefish,II,NA,LC,I,NA,0.07368,2.731
+Chromis cyanea,Blue chromis,II,NA,LC,Z,NA,NA,NA
+Chromis multilineata,Brown chromis,II,NA,LC,Z,NA,NA,NA
+Clepticus parrae,Creole wrasse,II,NA,LC,Z,NA,NA,NA
+Dactylopterus volitans,Flying gurnard,II,NA,LC,I,NA,0.00331,3.32
+Dasyatis americana,Southern stingray,II,NA,NA,I,NA,NA,NA
+Elacatinus genie,Cleaner goby,II,NA,LC,H,NA,NA,NA
+Elacatinus multifasciatus,Greenbanded goby,II,NA,NA,I,NA,NA,NA
+Elacatinus oceanops,Neon goby,II,NA,LC,I,NA,0.00799,3.137
+Elacatinus prochilos,Broadstripe goby,II,NA,VU,I,NA,NA,NA
+Elacatinus saucrum,Leopard goby,II,NA,NA,I,NA,NA,NA
+Enchelycore nigricans,Viper moray,II,NA,LC,P,SP,0.00173,3
+Fistularia tabacaria,Bluespotted cornetfish,II,NA,LC,P,SP,0.0002,3.25
+Galeocerdo cuvier,Tiger shark,II,NA,NT,P,LP,0.00621,3.16
+Ginglymostoma cirratum,Nurse shark,II,NA,VU,P,LP,0.0106,2.892
+Gramma loreto,Fairy basslet,II,NA,LC,I,NA,NA,NA
+Haemulon chrysargyreum,Smallmouth grunt,II,NA,LC,I,NA,NA,NA
+Halichoeres radiatus,Puddingwife,II,NA,LC,I,NA,0.0131,3.038
+Heteropriacanthus cruentatus,Glasseye snapper,II,NA,LC,Z,NA,0.02793,2.82313
+Holacanthus ciliaris,Queen angelfish,II,NA,LC,I,NA,0.0336,2.9
+Holacanthus tricolor,Rock beauty,II,NA,LC,I,NA,0.0428,2.858
+Hypoplectrus gemma,Blue hamlet,II,NA,LC,NA,NA,NA,NA
+Hypoplectrus hybrid,Hybrid hamlet,II,NA,NA,NA,NA,NA,NA
+Lachnolaimus maximus,Hogfish,II,NA,VU,I,NA,0.00887,3.264
+Lactophrys triqueter,Smooth trunkfish,II,NA,LC,I,NA,0.309,2.23
+Lactophrys bicaudalis,Spotted trunkfish,II,NA,LC,I,NA,0.07325,2.815
+Lactophrys trigonus,Trunkfish,II,NA,LC,I,NA,0.0178,3.083
+Lutjanus analis,Mutton snapper,II,NA,NT,I,NA,0.0163,2.944
+Lutjanus cyanopterus,Cubera snapper,II,NA,VU,P,LP,0.0151,3.059
+Lutjanus jocu,Dog snapper,II,NA,DD,P,LP,0.0158,2.998
+Melichthys niger,Black durgon,II,NA,LC,H,NA,0.0439,2.8
+Negaprion brevirostris,Lemon Shark,II,NA,VU,P,LP,0.0053,3.16
+Pareques acuminatus,Highhat,II,NA,LC,I,NA,0.00871,3.202
+Priacanthus arenatus,Bigeye,II,NA,LC,I,NA,0.0443,2.644
+Priolepis hipoliti,Rusty goby,II,NA,LC,I,NA,0.0133,3.041
+Prognathodes aculeatus,Longsnout butterflyfish,II,NA,LC,I,NA,NA,NA
+Scomberomorus regalis,Cero,II,NA,LC,P,SP,0.0202,2.8
+Seriola dumerili,Greater amberjack,II,NA,LC,P,LP,0.05065,2.72
+Seriola rivoliana,Almaco jack,II,NA,LC,P,LP,0.0146,3.055
+Serranus tigrinus,Harlequin bass,II,NA,LC,I,NA,0.0145,3.048
+Thalassoma bifasciatum,Bluehead,II,NA,LC,I,NA,0.0107,2.916
+Trachinotus falcatus,Permit,II,NA,LC,I,NA,0.0531,2.803
+Trachinotus goodei,Palometa,II,NA,LC,P,SP,0.0144,2.9
+Xanthichthys ringens,Sargassum triggerfish,II,NA,LC,Z,NA,NA,NA
+Abudefduf taurus,Night sergeant,III,NA,LC,H,NA,NA,NA
+Acanthemblemaria aspera,Roughhead blenny,III,III,LC,I,NA,0.00771,2.962
+Acanthemblemaria maria,Secretary blenny,III,NA,LC,I,NA,NA,NA
+Acanthemblemaria spinosa,Spinyhead blenny,III,NA,LC,I,NA,NA,NA
+Acanthurus chirurgus,Doctorfish,III,NA,LC,H,NA,0.024,2.93
+Acanthurus coeruleus,Blue tang,III,NA,LC,H,NA,0.0415,2.835
+Acanthurus tractus,Ocean surgeonfish,III,NA,LC,H,NA,0.0237,2.975
+Acanthurus tractus (bahianus),Ocean surgeonfish,III,NA,LC,H,NA,NA,NA
+Acanthurus bahianus,Ocean surgeonfish,III,NA,LC,H,NA,0.026,2.87
+Ancylomenes pedersoni (adult),Pederson cleaner shrimp,III,NA,NA,NA,NA,NA,NA
+Ancylomenes pedersoni,Pederson cleaner shrimp,III,NA,NA,NA,NA,NA,NA
+Apogon aurolineatus,Bridle cardinalfish,III,NA,LC,Z,NA,NA,NA
+Apogon binotatus,Barred cardinalfish,III,NA,LC,Z,NA,NA,NA
+Apogon lachneri,Whitestar cardinalfish,III,NA,LC,Z,NA,NA,NA
+Apogon quadrisquamatus,Sawcheek cardinalfish,III,NA,LC,Z,NA,NA,NA
+Astrapogon puncticulatus,Blackfin cardinalfish,III,NA,LC,I,NA,NA,NA
+Balistes vetula,Queen triggerfish,III,NA,NT,I,NA,0.02681,2.96
+Bodianus pulchellus,Spotfin hogfish,III,NA,LC,I,NA,0.0187,3.12
+Bodianus rufus,Spanish hogfish,III,NA,LC,I,NA,0.0144,3.053
+Canthidermis sufflamen,Ocean triggerfish,III,NA,LC,I,NA,0.0176,3.055
+Caranx latus,Horse-Eye jack,III,NA,LC,P,SP,0.0174,2.91
+Caranx lugubris,Black jack,III,NA,LC,P,LP,0.025,2.94
+Centropomus undecimalis,Common snook,III,NA,LC,P,SP,0.0104,2.91
+Centropyge aurantonotus,Flameback angelfish,III,NA,LC,H,NA,NA,NA
+Cephalopholis cruentata,Graysby,III,NA,LC,P,SP,0.0135,3.044
+Cephalopholis fulva,Coney,III,NA,LC,P,SP,0.0098,3.18
+Chaetodon capistratus,Foureye butterflyfish,III,NA,LC,I,NA,0.022,3.19
+Chaetodon ocellatus,Spotfin butterflyfish,III,NA,LC,I,NA,0.0318,2.984
+Chaetodon striatus,Banded butterflyfish,III,NA,LC,I,NA,0.029,2.98
+Chilomycterus antennatus,Bridled burrfish,III,NA,LC,I,NA,NA,NA
+Chromis insolata,Sunshinefish,III,NA,LC,Z,NA,NA,NA
+Coryphopterus dicrus,Colon goby,III,III,LC,I,NA,NA,NA
+Coryphopterus eidolon,Pallid goby,III,III,VU,I,NA,NA,NA
+Coryphopterus lipernes,Peppermint goby,III,NA,VU,I,NA,NA,NA
+Cosmocampus elucens,Shortfin pipefish,III,NA,LC,I,NA,NA,NA
+Diodon holocanthus,Balloonfish,III,NA,LC,I,NA,0.119,2.6296
+Echidna catenata,Chain moray,III,NA,LC,I,NA,NA,NA
+Elacatinus chancei,Shortstripe goby,III,NA,LC,I,NA,NA,NA
+Elacatinus louisae,Spotlight goby,III,NA,LC,I,NA,NA,NA
+Emmelichthyops atlanticus,Bonnetmouth,III,NA,LC,P,SP,NA,NA
+Epinephelus adscensionis,Rock hind,III,NA,LC,I,NA,0.01331,3.18
+Epinephelus guttatus,Red hind,III,NA,LC,P,SP,0.00906,3.171
+Equetus lanceolatus,Jackknife fish,III,NA,LC,I,NA,NA,NA
+Equetus punctatus,Spotted drum,III,NA,LC,I,NA,NA,NA
+Gymnothorax miliaris,Goldentail moray,III,NA,LC,P,SP,0.0109,2.574
+Gymnothorax vicinus,Purplemouth moray,III,NA,LC,P,SP,0.00425,2.876
+Haemulon album,Margate (White),III,NA,DD,I,NA,0.0167,3.042
+Haemulon carbonarium,Caesar grunt,III,NA,LC,I,NA,0.0147,3.056
+Haemulon flavolineatum,French grunt,III,NA,LC,I,NA,0.013,3.034
+Haemulon macrostomum,Spanish grunt,III,NA,LC,I,NA,0.0244,3.029
+Haemulon parra,Sailors choice,III,NA,LC,I,NA,0.0106,3.18
+Halichoeres garnoti,Yellowhead wrasse,III,NA,LC,I,NA,0.00519,3.375
+Halichoeres maculipinna,Clown wrasse,III,NA,LC,I,NA,0.00276,3.693
+Halichoeres pictus,Rainbow wrasse,III,NA,LC,I,NA,NA,NA
+Hippocampus reidi,Longsnout seahorse,III,NA,NT,I,NA,NA,NA
+Holocentrus adscensionis,Squirrelfish,III,NA,LC,I,NA,0.0213,2.7781
+Holocentrus rufus,Longspine squirrelfish,III,NA,LC,I,NA,0.015,3.059
+Hypoplectrus aberrans,Yellowbelly hamlet,III,NA,LC,I,NA,NA,NA
+Hypoplectrus chlorurus,Yellowtail hamlet,III,NA,LC,I,NA,NA,NA
+Hypoplectrus guttavarius,Shy hamlet,III,NA,LC,I,NA,NA,NA
+Hypoplectrus indigo,Indigo hamlet,III,NA,LC,I,NA,NA,NA
+Hypoplectrus nigricans,Black hamlet,III,NA,LC,P,SP,NA,NA
+Hypoplectrus puella,Barred hamlet,III,NA,LC,I,NA,0.009,3.04
+Hypoplectrus randallorum,Tan hamlet,III,NA,LC,I,NA,NA,NA
+Hypoplectrus unicolor,Butter hamlet,III,NA,LC,P,SP,0.0109,3.182
+Kyphosus sectator,Chub (Bermuda/Yellow),III,NA,NA,H,NA,NA,NA
+Labrisomus nuchipinnis,Hairy blenny,III,NA,LC,I,NA,0.0084,3.2
+Liopropoma rubre,Peppermint basslet,III,NA,LC,I,NA,NA,NA
+Lutjanus buccanella,Blackfin snapper,III,NA,DD,P,SP,0.00697,2.974
+Lutjanus mahogoni,Mahogany snapper,III,NA,LC,P,SP,0.0428,2.719
+Lutjanus synagris,Lane snapper,III,NA,NT,P,SP,0.0159,2.9561
+Malacanthus plumieri,Sand tilefish,III,NA,LC,I,NA,0.0047,3.147
+Malacoctenus aurolineatus,Goldline blenny,III,III,LC,I,NA,NA,NA
+Malacoctenus macropus,Rosy blenny,III,III,LC,I,NA,0.0245,2.223
+Malacoctenus versicolor,Barfin blenny,III,NA,LC,I,NA,NA,NA
+Megalops atlanticus,Tarpon,III,NA,VU,P,LP,0.008355,2.9635
+Microspathodon chrysurus,Yellowtail damselfish,III,NA,LC,H,NA,0.0239,3.082
+Monacanthus ciliatus,Fringed filefish,III,NA,LC,H,NA,0.0182,3.0869
+Monacanthus tuckeri,Slender filefish,III,NA,LC,Z,NA,0.0074,3.5613
+Mulloidichthys martinicus,Yellow goatfish,III,NA,LC,I,NA,0.01,3.0726
+Myrichthys breviceps,Sharptail eel,III,NA,LC,I,NA,NA,NA
+Myrichthys ocellatus,Goldspotted eel,III,NA,LC,I,NA,NA,NA
+Myripristis jacobus,Blackbar soldierfish,III,NA,LC,I,NA,0.01476,3.0563
+Neonifon marianus,Longjaw squirrelfish,III,NA,NA,I,NA,NA,NA
+Odontoscion dentex,Reef croaker,III,NA,LC,Z,NA,0.0105,3.007
+Ophichthus ophis,Spotted snake eel,III,NA,LC,P,SP,NA,NA
+Opistognathus aurifrons,Yellowhead jawfish,III,NA,LC,Z,NA,NA,NA
+Opistognathus macrognathus,Banded jawfish,III,NA,LC,I,NA,NA,NA
+Opistognathus whitehursti,Dusky jawfish,III,NA,LC,I,NA,0.00931,2.99
+Parablennius marmoreus,Seaweed blenny,III,III,LC,Z,NA,NA,NA
+Pempheris schomburgkii,Glassy sweeper,III,NA,LC,I,NA,0.0165,3.072
+Pomacanthus arcuatus,Gray angelfish,III,NA,LC,I,NA,0.0344,2.968
+Pomacanthus paru,French angelfish,III,NA,LC,I,NA,0.0203,3.126
+Pseudupeneus maculatus,Spotted goatfish,III,NA,LC,I,NA,0.00124,3.806
+Rypticus saponaceus,Greater soapfish,III,NA,LC,NA,NA,NA,NA
+Sargocentron bullisi,Deepwater squirrelfish,III,NA,LC,I,NA,NA,NA
+Sargocentron coruscum,Reef squirrelfish,III,NA,LC,I,NA,0.0161,3.069
+Scarus iseri,Striped parrotfish,III,NA,LC,H,NA,0.0147,3.055
+Scarus taeniopterus,Princess parrotfish,III,NA,LC,H,NA,0.02238,2.94
+Scarus vetula,Queen parrotfish,III,NA,LC,H,NA,NA,NA
+Scomberomorus cavalla,King mackerel,III,NA,LC,NA,NA,0.0083,2.973
+Scomberomorus maculatus,Spanish mackerel,III,NA,LC,NA,NA,0.00884,2.982
+Scorpaena plumieri,Spotted scorpionfish,III,NA,LC,I,NA,0.0348,2.85
+Selar crumenophthalmus,Bigeye scad,III,NA,LC,P,SP,0.0053,3.38
+Serranus tabacarius,Tobaccofish,III,NA,LC,P,SP,NA,NA
+Sparisoma atomarium,Greenblotch parrotfish,III,NA,LC,H,NA,0.0121,3.028
+Sparisoma chrysopterum,Redtail parrotfish,III,NA,LC,H,NA,0.0154,3.0423
+Sparisoma rubripinne,Yellowtail parrotfish,III,NA,LC,H,NA,0.0156,3.064
+Sparisoma viride,Stoplight parrotfish,III,NA,LC,H,NA,0.025,2.921
+Sphoeroides spengleri,Bandtail puffer,III,NA,LC,I,NA,0.0274,2.8162
+Sphyraena barracuda,Great barracuda,III,NA,LC,P,LP,0.038,2.407
+Sphyraena picudilla,Southern sennet,III,NA,NA,P,SP,0.00669,2.942
+Stegastes partitus,Bicolor damselfish,III,NA,LC,H,NA,0.0182,3.152
+Abudefduf saxatilis,Sergeant major,IV,NA,LC,I,NA,0.0246,2.85
+Alphestes afer,Mutton hamlet,IV,NA,LC,I,NA,0.0045,2.67
+Anisotremus virginicus,Porkfish,IV,NA,LC,I,NA,0.0148,3.167
+Apogon maculatus,Flamefish,IV,NA,LC,Z,NA,0.0158,3.073
+Apogon pseudomaculatus,Twospot cardinalfish,IV,NA,LC,Z,NA,0.02,2.943
+Apogon townsendi,Belted cardinalfish,IV,NA,LC,Z,NA,NA,NA
+Archosargus rhomboidalis,Sea bream,IV,NA,LC,H,NA,0.0179,3.102
+Bothus lunatus,Peacock flounder,IV,NA,LC,P,SP,0.00981,3.189
+Bothus ocellatus,Eyed flounder,IV,NA,LC,P,SP,0.0108,3.03
+Calamus bajonado,Jolthead porgy,IV,NA,LC,I,NA,0.0447,2.822
+Calamus calamus,Saucereye porgy,IV,NA,LC,I,NA,0.0306,2.81
+Calamus nodosus,Knobbed porgy,IV,NA,LC,I,NA,0.00765,3.13
+Calamus penna,Sheepshead porgy,IV,NA,LC,I,NA,0.0977,2.542
+Calamus pennatula,Pluma,IV,NA,LC,I,NA,0.0119,3.093
+Calamus proridens,Littlehead porgy,IV,NA,LC,NA,NA,0.06154,2.71
+Calamus UNK,Porgy,IV,NA,NA,I,NA,NA,NA
+Canthigaster rostrata,Sharpnose puffer,IV,NA,LC,I,NA,NA,NA
+Carangoides bartholomaei,Yellow Jack,IV,NA,NA,P,LP,NA,NA
+Caranx bartholomaei,Yellow Jack,IV,NA,NA,P,LP,0.02785,2.809
+Carangoides ruber,Bar jack,IV,NA,NA,P,SP,NA,NA
+Caranx ruber,Bar jack,IV,NA,NA,P,SP,0.01329,3.0955
+Chloroscombrus chrysurus,Atlantic bumper,IV,NA,LC,Z,NA,0.0168,2.763
+Conger triporiceps,Manytooth conger,IV,NA,LC,P,SP,NA,NA
+Coryphopterus glaucofraenum,Bridled goby,IV,IV,LC,I,NA,0.00934,3.03
+Coryphopterus personatus/hyalinus,Masked/Glass goby,IV,IV,VU,I,NA,NA,NA
+Cryptotomus roseus,Bluelip parrotfish,IV,NA,LC,H,NA,0.0078,3.2752
+Ctenogobius saepepallens,Dash goby,IV,IV,LC,I,NA,NA,NA
+Diodon hystrix,Porcupine fish,IV,NA,LC,I,NA,0.532,2.276
+Eucinostomus argenteus,Spotfin mojarra/Silver mojarra,IV,NA,NA,NA,NA,0.009,3.11
+Eucinostomus jonesii,Slender mojarra,IV,NA,LC,I,NA,0.092,2.65
+Eucinostomus melanopterus,Flagfin mojarra,IV,NA,LC,I,NA,0.0109,3.03
+Gnatholepis thompsoni,Goldspot goby,IV,IV,LC,H,NA,0.00351,3.766
+Gymnothorax funebris,Green moray,IV,NA,LC,P,SP,0.00071,3.24
+Gymnothorax moringa,Spotted moray,IV,NA,LC,P,SP,0.00102,3.07
+Haemulon aurolineatum,Tomtate,IV,NA,LC,I,NA,0.00999,3.208
+Haemulon plumierii,White grunt,IV,NA,LC,I,NA,0.0121,3.161
+Haemulon sciurus,Bluestriped grunt,IV,NA,LC,I,NA,0.0194,2.999
+Halichoeres bivittatus,Slippery dick,IV,NA,LC,I,NA,0.0105,3.0933
+Inermia vittata,Boga,IV,NA,NA,Z,NA,NA,NA
+Lutjanus apodus,Schoolmaster,IV,NA,LC,P,SP,0.0211,2.9261
+Lutjanus griseus,Gray snapper,IV,NA,LC,P,SP,0.0202,2.8928
+Ocyurus chrysurus,Yellowtail snapper,IV,NA,DD,Z,NA,0.02515,2.8695
+Ophioblennius macclurei,Redlip blenny,IV,IV,LC,H,NA,0.0324,2.379
+Paradiplogrammus bairdi,Lancer dragonet,IV,NA,NA,I,NA,NA,NA
+Sargocentron vexillarium,Dusky squirrelfish,IV,NA,LC,I,NA,NA,NA
+Serranus baldwini,Lantern bass,IV,NA,LC,I,NA,0.0129,3.036
+Serranus flaviventris,Twinspot bass,IV,NA,LC,P,SP,0.0079,3.4496
+Serranus tortugarum,Chalk bass,IV,NA,LC,Z,NA,NA,NA
+Sparisoma aurofrenatum,Redband parrotfish,IV,NA,LC,H,NA,0.00468,3.429
+Sparisoma radians,Bucktooth parrotfish,IV,NA,LC,H,NA,0.0095,3.21
+Stegastes adustus,Dusky damselfish,IV,NA,LC,H,NA,NA,NA
+Stegastes diencaeus,Longfin damselfish,IV,NA,LC,H,NA,NA,NA
+Stegastes leucostictus,Beaugregory,IV,NA,LC,H,NA,0.0277,2.8711
+Stegastes planifrons,Threespot damselfish,IV,NA,LC,I,NA,0.0379,2.857
+Stegastes variabilis,Cocoa damselfish,IV,NA,LC,H,NA,0.0156,3.13
+Xyrichtys splendens,Green razorfish,IV,NA,LC,Z,NA,0.00995,2.999
+Diplodus argenteus,Silver porgy,V,NA,LC,H,NA,NA,NA
+Gerres cinereus,Yellowfin mojarra,V,NA,LC,I,NA,0.0184,3.084
+Mugil cephalus,Striped mullet,V,NA,LC,Z,NA,0.0233,2.979
+Sphoeroides testudineus,Checkered puffer,V,NA,LC,I,NA,0.0164,3.072
+Synodus foetens,Inshore lizardfish,V,NA,LC,P,SP,0.00864,2.979
+Callogobius clitellus,Saddled goby,VI,NA,LC,I,NA,NA,NA
+Pterois volitans,Red lionfish,VI,NA,LC,P,NA,0.024526,3.252
+Ablennes hians,Flat needlefish,x-MNS,NA,LC,P,SP,0.00036,3.322
+Acanthemblemaria UNK,Tube blenny,x-MNS,NA,NA,I,NA,NA,NA
+Acanthocybium solandri,Wahoo,x-NRF,NA,LC,NA,NA,0.0016,3.275
+Acanthurus UNK,Surgeonfish,X-UNK,NA,NA,H,NA,NA,NA
+Acentronura dendritica,Pipehorse,x-MNS,NA,LC,I,NA,NA,NA
+Albula vulpes,Bonefish,x-NRF,NA,NT,I,NA,0.00729,3.187
+Alectis ciliaris,African pompano,x-NRF,NA,LC,P,SP,0.019,2.894
+Apogon UNK,Cardinalfish,x-UNK,NA,NA,Z,NA,NA,NA
+Archosargus probatocephalus,Sheepshead,x,NA,LC,I,NA,0.0188,3.091
+Atherinomorus stipes,Hardhead silverside,x-MNS,NA,LC,Z,NA,0.012,3.136
+Balistes capriscus,Gray triggerfish,x,NA,VU,I,NA,0.0711,2.515
+Bathygobious soporator,Frillfin goby,x-MNS,NA,NA,I,NA,NA,NA
+Belonidae UNK,Needlefish,x-UNK,NA,NA,P,SP,NA,NA
+Bollmannia boqueronensis,White-eye goby,x-MNS,NA,LC,I,NA,NA,NA
+Bothus UNK.,Flounder,x-UNK,NA,NA,P,SP,NA,NA
+Canthigaster jamestyleri,Goldface toby,x,NA,LC,I,NA,NA,NA
+Canthigaster UNK,Puffer,x-UNK,NA,NA,I,NA,NA,NA
+Carcharhinus leucas,Bull shark,x,NA,NA,NA,NA,0.0021,2.98
+Caranx UNK,Jack,x-UNK,NA,VU,P,SP,NA,NA
+Centropristis striata,Black sea bass,x,NA,LC,P,SP,0.0134,3.02
+Centropyge argi,Cherubfish,x,NA,LC,H,NA,NA,NA
+Chaenopsis ocellata,Bluethroat pikeblenny,x-MNS,NA,LC,I,NA,NA,NA
+Chaenopsis UNK,Pike blenny,x-MNS,NA,NA,I,NA,NA,NA
+Chaetodon sedentarius,Reef butterflyfish,x,NA,LC,I,NA,0.0252,3.0759
+Chromis enchrysura,Yellowtail reeffish,x,NA,LC,I,NA,NA,NA
+Chromis scotti,Purple reeffish,x,NA,LC,Z,NA,NA,NA
+Clupeidae UNK,Herrings,x,NA,NA,Z,NA,NA,NA
+Coryphopterus UNK,Goby,x-UNK,NA,NA,I,NA,NA,NA
+Coryphopterus punctipectophorus,Spotted Goby,x-MNS,NA,LC,NA,NA,NA,NA
+Ctenogobius stigmaticus,Marked goby,x,NA,LC,I,NA,NA,NA
+Decapterus macarellus,Mackerel scad,x-MNS,NA,LC,Z,NA,0.0032,3.56
+Decapterus punctatus,Round scad,x-MNS,NA,LC,NA,NA,0.0084,3.0666
+Decapterus UNK,Scad,x-UNK,NA,NA,Z,NA,NA,NA
+Dermatolepis inermis,Marbled grouper,x,NA,DD,P,SP,0.0111,3.243
+Diplectrum bivittatum,Dwarf sand perch,x,NA,LC,I,NA,0.0025,3.5964
+Diplectrum formosum,Sand perch,x,NA,LC,P,SP,0.00537,3.282
+Diplodus holbrooki,Spottail pinfish,x,NA,NA,H,NA,NA,NA
+Doratonotus megalepis,Dwarf wrasse,x-MNS,NA,LC,I,NA,0.0292,2.86
+Echeneis naucrates,Sharksucker,x,NA,LC,Z,NA,0.0006,3.42
+Echeneis neucratoides,Whitefin sharksucker,x,NA,DD,Z,NA,NA,NA
+Elacatinus dilepis,Orangesided goby,x-MNS,NA,NA,I,NA,NA,NA
+Elacatinus evelynae,Sharknose goby,x-MNS,NA,LC,I,NA,NA,NA
+Elacatinus horsti,Yellowline goby,x-MNS,NA,LC,NA,NA,NA,NA
+Elacatinus macrodon,Tiger goby,x-MNS,NA,NA,NA,NA,NA,NA
+Elacatinus UNK,Goby,x-MNS,NA,NA,I,NA,NA,NA
+Elacatinus xanthiprora,Yellowprow goby,x-MNS,NA,LC,NA,NA,NA,NA
+Elagatis bipinnulata,Rainbow runner,x-MNS,NA,LC,P,SP,0.0135,2.92
+Emblemaria pandionis,Sailfin blenny,x-MNS,NA,LC,Z,NA,NA,NA
+Emblemaria sp,Tube blenny,x-MNS,NA,NA,Z,NA,NA,NA
+Emblemariopsis UNK,Blenny,x-MNS,NA,NA,I,NA,NA,NA
+Engraulidae UNK,Anchovies,x-UNK,NA,NA,Z,NA,NA,NA
+Enneanectes UNK,Triplefin,x-UNK,NA,NA,H,NA,NA,NA
+Eucinostomus gula,Silver jenny,x-MNS,NA,LC,I,NA,0.0144,2.9744
+Eucinostomus UNK,Mojarra,x-UNK,NA,NA,I,NA,NA,NA
+Euthynnus alletteratus,Little tuny,x-NRF,NA,LC,P,SP,0.0138,3.035
+Gobiidae UNK,Goby,x-MNS,NA,NA,I,NA,NA,NA
+Gobiosoma grosvenori,Rockcut goby,x-MNS,NA,LC,I,NA,NA,NA
+Gymnothorax UNK,Moray eel,x-UNK,NA,NA,P,SP,NA,NA
+Haemulon melanurum,Cottonwick,x,NA,LC,I,NA,0.0226,2.953
+Haemulon UNK,Grunt,x-UNK,NA,NA,I,NA,NA,NA
+Haemulon striatum,Striped grunt,x,NA,LC,Z,NA,0.0175,3.099
+Halichoeres burekae,Mardi gras wrasse,x,NA,EN,I,NA,NA,NA
+Halichoeres caudalis,Painted wrasse,x,NA,LC,I,NA,NA,NA
+Halichoeres cyanocephalus,Yellowcheek wrasse,x,NA,LC,I,NA,NA,NA
+Halichoeres poeyi,Blackear wrasse,x,NA,LC,I,NA,0.0146,3.03
+Halichoeres UNK,Wrasse,x-UNK,NA,NA,I,NA,NA,NA
+Harengula jaguana,Scaled sardine,x-MNS,NA,LC,NA,NA,0.006,3.518
+Hemiemblemaria simulas,Wrasse blenny,x-MNS,NA,NA,NA,NA,NA,NA
+Hemiramphus brasiliensis,Ballyhoo,x-MNS,NA,LC,NA,NA,0.105,2.356
+Heteroconger halis,Brown garden eel,x,NA,NA,Z,NA,NA,NA
+Heteroconger longissimus,Brown garden eel,x,NA,LC,Z,NA,NA,NA
+Hippocampus UNK,Pipefish,x- MNS,NA,NA,I,NA,NA,NA
+Holacanthus bermudensis,Blue angelfish,x-MNS,NA,LC,I,NA,0.0319,2.899
+Holocanthus Townsendi,Townsend angelfish,x-MNS,NA,NA,NA,NA,NA,NA
+Holacanthus UNK,Angelfish,x-UNK,NA,NA,I,NA,NA,NA
+Hypleurochilus bermudensis,Barred blenny,x-MNS,NA,LC,I,NA,0.0123,3.033
+Hypoplectrus UNK,Hamlet,x-UNK,NA,NA,I,NA,NA,NA
+Jenkinsia UNK,Herring,x-UNK,NA,NA,Z,NA,NA,NA
+Labrisomus filamentosus,Quillfin blenny,x-MNS,NA,NA,I,NA,NA,NA
+Lagodon rhomboides,Pinfish,x,NA,LC,I,NA,0.0155,3.074
+Lonchopisthus micrognathus,Swordtail jawfish,x,NA,LC,Z,NA,NA,NA
+Lophogobius cyprinoides,Crested goby,x,NA,LC,I,NA,NA,NA
+Lutjanus campechanus,Red snapper,x-NPR,NA,VU,P,SP,0.0176975,3.0075
+Lutjanus UNK,Snapper,x-UNK,NA,NA,P,SP,NA,NA
+Malacoctenus boehlkei,Diamond blenny,x-MNS,NA,LC,I,NA,NA,NA
+Malacoctenus gilli,Dusky blenny,x-MNS,NA,LC,I,NA,NA,NA
+Malacoctenus triangulatus,Saddled blenny,x-MNS,NA,LC,I,NA,0.00891,3
+Malacoctenus UNK,Scaly blenny,x-MNS,NA,NA,I,NA,NA,NA
+Manta birostris,Giant manta,x,NA,NA,Z,NA,NA,NA
+Microgobius carri,Seminole goby,x-MNS,NA,LC,Z,NA,NA,NA
+Microgobius signatus,Microgobius signatus,x,NA,LC,Z,NA,NA,NA
+Microgobius UNK,Goby UNK,x-UNK,NA,NA,H,NA,NA,NA
+Mullidae UNK,Goatfishes,x-UNK,NA,NA,I,NA,NA,NA
+Muraenidae UNK,Moray eel,x-UNK,NA,NA,P,SP,NA,NA
+Mycteroperca microlepis,Gag,x-NPR,NA,VU,P,SP,0.0151,2.9672
+Mycteroperca phenax,Scamp,x-NPR,NA,DD,P,SP,0.01435,3
+Mycteroperca UNK,Grouper UNK,x-UNK,NA,NA,P,SP,NA,NA
+Myrichthys UNK,Snake eel,x-UNK,NA,NA,I,NA,NA,NA
+Nes longus,Orangespotted goby,x-MNS,NA,LC,I,NA,NA,NA
+Nicholsina usta,Emerald parrotfish,x,NA,LC,H,NA,NA,NA
+Ogcocephalus nasutus,Shortnose batfish,x,NA,LC,I,NA,NA,NA
+Ophichthidae UNK,Snake eel UNK,x-UNK,NA,NA,P,SP,NA,NA
+Opistognathus UNK,Jawfish,x-UNK,NA,NA,Z,NA,NA,NA
+Oxyurichthys stigmalophius,Spotfin goby,X-MNS,NA,LC,I,NA,NA,NA
+Pareques umbrosus,Cubbyu,x,NA,LC,I,NA,NA,NA
+Platybelone argalus,Keeltail needlefish,x-MNS,NA,LC,P,SP,0.00143,3
+Pomacanthus UNK,Angelfish,x-UNK,NA,NA,I,NA,NA,NA
+Ptereleotris calliura,Blue dartfish,x-NPR,NA,LC,NA,NA,NA,NA
+Ptereleotris helenae,Hovering dartfish,x,NA,LC,Z,NA,NA,NA
+Remora remora,Common remora,x,NA,LC,Z,NA,0.00418,3
+Rypticus bistrispinus,Freckled soapfish,x,NA,LC,P,SP,NA,NA
+Rypticus maculatus,Whitespotted soapfish,x,NA,LC,P,SP,0.019,3
+Scartella cristata,Molly miller,x,NA,LC,H,NA,0.00812,3.27
+Scarus UNK,Parrotfish,x-UNK,NA,NA,H,NA,NA,NA
+Scorpaena UNK,Scorpionfish UNK,x-UNK,NA,NA,I,NA,NA,NA
+Scorpaenodes caribbaeus,Reef scorpionfish,x,NA,LC,NA,NA,NA,NA
+Serraniculus pumilio,Pygmy sea bass,x,NA,LC,I,NA,NA,NA
+Serranus subligarius,Belted sandfish,x,NA,LC,I,NA,NA,NA
+Serranus UNK,Seabass UNK,x-UNK,NA,NA,P,SP,NA,NA
+Sparisoma UNK,Parrotfish,x-UNK,NA,NA,H,NA,NA,NA
+Sphyraena borealis,Northern sennet,x,NA,LC,P,SP,NA,NA
+Stephanolepis hispidus,Planehead filefish,x,NA,LC,H,NA,NA,NA
+Stephanolepsis setifer,Pygmy filefish,x,NA,NA,H,NA,NA,NA
+Stromateidae UNK,Butterfish,x-UNK,NA,NA,P,SP,NA,NA
+Syacium UNK,Sand flounder,x-UNK,NA,NA,I,NA,NA,NA
+Sygnathus dawsoni,Pipefish,x-MNS,NA,NA,I,NA,NA,NA
+Synodus intermedius,Sand diver,x,NA,LC,P,SP,0.00993,2.999
+Synodus saurus,Bluestriped lizardfish,x,NA,LC,P,SP,0.0088,3.123
+Tigrigobius dilepis,Orangesided goby,x-MNS,NA,LC,I,NA,NA,NA
+Trachinocephalus myops,Snakefish,x,NA,LC,Z,NA,0.0004,3.972
+Triglidae UNK,Searobin Family UNK,x-UNK,NA,NA,I,NA,NA,NA
+Tylosurus crocodilus,Houndfish,x,NA,LC,P,SP,0.00078,3.205
+Urobatis jamaicensis,Yellow stingray,x-NPR,NA,LC,NA,NA,0.00723,3.083
+Xyrichtys martinicensis,Rosy razorfish,x,NA,LC,I,NA,0.018,3.078
+Xyrichtys novacula,Pearly razorfish,x,NA,LC,I,NA,0.0481,2.243
+Xyrichtys UNK,Razorfish,x-UNK,NA,NA,I,NA,NA,NA
+Diadema antillarum (adult),Long-spined sea urchin,III,NA,NA,H,NA,NA,NA
+Diadema antillarum,Long-spined sea urchin,III,NA,NA,H,NA,NA,NA
+Panulirus argus,Caribbean spiny lobster,III,NA,NA,NA,NA,NA,NA
+Panulirus guttatus,Spotted spiny lobster,III,NA,NA,NA,NA,NA,NA

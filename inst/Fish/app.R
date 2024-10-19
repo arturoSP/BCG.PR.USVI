@@ -169,6 +169,7 @@ ui <- fluidPage(
 
 # Server logic ----
 server <- function(input, output, session) {
+  options(shiny.maxRequestSize = 10*1024^2) #set upload limit to 10MB
 
   # Get the data ---------
   # Store the data to show it to the user

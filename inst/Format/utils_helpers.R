@@ -32,6 +32,11 @@ spatialValues <- c("REGION",
                    "SUB_REGION_NAME",
                    "SUB-REGION-NAME",
                    "SITE",
+                   "SITE NAME",
+                   "SITE_NAME",
+                   "SITE.NAME",
+                   "SITES",
+                   "SITES NAMES",
                    "SITES",
                    "LOCATION",
                    "HABITAT")
@@ -150,7 +155,7 @@ templateFish <- data.frame("YEAR" = numeric(), "MONTH" = numeric(), "DAY" = nume
                  "SCIENTIFIC_NAME" = character(),
                  "LENGTH" = numeric(), "BIOMASS" = numeric())
 
-# template for LPI and Mobile species data ----
+# template for LPI data ----
 templateLPI <- data.frame("YEAR" = numeric(), "MONTH" = numeric(), "DAY" = numeric(),
                           "REGION" = character(), "SUB_REGION" = character(),
                           "SITE" = character(),
@@ -160,6 +165,17 @@ templateLPI <- data.frame("YEAR" = numeric(), "MONTH" = numeric(), "DAY" = numer
                           "LAT_DEGREES" = numeric(), "LON_DEGREES" = numeric(),
                           "SPECIES_NAME" = character(),
                           "COVER" = numeric())
+
+# template for Mobile species data ----
+templateMOB <- data.frame("YEAR" = numeric(), "MONTH" = numeric(), "DAY" = numeric(),
+                          "REGION" = character(), "SUB_REGION" = character(),
+                          "SITE" = character(),
+                          "LOCATION" = character(), "HABITAT" = character(),
+                          "PRIMARY_SAMPLE_UNIT" = character(),
+                          "METERS_COMPLETED" = numeric(),
+                          "LAT_DEGREES" = numeric(), "LON_DEGREES" = numeric(),
+                          "SPECIES_NAME" = character(),
+                          "COUNTS" = numeric())
 
 # template for DEMO data ----
 templateDEMO <- data.frame("YEAR" = numeric(), "MONTH" = numeric(), "DAY" = numeric(),
@@ -180,24 +196,32 @@ templateDEMO <- data.frame("YEAR" = numeric(), "MONTH" = numeric(), "DAY" = nume
 
 f_CheckColumns <- function(C_names, type){
   selections <- if(type == "temporal"){
-    temporalValues[temporalValues %in% C_names]
+    temp1 <- temporalValues[temporalValues %in% C_names]
+    ifelse(length(temp1) <= 3, C_names, temp1)
   } else if(type == "spatial"){
-    spatialValues[spatialValues %in% C_names]
+    temp1 <- spatialValues[spatialValues %in% C_names]
+    ifelse(length(temp1) <= 5, C_names, temp1)
   } else if(type == "transect"){
-    transectValues[transectValues %in% C_names]
+    temp1 <- transectValues[transectValues %in% C_names]
+    ifelse(length(temp1) < 1, C_names, temp1)
   } else if(type == "coordinates"){
-    coordinateValues[coordinateValues %in% C_names]
+    temp1 <- coordinateValues[coordinateValues %in% C_names]
+    ifelse(length(temp1) < 2, C_names, temp1)
   } else if(type == "length"){
-    lengthValues[lengthValues %in% C_names]
+    temp1 <- lengthValues[lengthValues %in% C_names]
+    ifelse(length(temp1) < 1, C_names, temp1)
   } else if(type == "names"){
-    namesValues[namesValues %in% C_names]
+    temp1 <- namesValues[namesValues %in% C_names]
+    ifelse(length(temp1) < 1, C_names, temp1)
   } else if(type == "count"){
-    countValues[countValues %in% C_names]
+    temp1 <- countValues[countValues %in% C_names]
+    ifelse(length(temp1) < 1, C_names, temp1)
   } else if(type == "biomass"){
-    biomassValues[biomassValues %in% C_names]
+    temp1 <- biomassValues[biomassValues %in% C_names]
+    ifelse(length(temp1) < 1, C_names, temp1)
   }
 
-  selections <- if(length(selections) <= 1){
+  selections <- if(length(selections) <= 2){
     C_names
   } else {
     selections
@@ -232,3 +256,6 @@ indexPrefixes <- function(data, selected, prefix){
 
   return(result)
 }
+
+# Fish masterlist
+FishMasterList <- read.csv("./www/FishMasterList.csv", na.strings="NA")

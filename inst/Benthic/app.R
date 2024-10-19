@@ -25,9 +25,9 @@ source("BCG_Model.R")
 
 # Test material, do not delete ----
 #
-# tempTemplateLPI3 <- import("./CR_BCG_Data/tests/TestTemplate01.xlsx", sheet = "LPI")
-# tempTemplateMOB3 <- import("./CR_BCG_Data/tests/TestTemplate01.xlsx", sheet = "MOBILE_FAUNA")
-# tempTemplateDEM3 <- import("./CR_BCG_Data/tests/TestTemplate01.xlsx", sheet = "DEMO")
+# tempTemplateLPI3 <- import("./data/Benthic_1.xlsx", sheet = "LPI")
+# tempTemplateMOB3 <- import("./data/Benthic_1.xlsx", sheet = "MOBILE_FAUNA")
+# tempTemplateDEM3 <- import("./data/Benthic_1.xlsx", sheet = "DEMO")
 # colYear = "YEAR"
 # colSite = "SITE"
 # colTransect = "PRIMARY_SAMPLE_UNIT"
@@ -168,7 +168,8 @@ ui <- fluidPage(
 ))
 
 server <- function(input, output, session) {
-# Start here --------------------------------------------------------------
+  options(shiny.maxRequestSize = 10*1024^2) #set upload limit to 10MB
+
   # read the file with data, ask for it to be either excel or csv file
   MetricData <- reactive ({
     req(input$WorkFile)

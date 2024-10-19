@@ -51,7 +51,7 @@ mod_DataUploadSmall_server <- function(id){
       req(input$GeneralInput, SSheet())
       readxl::read_excel(input$GeneralInput$datapath,
                          sheet = SSheet(),
-                         .name_repair = "universal") %>%
+                         .name_repair = "minimal") %>%
         `colnames<-`(stringr::str_to_upper(colnames(.)))
     })
 

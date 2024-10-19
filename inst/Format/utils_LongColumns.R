@@ -13,6 +13,8 @@ f_cBiomass <- function(inputDT, LEN, specV){
   Samp_species <- Samp_species[[specV]] |>
     unique()
 
+  Samp_species <- setdiff(Samp_species, FishMasterList[,1])
+
   withProgress(
     message = "Please wait as this may take a few minutes" ,
     value = 0,
@@ -64,9 +66,12 @@ f_cBiomass <- function(inputDT, LEN, specV){
 
 
   Samp <- left_join(inputDT, Samp_species_list) |>
-    mutate(BIOMASS = A * LENGTH ^ B) |>
-    select(!A) |>
-    select(!B)
+    full_join(FishMasterList[,c(1,8,9)], by = c("SCIENTIFIC_NAME" = "FinalID")) |>
+    mutate(A = ifelse(is.na(A.x), A.y, A.x),
+           B = ifelse(is.na(B.x), B.y, B.x)) |>
+    mutate(BIOMASS = A * LENGTH ^ B)
+
+  Samp <- Samp[,c(1:8,15)]
 
   Samp[is.na(Samp[,"BIOMASS"]), "BIOMASS"] <- 0
 

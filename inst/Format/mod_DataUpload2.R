@@ -35,6 +35,14 @@ mod_DataUpload2_server <- function(id){
       tools::file_ext(input$GeneralInput$name)
     })
 
+    ## Reactive for file name ----
+    fileName <- reactive({
+      req(input$GeneralInput)
+      sub(paste0(".", fileType()),
+          "",
+          input$GeneralInput$name)
+    })
+
     ## Reactive for sheet names ----
     sheetNames <- reactive({
       req(input$GeneralInput,
@@ -85,7 +93,7 @@ mod_DataUpload2_server <- function(id){
         }
         readxl::read_excel(input$GeneralInput$datapath,
                            sheet = SSheet(),
-                           .name_repair = "universal") %>%
+                           .name_repair = "minimal") %>%
           `colnames<-`(stringr::str_to_upper(colnames(.)))
       }
     })
@@ -127,6 +135,7 @@ mod_DataUpload2_server <- function(id){
     })
 
     return(list(
+      fileName = fileName,
       sheetNames = sheetNames,
       InputDT = InputDT,
       columnNames = columnNames

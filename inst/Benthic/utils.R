@@ -6,14 +6,14 @@ rules <- import("./Rules.csv")
 # Masterlist ----
 # Prepare master list
 MasterList <- import("./2019CoralMasterList.csv") %>%
-  select(FinalID, ReefBuildingSpecies, Type, OrbicellaAcropora, 
-         `BCG Attribute`, RedListCategory, MorphologyIndex, 
-         OBSERVATIONS_COMMENTS) %>% 
-  transmute(FinalID = str_to_sentence(FinalID), 
+  select(FinalID, ReefBuildingSpecies, Type, OrbicellaAcropora,
+         `BCG Attribute`, RedListCategory, MorphologyIndex,
+         OBSERVATIONS_COMMENTS) %>%
+  transmute(FinalID = str_to_sentence(FinalID),
             ReefBuildingSpecies = ifelse(ReefBuildingSpecies == "X", T, F),
-            Type, 
-            OrbicellaAcropora = ifelse(OrbicellaAcropora == "OrbAcrp", T, F), 
-            BCGAttr = `BCG Attribute`, 
+            Type,
+            OrbicellaAcropora = ifelse(OrbicellaAcropora == "OrbAcrp", T, F),
+            BCGAttr = `BCG Attribute`,
             RedListCategory,
             MorphologyIndex,
             OBSERVATIONS_COMMENTS) %>%
@@ -40,7 +40,7 @@ F_threatSp <- function(Samp, colSite, colYear) {
               Year = str_extract(CVE, "(?<=___)[[:digit:]]*"),
               `Vulnerable species` = SPECIES_NAME,
               Status)
-  
+
   if(dim(ThreatSp2)[1] > 0){
     ThreatSp2 %>%
       arrange(Site, Year) %>%
@@ -51,7 +51,7 @@ F_threatSp <- function(Samp, colSite, colYear) {
     ThreatSp2[1,1] <- "There are no records"
     return(ThreatSp2)
   }
-  
+
 }
 
 # F_invasiveSp ----
@@ -68,7 +68,7 @@ F_invasiveSp <- function(Samp, colSite, colYear) {
     transmute(Site = str_extract(CVE, ".*(?=___)"),
               Year = str_extract(CVE, "(?<=___)[[:digit:]]*"),
               `Invasive species` = SPECIES_NAME)
-  
+
   if(dim(InvasiveSp2)[1] > 0){
     InvasiveSp2 %>%
       arrange(Site, Year) %>%
@@ -78,7 +78,7 @@ F_invasiveSp <- function(Samp, colSite, colYear) {
     InvasiveSp2[1,1] <- "There are no records"
     return(InvasiveSp2)
   }
-  
+
 }
 
 # F_diadema ----
@@ -90,7 +90,7 @@ F_diadema <- function(Samp) {
     filter(!is.na(taxa)) %>%
     filter(TotalPoints > 0) %>%
     summarise(sum(TotalPoints, na.rm = T))
-  
+
   return(Diadema)
 }
 
@@ -103,7 +103,7 @@ F_panulirus <- function(Samp) {
     filter(!is.na(taxa)) %>%
     filter(TotalPoints > 0) %>%
     summarise(sum(TotalPoints, na.rm = T))
-  
+
   return(Panulirus)
 }
 
@@ -113,26 +113,26 @@ F_aliger <- function(Samp) {
   Aliger <- Samp %>%
     select(SPECIES_NAME, TotalPoints) %>%
     mutate(taxa = str_extract(SPECIES_NAME, "Aliger gigas")) %>%
-    filter(SPECIES_NAME == "Aliger gigas" | 
-             SPECIES_NAME == "Lobatus gigas" | 
-             SPECIES_NAME == "Strombus gigas") %>% 
+    filter(SPECIES_NAME == "Aliger gigas" |
+             SPECIES_NAME == "Lobatus gigas" |
+             SPECIES_NAME == "Strombus gigas") %>%
     filter(TotalPoints > 0) %>%
     summarise(sum(TotalPoints, na.rm = T))
-  
+
   return(Aliger)
 }
 
 # Test data to use for the drawing the map
 # tLevel <- tribble(~Site, ~Year, ~Level,
-#                   "2701", "5", "4+",
-#                   "1008", "8", "4-")
+#                   "ESTX_4165", "5", "4+",
+#                   "SSTX_4004", "8", "4-")
 
 # F_map ----
 # prepare the data that will be mapped
 F_map <- function(Samp, colSite, colYear, tLevel){
   map1 <- Samp %>%
     group_by(Samp[[colSite]], Samp[[colYear]]) %>%
-    summarise(LAT = mean(LAT_DEGREES, na.rm = T), 
+    summarise(LAT = mean(LAT_DEGREES, na.rm = T),
               LNG = mean(LON_DEGREES, na.rm = T)) %>%
     ungroup() %>%
     mutate(`Samp[[colYear]]` = as.character(`Samp[[colYear]]`)) %>%
@@ -142,7 +142,7 @@ F_map <- function(Samp, colSite, colYear, tLevel){
               LAT, LNG, Level,
               Label = paste0("Site: ", Site, ", ", Year, "\nLevel: ", Level)) %>%
     arrange(Site, desc(Year))
-  
+
   return(map1)
 }
 
@@ -178,48 +178,59 @@ F_MapParam <- function(coord) {
     library = "ion",
     markerColor = getColor(coord)
   )
-  
+
   EsriToken <- Sys.getenv("EsriToken")
-  
+
   map1 <- coord %>%
     leaflet() %>%
     addProviderTiles(providers$Esri.NatGeoWorldMap,
                      options = list(apikey = EsriToken)) %>%
     addAwesomeMarkers(lat = coord$LAT, lng = coord$LNG,
                       icon = icons,
-                      popup = coord$Label) 
+                      popup = coord$Label,
+                      clusterOptions = markerClusterOptions(
+                        showCoverageOnHover=FALSE,
+                        zoomToBoundsOnClick=FALSE,
+                        spiderfyOnMaxZoom=TRUE,
+                        removeOutsideVisibleBounds=TRUE,
+                        spiderLegPolylineOptions=list(
+                          weight=1,
+                          color = "#222",
+                          opacity = 0.3)
+                        )
+                      )
   return(map1)
 }
 
 # set the results of other indicators into a table ----
 F_otherInd_1 <- function(Samp, colTransect, colSite, colYear){
   tOther <- tibble("Site" = character(), "Year" = character(), "Diadema spp" = integer(),
-                   "Panulirus argus" = integer(), "Aliger gigas" = integer(), 
+                   "Panulirus argus" = integer(), "Aliger gigas" = integer(),
                    "Vulnerable species" = integer(), "Invasive species" = integer(),
                    "Mean coral cover" = double(), "SD coral cover" = double())
-  
+
   counter <- 1
-  
+
   Samp <- Samp %>% mutate(CVE = paste(Samp[[colSite]], Samp[[colYear]], sep = "___"))
-  
+
   numSite <- unique(Samp[[colSite]])
   numYear <- unique(Samp[[colYear]])
   numCVE <- unique(Samp$CVE)
-  
+
   withProgress(
     message = "Please wait, this analysis may take a few minutes" ,
     {
       for (i in numCVE) {
         tSamp <- Samp %>%
           filter(Samp$CVE == i)
-        
+
         # test for each indicator
         Diadema <- F_diadema(tSamp)
         Panulirus <- F_panulirus(tSamp)
         Aliger <- F_aliger(tSamp)
-        Vulnerable <- F_threatSp(tSamp, colSite, colYear) 
+        Vulnerable <- F_threatSp(tSamp, colSite, colYear)
         if(Vulnerable[1,1] != "There are no records"){
-          Vulnerable <- Vulnerable %>% 
+          Vulnerable <- Vulnerable %>%
             group_by(`Vulnerable species`) %>%
             summarise(Count = n()) %>%
             summarise(Count = n())
@@ -237,7 +248,7 @@ F_otherInd_1 <- function(Samp, colTransect, colSite, colYear){
         }
         MeanCoral <- F_meanCoral(tSamp, colTransect)
         SDCoral <- F_sdCoral(tSamp, colTransect)
-        
+
         # assemble the results table
         tOther[counter, 1] <- i %>% str_extract(".*(?=___)")
         tOther[counter, 2] <- i %>% str_extract("(?<=___)[[:digit:]]*")
@@ -249,7 +260,7 @@ F_otherInd_1 <- function(Samp, colTransect, colSite, colYear){
         tOther[counter, 8] <- MeanCoral
         tOther[counter, 9] <- SDCoral
         counter = counter +1
-        
+
         incProgress(1 / nrow(as.data.frame(numCVE)))
       }
     }
@@ -266,33 +277,33 @@ F_otherInd_1 <- function(Samp, colTransect, colSite, colYear){
 
 F_otherInd_2 <- function(Samp, colTransect, colSite, colYear){
   tOther <- tibble("Site" = character(), "Year" = character(), "Diadema spp" = integer(),
-                   "Panulirus argus" = integer(), "Aliger gigas" = integer(), 
+                   "Panulirus argus" = integer(), "Aliger gigas" = integer(),
                    "Vulnerable species" = integer(), "Invasive species" = integer(),
                    "Bleaching" = character(), "Disease" = character(),
                    "Mean coral cover" = double(), "SD coral cover" = double())
-  
+
   counter <- 1
-  
+
   Samp <- Samp %>% mutate(CVE = paste(Samp[[colSite]], Samp[[colYear]], sep = "___"))
-  
+
   numSite <- unique(Samp[[colSite]])
   numYear <- unique(Samp[[colYear]])
   numCVE <- unique(Samp$CVE)
-  
+
   withProgress(
     message = "Please wait, this analysis may take a few minutes" ,
     {
       for (i in numCVE) {
         tSamp <- Samp %>%
           filter(Samp$CVE == i)
-        
+
         # test for each indicator
         Diadema <- F_diadema(tSamp)
         Panulirus <- F_panulirus(tSamp)
         Aliger <- F_aliger(tSamp)
-        Vulnerable <- F_threatSp_2(tSamp, colSite, colYear) 
+        Vulnerable <- F_threatSp_2(tSamp, colSite, colYear)
         if(Vulnerable[1,1] != "There are no records"){
-          Vulnerable <- Vulnerable %>% 
+          Vulnerable <- Vulnerable %>%
             group_by(`Vulnerable species`) %>%
             summarise(Count = n()) %>%
             summarise(Count = n())
@@ -312,7 +323,7 @@ F_otherInd_2 <- function(Samp, colTransect, colSite, colYear){
         Disease <- F_disease(tSamp)
         MeanCoral <- F_meanCoral(tSamp, colTransect)
         SDCoral <- F_sdCoral(tSamp, colTransect)
-        
+
         # assemble the results table
         tOther[counter, 1] <- i %>% str_extract(".*(?=___)")
         tOther[counter, 2] <- i %>% str_extract("(?<=___)[[:digit:]]*")
@@ -326,7 +337,7 @@ F_otherInd_2 <- function(Samp, colTransect, colSite, colYear){
         tOther[counter, 10] <- MeanCoral
         tOther[counter, 11] <- SDCoral
         counter = counter +1
-        
+
         incProgress(1 / nrow(as.data.frame(numCVE)))
       }
     }
@@ -359,7 +370,7 @@ F_threatSp_2 <- function(Samp, colSite, colYear) {
               Year = str_extract(CVE, "(?<=___)[[:digit:]]*"),
               `Vulnerable species` = SPECIES_NAME,
               Status)
-  
+
   if(dim(ThreatSp2)[1] > 0){
     ThreatSp2 %>%
       arrange(Site, Year) %>%
@@ -386,7 +397,7 @@ F_invasiveSp_2 <- function(Samp, colSite, colYear) {
     transmute(Site = str_extract(CVE, ".*(?=___)"),
               Year = str_extract(CVE, "(?<=___)[[:digit:]]*"),
               `Invasive species` = SPECIES_NAME)
-  
+
   if(dim(InvasiveSp2)[1] > 0){
     InvasiveSp2 %>%
       arrange(Site, Year) %>%
@@ -396,7 +407,7 @@ F_invasiveSp_2 <- function(Samp, colSite, colYear) {
     InvasiveSp2[1,1] <- "There are no records"
     return(InvasiveSp2)
   }
-  
+
 }
 
 # F_bleaching ----
@@ -408,7 +419,7 @@ F_bleaching <- function(Samp) {
     filter(BLEACH_CONDITION > 0) %>%
     summarise(Bleach = sum(BLEACH_CONDITION, na.rm = T)) %>%
     mutate(Bleach = ifelse(Bleach > 0, "Yes", "No"))
-  
+
   return(Bleaching)
 }
 
@@ -421,7 +432,7 @@ F_disease <- function(Samp) {
     filter(DISEASE > 0) %>%
     summarise(Dis = sum(DISEASE, na.rm = T)) %>%
     mutate(Dis = ifelse(Dis > 0, "Yes", "No"))
-  
+
   return(Disease)
 }
 
@@ -431,9 +442,9 @@ F_meanCoral <- function(Samp, colTransect){
   MeanCoral <- Samp %>%
     filter(Type == "Scleractinian") %>%
     group_by(.[[colTransect]]) %>%
-    summarise(SumPoints = sum(TotalPoints, na.rm = T)) %>% 
+    summarise(SumPoints = sum(TotalPoints, na.rm = T)) %>%
     summarise(meanCoral = round(mean(SumPoints),2))
-  
+
   return(MeanCoral)
 }
 
@@ -443,9 +454,9 @@ F_sdCoral <- function(Samp, colTransect){
   SDCoral <- Samp %>%
     filter(Type == "Scleractinian") %>%
     group_by(.[[colTransect]]) %>%
-    summarise(sumPoints = sum(TotalPoints, na.rm = T)) %>% 
+    summarise(sumPoints = sum(TotalPoints, na.rm = T)) %>%
     summarise(sdCoral = round(sd(sumPoints, na.rm = T),2))
-  
+
   return(SDCoral)
 }
 
@@ -469,7 +480,7 @@ F_SampBSAT_Long <- function(MetricData, colTransect, colSite, colYear) {
         print(w)
       }
   )
-  
+
   return(Samp)
 }
 
@@ -486,14 +497,14 @@ F_SampBCG_Long <- function(MetricData, colTransect, colSite, colYear) {
     mutate(SPECIES_NAME = str_to_sentence(SPECIES_NAME),
            Model = "BCG") %>%
     left_join(MasterList, by = c("SPECIES_NAME" = "FinalID"))
-  
+
   return(Samp)},
   error = function(e){message("Select temporal and/or spatial factors.")
   },
   warning = function(w){message("Select temporal and/or spatial factors.")
   }
   )
-  
+
 }
 
 
@@ -518,7 +529,7 @@ F_Template_BSAT <- function(sheetLPI, sheetMOB) {
              SITE, LOCATION, LAT_DEGREES, LON_DEGREES,
              PRIMARY_SAMPLE_UNIT, SPECIES_NAME) %>%
     summarise(TotalPoints = sum(COVER))
-  
+
   dataMOB <- sheetMOB %>%
     mutate(YEAR = as.numeric(YEAR),
            MONTH = as.numeric(MONTH),
@@ -537,7 +548,7 @@ F_Template_BSAT <- function(sheetLPI, sheetMOB) {
              SITE, LOCATION, LAT_DEGREES, LON_DEGREES,
              PRIMARY_SAMPLE_UNIT, SPECIES_NAME) %>%
     summarise(TotalPoints = sum(COUNTS))
-  
+
   MetricData <- dataLPI %>%
     full_join(dataMOB) %>%
     ungroup() %>%
@@ -545,7 +556,7 @@ F_Template_BSAT <- function(sheetLPI, sheetMOB) {
            SUB_REGION = as.character(SUB_REGION),
            SITE = as.character(SITE),
            PRIMARY_SAMPLE_UNIT = as.character(PRIMARY_SAMPLE_UNIT))
-  
+
   return(MetricData)
 }
 
@@ -570,7 +581,7 @@ F_Template_BCG <- function(sheetLPI, sheetMOB, sheetDEMO) {
              SITE, LOCATION, LAT_DEGREES, LON_DEGREES,
              PRIMARY_SAMPLE_UNIT, SPECIES_NAME) %>%
     summarise(TotalPoints = sum(COVER))
-  
+
   dataMOB <- sheetMOB %>%
     mutate(YEAR = as.numeric(YEAR),
            MONTH = as.numeric(MONTH),
@@ -589,8 +600,8 @@ F_Template_BCG <- function(sheetLPI, sheetMOB, sheetDEMO) {
              SITE, LOCATION, LAT_DEGREES, LON_DEGREES,
              PRIMARY_SAMPLE_UNIT, SPECIES_NAME) %>%
     summarise(TotalPoints = sum(COUNTS))
-  
-  dataDEMO <- sheetDEMO %>% 
+
+  dataDEMO <- sheetDEMO %>%
     mutate(YEAR = as.numeric(YEAR),
            MONTH = as.numeric(MONTH),
            DAY = as.numeric(DAY),
@@ -612,7 +623,7 @@ F_Template_BCG <- function(sheetLPI, sheetMOB, sheetDEMO) {
            BLEACH_CONDITION = as.character(BLEACH_CONDITION),
            DISEASE = as.character(DISEASE)
     ) %>%
-    mutate(BLEACH_CONDITION = ifelse(BLEACH_CONDITION == "T", 1, 
+    mutate(BLEACH_CONDITION = ifelse(BLEACH_CONDITION == "T", 1,
                                      ifelse(BLEACH_CONDITION == "P", 0.5, 0)),
            DISEASE = ifelse(DISEASE == "P", 1, 0)) %>%
     group_by(YEAR, MONTH, DAY, REGION,SUB_REGION,
@@ -626,9 +637,9 @@ F_Template_BCG <- function(sheetLPI, sheetMOB, sheetDEMO) {
               RECENT_MORT = mean(RECENT_MORT, na.rm = T),
               BLEACH_CONDITION = mean(BLEACH_CONDITION, na.rm = T),
               DISEASE = mean(DISEASE, na.rm = T),
-              METERS_COMPLETED = mean(METERS_COMPLETED, na.rm = T)) 
-  
-  MetricData <- dataLPI %>% 
+              METERS_COMPLETED = mean(METERS_COMPLETED, na.rm = T))
+
+  MetricData <- dataLPI %>%
     full_join(dataMOB) %>%
     full_join(dataDEMO) %>%
     ungroup() %>%
@@ -636,6 +647,6 @@ F_Template_BCG <- function(sheetLPI, sheetMOB, sheetDEMO) {
            SUB_REGION = as.character(SUB_REGION),
            SITE = as.character(SITE),
            PRIMARY_SAMPLE_UNIT = as.character(PRIMARY_SAMPLE_UNIT))
-  
+
   return(MetricData)
 }
