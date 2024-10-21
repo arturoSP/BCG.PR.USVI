@@ -93,7 +93,7 @@ mod_DataUpload2_server <- function(id){
         }
         readxl::read_excel(input$GeneralInput$datapath,
                            sheet = SSheet(),
-                           .name_repair = "minimal") %>%
+                           .name_repair = "universal") %>%
           `colnames<-`(stringr::str_to_upper(colnames(.)))
       }
     })
