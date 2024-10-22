@@ -8,74 +8,139 @@
 
 # Function to calculate biomass ----
 f_cBiomass <- function(inputDT, LEN, specV){
-  # read the list of unique species
-  Samp_species <- inputDT[inputDT[[LEN]] > 0,]
-  Samp_species <- Samp_species[[specV]] |>
-    unique()
+# read the list of unique species
+Samp_species <- inputDT[inputDT[[LEN]] > 0,]
+Samp_species <- Samp_species[[specV]] |>
+  unique()
 
-  Samp_species <- setdiff(Samp_species, FishMasterList[,1])
+withProgress(
+  message = "Please wait as this may take a few minutes" ,
+  value = 0,
+  {
+    incProgress(1/4, detail = "Obtaining data from FishBase...")
+    # find species with data in the FishBase
+    Samp_species_list <- sapply(Samp_species,
+                                rfishbase::length_weight,
+                                simplify = FALSE)
 
-  withProgress(
-    message = "Please wait as this may take a few minutes" ,
-    value = 0,
-    {
-      incProgress(1/4, detail = "Obtaining data from FishBase...")
-      # find species with data in the FishBase
-      Samp_species_list <- sapply(Samp_species,
-                                  rfishbase::length_weight,
-                                  simplify = FALSE)
+    incProgress(1/4, detail = "Calculating biomass...")
 
-      incProgress(1/4, detail = "Calculating biomass...")
+    Samp_species_list <- Samp_species_list |>
+      lapply(select, c(a, b, CoeffDetermination)) |>
+      lapply(mutate, CoeffDetermination = ifelse(is.na(CoeffDetermination),
+                                                 0,
+                                                 CoeffDetermination)) |>
+      lapply(filter, CoeffDetermination == max(CoeffDetermination))
 
-      Samp_species_list <- Samp_species_list |>
-        lapply(select, c(a, b, CoeffDetermination)) |>
-        lapply(mutate, CoeffDetermination = ifelse(is.na(CoeffDetermination),
-                                                   0,
-                                                   CoeffDetermination)) |>
-        lapply(filter, CoeffDetermination == max(CoeffDetermination))
+    incProgress(1/4, detail = "Obtaining averages...")
 
-      incProgress(1/4, detail = "Obtaining averages...")
-
-      # Get the average values for A and B, then compute biomass with the formula
-      Samp_species_list <- Filter(function(x) nrow(x) > 0, Samp_species_list) |>
-        lapply(function(x){
-          x |>
-            summarise(
-              A = mean(a, na.rm = TRUE),
-              B = mean(b, na.rm = TRUE)
-            )
-        })
-      incProgress(1/4, detail = "Ending the process...")
-    }
-  )
-
-  Samp_species_list <- mapply(function(data, name){
-    data |>
-      mutate(SCIENTIFIC_NAME = name)
-  }, Samp_species_list, names(Samp_species_list), SIMPLIFY = FALSE) |>
-    bind_rows()
-
-  if(specV != "SCIENTIFIC_NAME"){
-    inputDT$SCIENTIFIC_NAME <- inputDT[[specV]]
-    inputDT[[specV]] <- NULL
+    # Get the average values for A and B, then compute biomass with the formula
+    Samp_species_list <- Filter(function(x) nrow(x) > 0, Samp_species_list) |>
+      lapply(function(x){
+        x |>
+          summarise(
+            A = mean(a, na.rm = TRUE),
+            B = mean(b, na.rm = TRUE)
+          )
+      })
+    incProgress(1/4, detail = "Ending the process...")
   }
-  if(LEN != "LENGTH"){
-    inputDT$LENGTH <- inputDT[[LEN]]
-    inputDT[[LEN]] <- NULL
-  }
+)
+
+Samp_species_list <- mapply(function(data, name){
+  data |>
+    mutate(SCIENTIFIC_NAME = name)
+}, Samp_species_list, names(Samp_species_list), SIMPLIFY = FALSE) |>
+  bind_rows()
+
+if(specV != "SCIENTIFIC_NAME"){
+  inputDT$SCIENTIFIC_NAME <- inputDT[[specV]]
+  inputDT[[specV]] <- NULL
+}
+if(LEN != "LENGTH"){
+  inputDT$LENGTH <- inputDT[[LEN]]
+  inputDT[[LEN]] <- NULL
+}
 
 
-  Samp <- left_join(inputDT, Samp_species_list) |>
-    full_join(FishMasterList[,c(1,8,9)], by = c("SCIENTIFIC_NAME" = "FinalID")) |>
-    mutate(A = ifelse(is.na(A.x), A.y, A.x),
-           B = ifelse(is.na(B.x), B.y, B.x)) |>
-    mutate(BIOMASS = A * LENGTH ^ B)
+Samp <- left_join(inputDT, Samp_species_list) |>
+  mutate(BIOMASS = A * LENGTH ^ B) |>
+  select(!A) |>
+  select(!B)
 
-  Samp <- Samp[,c(1:8,15)]
+Samp[is.na(Samp[,"BIOMASS"]), "BIOMASS"] <- 0
 
-  Samp[is.na(Samp[,"BIOMASS"]), "BIOMASS"] <- 0
+return(Samp)
 
-  return(Samp)
+#   # read the list of unique species
+#   Samp_species <- inputDT[inputDT[[LEN]] > 0,]
+#   Samp_species <- Samp_species[[specV]] |>
+#     unique()
+#
+#   Samp_species <- setdiff(Samp_species, FishMasterList[,1])
+#
+#   withProgress(
+#     message = "Please wait as this may take a few minutes" ,
+#     value = 0,
+#     {
+#       incProgress(1/4, detail = "Obtaining data from FishBase...")
+#       # find species with data in the FishBase
+#       Samp_species_list <- sapply(Samp_species,
+#                                   rfishbase::length_weight,
+#                                   simplify = FALSE)
+#
+#       incProgress(1/4, detail = "Calculating biomass...")
+#
+#       Samp_species_list <- Samp_species_list |>
+#         lapply(select, c(a, b, CoeffDetermination)) |>
+#         lapply(mutate, CoeffDetermination = ifelse(is.na(CoeffDetermination),
+#                                                    0,
+#                                                    CoeffDetermination)) |>
+#         lapply(filter, CoeffDetermination == max(CoeffDetermination))
+#
+#       incProgress(1/4, detail = "Obtaining averages...")
+#
+#       # Get the average values for A and B, then compute biomass with the formula
+#       Samp_species_list <- Filter(function(x) nrow(x) > 0, Samp_species_list) |>
+#         lapply(function(x){
+#           x |>
+#             summarise(
+#               A = mean(a, na.rm = TRUE),
+#               B = mean(b, na.rm = TRUE)
+#             )
+#         })
+#       incProgress(1/4, detail = "Ending the process...")
+#     }
+#   )
+#
+#   Samp_species_list <- mapply(function(data, name){
+#     data |>
+#       mutate(SCIENTIFIC_NAME = name)
+#   }, Samp_species_list, names(Samp_species_list), SIMPLIFY = FALSE) |>
+#     bind_rows()
+#
+#   if(specV != "SCIENTIFIC_NAME"){
+#     inputDT$SCIENTIFIC_NAME <- inputDT[[specV]]
+#     inputDT[[specV]] <- NULL
+#   }
+#   if(LEN != "LENGTH"){
+#     inputDT$LENGTH <- inputDT[[LEN]]
+#     inputDT[[LEN]] <- NULL
+#   }
+#
+#   length_weight_list <- FishMasterList |>
+#     transmute(SCIENTIFIC_NAME = FinalID,
+#               A,
+#               B) |>
+#     bind_rows(Samp_species_list)
+#
+#   left_join(inputDT, length_weight_list) |>
+#     mutate(BIOMASS = A * LENGTH ^ B) |>
+#     select(!A:B)
+#
+#   Samp[is.na(Samp[,"BIOMASS"]), "BIOMASS"] <- 0
+#
+#   return(Samp)
 }
 
 # Function to summarise the long format data after biomass calculation ----

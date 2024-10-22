@@ -73,13 +73,13 @@ mod_DataUpload_server <- function(id){
       if(fileType() == "csv") {
         readr::read_csv(input$GeneralInput$datapath,
                         show_col_types = FALSE,
-                        name_repair = "universal") %>%
+                        name_repair = "minimal") %>%
           `colnames<-`(stringr::str_to_upper(colnames(.)))
       } else if(fileType() %in% c("xlsx", "xls")) {
         req(SSheet())
         readxl::read_excel(input$GeneralInput$datapath,
                            sheet = SSheet(),
-                           .name_repair = "universal") %>%
+                           .name_repair = "minimal") %>%
           `colnames<-`(stringr::str_to_upper(colnames(.)))
       }
     })
