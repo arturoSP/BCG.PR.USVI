@@ -467,7 +467,7 @@ ui <- fluidPage(
 
 # Server logic ----
 server <- function(input, output, session) {
-  options(shiny.maxRequestSize = 10*1024^2) #set upload limit to 10MB
+  options(shiny.maxRequestSize = 20*1024^2) #set upload limit to 10MB
 
   # Pagination buttons ----
   switch_page <- function(i) {

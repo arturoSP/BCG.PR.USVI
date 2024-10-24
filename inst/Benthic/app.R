@@ -168,7 +168,7 @@ ui <- fluidPage(
 ))
 
 server <- function(input, output, session) {
-  options(shiny.maxRequestSize = 10*1024^2) #set upload limit to 10MB
+  options(shiny.maxRequestSize = 20*1024^2) #set upload limit to 10MB
 
   # read the file with data, ask for it to be either excel or csv file
   MetricData <- reactive ({
