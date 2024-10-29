@@ -11,7 +11,7 @@ M_BSAT_1 <- function(Samp, colTransect, colSite, colYear){
   numSite <- unique(Samp[[colSite]])
   numYear <- unique(Samp[[colYear]])
   numCVE <- unique(Samp$CVE)
-  
+
   withProgress(
     message = "Please wait...",
     detail = "this analysis may take a few minutes.",
@@ -19,23 +19,23 @@ M_BSAT_1 <- function(Samp, colTransect, colSite, colYear){
       for (i in numCVE) {
         tSamp <- Samp %>%
           filter(Samp$CVE == i)
-        
+
         # test all the rules and then binds together the results
-        P_cc_lpi <- BSAT_P_cc_lpi(tSamp, colTransect) %>% 
-          mutate(Site = unique(tSamp[[colSite]]), 
+        P_cc_lpi <- BSAT_P_cc_lpi(tSamp, colTransect) %>%
+          mutate(Site = unique(tSamp[[colSite]]),
                  Year = unique(tSamp[[colYear]]))
-        P_oac_lpi <- BSAT_P_oac_lpi(tSamp, colTransect) %>% 
-          mutate(Site = unique(tSamp[[colSite]]), 
+        P_oac_lpi <- BSAT_P_oac_lpi(tSamp, colTransect) %>%
+          mutate(Site = unique(tSamp[[colSite]]),
                  Year = unique(tSamp[[colYear]]))
-        T_cratt45 <- BSAT_T_cratt45(tSamp) %>% 
-          mutate(Site = unique(tSamp[[colSite]]), 
+        T_cratt45 <- BSAT_T_cratt45(tSamp) %>%
+          mutate(Site = unique(tSamp[[colSite]]),
                  Year = unique(tSamp[[colYear]]))
-        P_bts_lpi <- BSAT_P_bts_lpi(tSamp, colTransect) %>% 
-          mutate(Site = unique(tSamp[[colSite]]), 
+        P_bts_lpi <- BSAT_P_bts_lpi(tSamp, colTransect) %>%
+          mutate(Site = unique(tSamp[[colSite]]),
                  Year = unique(tSamp[[colYear]]))
-        
+
         testB <- bind_rows(P_cc_lpi, P_oac_lpi, T_cratt45, P_bts_lpi)
-        testB <- rules %>% 
+        testB <- rules %>%
           filter(Model == "BSAT") %>%
           left_join(testB) %>%
           replace_na(list(MCalc = 0,
@@ -44,10 +44,10 @@ M_BSAT_1 <- function(Samp, colTransect, colSite, colYear){
                           Site = unique(tSamp[[colSite]]),
                           Year = unique(tSamp[[colYear]]))) %>%
           mutate(Membership = as.numeric(Membership)) %>%
-          arrange(Level, desc(Membership), desc(MemberValue)) 
-        
+          arrange(Level, desc(Membership), desc(MemberValue))
+
         M_Result <- bind_rows(M_Result, testB)
-        
+
         incProgress(1 / length(numCVE))
       }
     })
@@ -62,32 +62,32 @@ M_BSAT_2 <- function(M_Result){
   numSite <- unique(M_Result$Site)
   numYear <- unique(M_Result$Year)
   numCVE <- unique(M_Result$CVE)
-  
+
   # tests for each level, looking for the value at the nth position
    L3 <- M_Result %>%
     filter(Level == 3) %>%
      arrange(CVE, desc(Membership)) %>%
      group_by(CVE, Level) %>%
      summarise(Membership = nth(Membership, 4))
-   
+
    L4 <- M_Result %>%
      filter(Level == 4) %>%
      arrange(CVE, desc(Membership)) %>%
      group_by(CVE, Level) %>%
      summarise(Membership = nth(Membership, 4))
-   
+
    L5 <- M_Result %>%
      filter(Level == 5) %>%
      arrange(CVE, desc(Membership)) %>%
      group_by(CVE, Level) %>%
      summarise(Membership = nth(Membership, 3))
-   
-   # prepare a matrix to check partial membership 
+
+   # prepare a matrix to check partial membership
    Def_1 <- bind_rows(L3, L4, L5) %>%
      mutate(Level = paste0("L", Level, ".Sub")) %>%
      pivot_wider(names_from = "Level", values_from = "Membership")
-   
-Def_Result <-  Def_1 %>% 
+
+Def_Result <-  Def_1 %>%
    ungroup() %>%
      transmute(CVE,
                L1.Sub = 0,
@@ -98,13 +98,13 @@ Def_Result <-  Def_1 %>%
                L6.Sub = 1) %>%
      mutate(L1 = L1.Sub) %>%
      mutate(L2 = apply(.[,c("L1", "L2.Sub")], 1,
-                       function(x) min(round(1 - x[1], 
+                       function(x) min(round(1 - x[1],
                                              8),
                                        x[2],
                                        na.rm = T))) %>%
      mutate(L3 = apply(.[,c("L1", "L2", "L3.Sub")], 1,
-                       function(x) min(round(1 - sum(x[1], 
-                                                     x[2]), 
+                       function(x) min(round(1 - sum(x[1],
+                                                     x[2]),
                                              8),
                                        x[3],
                                        na.rm = T))) %>%
@@ -144,13 +144,13 @@ Def_Result <-  Def_1 %>%
                                function(x) match(x[7], x[1:6]))) %>%
      mutate(Lev.1.Name = ifelse(Lev.1.Memb != 0, Lev.1.Name, NA),
             Lev.2.Name = ifelse(Lev.2.Memb != 0, Lev.2.Name, NA)) %>%
-     mutate(Lev.2.Name = ifelse(Lev.2.Memb == 0.5, 
+     mutate(Lev.2.Name = ifelse(Lev.2.Memb == 0.5,
                                 apply(.[,c("L1", "L2", "L3", "L4", "L5", "L6")], 1,
-                                      function(x) which(x[1:6] == 0.5)[2]), 
+                                      function(x) which(x[1:6] == 0.5)[2]),
                                 Lev.2.Name)) %>%
      mutate(Diff = Lev.1.Memb - Lev.2.Memb,
-            close = ifelse(Diff < 0.1, 
-                           "tie", 
+            close = ifelse(Diff < 0.1,
+                           "tie",
                            ifelse(Diff < 0.2,
                                   "yes",
                                   NA))) %>%
@@ -166,14 +166,14 @@ Def_Result <-  Def_1 %>%
                                paste0(Lev.1.Name, "/", Lev.2.Name, " tie"),
                                NA),
          Lev.Prop.Nar = ifelse(!is.na(Lev.Prop.Nar.Tie), Lev.Prop.Nar.Tie, Lev.Prop.Nar)
-         ) 
-    
+         )
+
     # assemble the results table
   tLevel <- Def_Result %>%
     transmute(Site = str_extract(CVE, ".*(?=___)"),
               Year = str_extract(CVE, "(?<=___)[[:digit:]]*"),
-              Level = Lev.Prop.Nar) 
-  
+              Level = Lev.Prop.Nar)
+
    return(tLevel)
 }
 
@@ -181,7 +181,21 @@ Def_Result <-  Def_1 %>%
 BSAT_P_cc_lpi <- function(Samp, colTransect){
   P_cc_lpi <- Samp %>%
     filter(Type == "Scleractinian") %>%
-    mutate(Metric_name = "p_cc_lpi") %>%
+    mutate(Metric_name = "p_cc_lpi")
+
+  if(nrow(P_cc_lpi) == 0){
+    # Create a dummy data frame
+    dummy <- data.frame(
+      Model = unique(Samp$Model),
+      Metric_name = "p_cc_lpi",
+      TotalPoints = 0,
+      PRIMARY_SAMPLE_UNIT = unique(Samp[[colTransect]])
+    )
+    # Bind the dummy data to P_oac_lpi
+    P_cc_lpi <- bind_rows(P_cc_lpi, dummy)
+  }
+
+  P_cc_lpi <- P_cc_lpi %>%
     group_by(Model, Metric_name) %>%
     summarise(MCalc = sum(TotalPoints, na.rm = T) / length(unique(Samp[[colTransect]]))) %>%
     left_join(rules) %>%
@@ -196,9 +210,23 @@ BSAT_P_cc_lpi <- function(Samp, colTransect){
 BSAT_P_oac_lpi <- function(Samp, colTransect){
   P_oac_lpi <- Samp %>%
     filter(OrbicellaAcropora == T) %>%
-    mutate(Metric_name = "p_oac_lpi") %>%
-    group_by(Model, Metric_name) %>% 
-    summarise(MCalc = sum(TotalPoints, na.rm = T) / length(unique(Samp[[colTransect]]))) %>% 
+    mutate(Metric_name = "p_oac_lpi")
+
+  if(nrow(P_oac_lpi) == 0){
+    # Create dummy data frame
+    dummy <- data.frame(
+      Model = unique(Samp$Model),
+      Metric_name = "p_oac_lpi",
+      TotalPoints = 0,
+      PRIMARY_SAMPLE_UNIT = unique(Samp[[colTransect]])
+    )
+    # Bind the dummy data to P_oac_lpi
+    P_oac_lpi <- bind_rows(P_oac_lpi, dummy)
+  }
+
+  P_oac_lpi <- P_oac_lpi %>%
+    group_by(Model, Metric_name) %>%
+    summarise(MCalc = sum(TotalPoints, na.rm = T) / length(unique(Samp[[colTransect]]))) %>%
     left_join(rules) %>%
     mutate(MemberValue = (MCalc - Lower) / (Upper - Lower),
            Membership = ifelse(MemberValue >= 1, 1,
@@ -211,12 +239,20 @@ BSAT_P_oac_lpi <- function(Samp, colTransect){
 BSAT_T_cratt45 <- function(Samp){
   T_cratt45 <- Samp %>%
     filter(TotalPoints > 0) %>%
-    filter(BCGAttr %in% c(4,5)) %>% 
+    filter(BCGAttr %in% c(4,5)) %>%
     mutate(Metric_name = "t_cratt45") %>%
     group_by(Model, Metric_name, SPECIES_NAME) %>%
     summarise(P1 = n()) %>%
     group_by(Model, Metric_name) %>%
-    summarise(MCalc = n()) %>%
+    summarise(MCalc = n())
+
+  if(nrow(T_cratt45) == 0){
+    T_cratt45[1,1] = "BSAT"
+    T_cratt45[1,2] = "t_cratt45"
+    T_cratt45[1,3] = 0
+  }
+
+  T_cratt45 <- T_cratt45 %>%
     left_join(rules) %>%
     mutate(MemberValue = (MCalc - Lower) / (Upper - Lower),
            Membership = ifelse(MemberValue >= 1, 1,
@@ -229,12 +265,29 @@ BSAT_T_cratt45 <- function(Samp){
 BSAT_P_bts_lpi <- function(Samp, colTransect){
   P_bts_lpi <- Samp %>%
     filter(Type == "Bare_TurfWSed") %>%
-    mutate(Metric_name = "p_bts_lpi") %>%
-    group_by(Model, Metric_name) %>% 
+    mutate(Metric_name = "p_bts_lpi")
+
+  # Check for cases when there is no bare substrate records.
+  if(nrow(P_bts_lpi) == 0){
+    # Create a dummy data frame with the necessary columns
+    dummy <- data.frame(
+      Model = unique(tSamp$Model),
+      Metric_name = "p_bts_lpi",
+      TotalPoints = 0,
+      Type = "Bare_TurfWSed",
+      PRIMARY_SAMPLE_UNIT = unique(Samp[[colTransect]])
+    )
+    # Bind the dummy data frame to P_bts_lpi
+    P_bts_lpi <- bind_rows(P_bts_lpi, dummy)
+  }
+
+  P_bts_lpi <- P_bts_lpi %>%
+    group_by(Model, Metric_name) %>%
     summarise(MCalc = sum(TotalPoints, na.rm = T) / length(unique(Samp[[colTransect]]))) %>%
     left_join(rules) %>%
     mutate(MemberValue = (MCalc - Lower) / (Upper - Lower),
            Membership = ifelse(MemberValue >= 1, 0,
                                ifelse(MemberValue <= 0, 1, 1 - MemberValue)))
+
   return(P_bts_lpi)
 }
