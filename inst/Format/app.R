@@ -13,6 +13,30 @@ source("./utils_name_mapping.R")
 source("./utils_verify.R")
 source("./utils_WideColumns.R")
 
+# # Testing data, do not delete
+# inputDT <- readxl::read_xlsx("./data/Test_Format_Fish_Wide.xlsx", sheet = 5)
+# columnNames <- names(inputDT)
+# year <- "Year"
+# month <- "MONTH"
+# region <- "Site"
+# subregion <- "sub_region"
+# location <- NULL
+# habitat <- NULL
+# primsampleu <- "PRIMARY_SAMPLE_UNIT"
+# latitude <- "Lat_degrees"
+# longitude <- "LON_degrees"
+# wideLPIMetersCR <- "METERS_COMPLETED"
+# wideLPIT1R <- "c0"
+# wideLPIT2R <- "c5"
+# timeVar <- c(year, month)
+# spatialVar <- c(region, subregion, location, habitat)
+# transectVar <- primsampleu
+# coordinateVar <- c(latitude, longitude)
+# specVar <- "SCIENTIFIC_NAME"
+# lenVar <- NULL
+# datashape <- "Wide"
+# selected_values <- c(year, month, region, subregion, location, habitat, primsampleu, latitude, longitude)
+
 # User interface ---
 ui <- fluidPage(
   theme = bslib::bs_theme(bootswatch = "litera"),
@@ -133,7 +157,8 @@ ui <- fluidPage(
           width = "100%"
         ),
         column(6, uiOutput("wideFishT1"), uiOutput("wideFishB1")),
-        column(6, uiOutput("wideFishT2"), uiOutput("wideFishB2"))
+        column(6, uiOutput("wideFishT2"), uiOutput("wideFishB2")),
+        column(6, uiOutput("wideFishSpp"))
       ),
       uiOutput("TwoSheetData"),
       br(),
@@ -199,8 +224,7 @@ ui <- fluidPage(
           radioButtons(
             "CodedLongLength",
             "Indicate if your length data is coded (i.e. c0, c1, c2, ...).",
-            choices = c("Yes (e.g. c0, c1, c2, ...)" = "yes_c",
-                        "Yes (e.g. 0-5, 6-10, 11-15, ...)" = "yes_n",
+            choices = c("Yes (e.g. c0, c1, c2, ...)" = "Yes",
                         "No" = "No"),
             selected = "No"
           )
@@ -924,6 +948,23 @@ server <- function(input, output, session) {
     }
   )
 
+  ## Wide fish species name ----
+  output$wideFishSpp <- renderUI({
+    if(FWideOptions() == "WFCoded") {
+      selectInput("wideFishSpp",
+                  "Column for species name:",
+                  choices = colNamesWT()
+      )
+    }
+  })
+
+  wideFishSppR <- eventReactive(
+    input$wideFishSave,
+    {
+      input$wideFishSpp
+    }
+  )
+
   ### Finish by presenting the table ----
   wideFishTable <- eventReactive(
     input$wideFishSave,
@@ -948,7 +989,7 @@ server <- function(input, output, session) {
         f_C2LFish(Intro$InputDT(), vectorSel(),
           timeVar(), spatialVar(),
           coordinateVar(), transectVar(),
-          specV = "SPECIES_NAME",
+          specV = wideFishSppR(),
           FT1 = wideFishT1R(), FT2 = wideFishT2R(),
           type = "Wide"
         )

@@ -8,139 +8,84 @@
 
 # Function to calculate biomass ----
 f_cBiomass <- function(inputDT, LEN, specV){
-# read the list of unique species
-Samp_species <- inputDT[inputDT[[LEN]] > 0,]
-Samp_species <- Samp_species[[specV]] |>
-  unique()
+  # read the list of unique species
+  Samp_species <- inputDT[inputDT[[LEN]] > 0,]
+  Samp_species <- Samp_species[[specV]] |>
+    unique()
 
-withProgress(
-  message = "Please wait as this may take a few minutes" ,
-  value = 0,
-  {
-    incProgress(1/4, detail = "Obtaining data from FishBase...")
-    # find species with data in the FishBase
-    Samp_species_list <- sapply(Samp_species,
-                                rfishbase::length_weight,
-                                simplify = FALSE)
+  # Adding a couple of species, for testing purposes
+  # Samp_species <- c(Samp_species, "Aluterus schoepfii", "Anchoa lyolepis",
+  #                   "Synodus synodus")
 
-    incProgress(1/4, detail = "Calculating biomass...")
+  Samp_species_missing <- setdiff(Samp_species, FishMasterList[,1])
 
-    Samp_species_list <- Samp_species_list |>
-      lapply(select, c(a, b, CoeffDetermination)) |>
-      lapply(mutate, CoeffDetermination = ifelse(is.na(CoeffDetermination),
-                                                 0,
-                                                 CoeffDetermination)) |>
-      lapply(filter, CoeffDetermination == max(CoeffDetermination))
+  withProgress(
+    message = "Please wait as this may take a few minutes" ,
+    value = 0,
+    {
+      total_steps <- length(Samp_species_missing)
+      # Calculate progress
+      progress <- 1 / total_steps
+      # find species with data in the FishBase
+      Samp_species_list_missing <- sapply(1:total_steps, function(i) {
+        result <- rfishbase::length_weight(Samp_species_missing[i])
 
-    incProgress(1/4, detail = "Obtaining averages...")
+        # Update progress bar
+        incProgress(amount = progress,
+                    detail = paste("Processing species", i,
+                                   "of", total_steps ))
 
-    # Get the average values for A and B, then compute biomass with the formula
-    Samp_species_list <- Filter(function(x) nrow(x) > 0, Samp_species_list) |>
-      lapply(function(x){
-        x |>
-          summarise(
-            A = mean(a, na.rm = TRUE),
-            B = mean(b, na.rm = TRUE)
-          )
-      })
-    incProgress(1/4, detail = "Ending the process...")
+        return(result)
+      }, simplify = FALSE)
+
+      Samp_species_list_missing <- Samp_species_list_missing |>
+        lapply(select, c(a, b, CoeffDetermination)) |>
+        lapply(mutate, CoeffDetermination = ifelse(is.na(CoeffDetermination),
+                                                   0,
+                                                   CoeffDetermination)) |>
+        lapply(filter, CoeffDetermination == max(CoeffDetermination))
+
+      # Get the average values for A and B, then compute biomass with the formula
+      Samp_species_list_missing <- Filter(function(x) nrow(x) > 0, Samp_species_list_missing) |>
+        lapply(function(x){
+          x |>
+            summarise(
+              A = mean(a, na.rm = TRUE),
+              B = mean(b, na.rm = TRUE)
+            )
+        })
+    }
+  )
+
+  Samp_species_list_missing <- mapply(function(data, name){
+    data |>
+      mutate(SCIENTIFIC_NAME = name)
+  }, Samp_species_list_missing, names(Samp_species_list_missing), SIMPLIFY = FALSE) |>
+    bind_rows()
+
+  if(specV != "SCIENTIFIC_NAME"){
+    inputDT$SCIENTIFIC_NAME <- inputDT[[specV]]
+    inputDT[[specV]] <- NULL
   }
-)
+  if(LEN != "LENGTH"){
+    inputDT$LENGTH <- inputDT[[LEN]]
+    inputDT[[LEN]] <- NULL
+  }
 
-Samp_species_list <- mapply(function(data, name){
-  data |>
-    mutate(SCIENTIFIC_NAME = name)
-}, Samp_species_list, names(Samp_species_list), SIMPLIFY = FALSE) |>
-  bind_rows()
+  length_weight_list <- FishMasterList |>
+    transmute(SCIENTIFIC_NAME = FinalID,
+              A,
+              B) |>
+    bind_rows(Samp_species_list_missing) |>
+    filter(!is.na(A))
 
-if(specV != "SCIENTIFIC_NAME"){
-  inputDT$SCIENTIFIC_NAME <- inputDT[[specV]]
-  inputDT[[specV]] <- NULL
-}
-if(LEN != "LENGTH"){
-  inputDT$LENGTH <- inputDT[[LEN]]
-  inputDT[[LEN]] <- NULL
-}
+  Samp <- left_join(inputDT, length_weight_list) |>
+    mutate(BIOMASS = A * LENGTH ^ B) |>
+    select(!A:B)
 
+  Samp[is.na(Samp[,"BIOMASS"]), "BIOMASS"] <- 0
 
-Samp <- left_join(inputDT, Samp_species_list) |>
-  mutate(BIOMASS = A * LENGTH ^ B) |>
-  select(!A) |>
-  select(!B)
-
-Samp[is.na(Samp[,"BIOMASS"]), "BIOMASS"] <- 0
-
-return(Samp)
-
-#   # read the list of unique species
-#   Samp_species <- inputDT[inputDT[[LEN]] > 0,]
-#   Samp_species <- Samp_species[[specV]] |>
-#     unique()
-#
-#   Samp_species <- setdiff(Samp_species, FishMasterList[,1])
-#
-#   withProgress(
-#     message = "Please wait as this may take a few minutes" ,
-#     value = 0,
-#     {
-#       incProgress(1/4, detail = "Obtaining data from FishBase...")
-#       # find species with data in the FishBase
-#       Samp_species_list <- sapply(Samp_species,
-#                                   rfishbase::length_weight,
-#                                   simplify = FALSE)
-#
-#       incProgress(1/4, detail = "Calculating biomass...")
-#
-#       Samp_species_list <- Samp_species_list |>
-#         lapply(select, c(a, b, CoeffDetermination)) |>
-#         lapply(mutate, CoeffDetermination = ifelse(is.na(CoeffDetermination),
-#                                                    0,
-#                                                    CoeffDetermination)) |>
-#         lapply(filter, CoeffDetermination == max(CoeffDetermination))
-#
-#       incProgress(1/4, detail = "Obtaining averages...")
-#
-#       # Get the average values for A and B, then compute biomass with the formula
-#       Samp_species_list <- Filter(function(x) nrow(x) > 0, Samp_species_list) |>
-#         lapply(function(x){
-#           x |>
-#             summarise(
-#               A = mean(a, na.rm = TRUE),
-#               B = mean(b, na.rm = TRUE)
-#             )
-#         })
-#       incProgress(1/4, detail = "Ending the process...")
-#     }
-#   )
-#
-#   Samp_species_list <- mapply(function(data, name){
-#     data |>
-#       mutate(SCIENTIFIC_NAME = name)
-#   }, Samp_species_list, names(Samp_species_list), SIMPLIFY = FALSE) |>
-#     bind_rows()
-#
-#   if(specV != "SCIENTIFIC_NAME"){
-#     inputDT$SCIENTIFIC_NAME <- inputDT[[specV]]
-#     inputDT[[specV]] <- NULL
-#   }
-#   if(LEN != "LENGTH"){
-#     inputDT$LENGTH <- inputDT[[LEN]]
-#     inputDT[[LEN]] <- NULL
-#   }
-#
-#   length_weight_list <- FishMasterList |>
-#     transmute(SCIENTIFIC_NAME = FinalID,
-#               A,
-#               B) |>
-#     bind_rows(Samp_species_list)
-#
-#   left_join(inputDT, length_weight_list) |>
-#     mutate(BIOMASS = A * LENGTH ^ B) |>
-#     select(!A:B)
-#
-#   Samp[is.na(Samp[,"BIOMASS"]), "BIOMASS"] <- 0
-#
-#   return(Samp)
+  return(Samp)
 }
 
 # Function to summarise the long format data after biomass calculation ----
@@ -192,10 +137,11 @@ f_L2LFish <- function(Samp, timeV, spatV, coorV, tranV,
 
   # quick adjustment so that location and habitat are always set
   Final[,"LOCATION"] <- stringr::str_to_upper(Final[,"LOCATION"])
-  Final[,"LOCATION"] <- case_when(Final[,"LOCATION"] == "FLO" ~ "FL",
+  Final[,"LOCATION"] <- case_when(Final[,"LOCATION"] == "FL" ~ "FL",
+                                  Final[,"LOCATION"] == "FLO" ~ "FL",
                                   Final[,"LOCATION"] == "FLORIDA" ~ "FL",
                                   Final[,"LOCATION"] == "FLRD" ~ "FL",
-                                  TRUE ~ "PR")
+                                  TRUE ~ "PR/USVI")
   Final[,"HABITAT"] <- stringr::str_to_upper(Final[,"HABITAT"])
   Final[,"HABITAT"] <- case_when(stringr::str_detect(Final$HABITAT, "HARD") ~ "HARD",
                                  stringr::str_detect(Final$HABITAT, "HRD") ~ "HARD",
@@ -296,7 +242,7 @@ f_L2LDEMOSimple <- function(Simple, timeV, spatV,
   if(type == "wide"){
     Final[, "N_COLONIES"] = 1
   } else {
-    Final[, "N_COLONIES"] = select(Simple, all_of(NCol))
+    Final[, "N_COLONIES"] = select(Simple, any_of(NCol))
   }
 
   # quick adjustment so that METERS_COMPLETED is always set
@@ -305,7 +251,21 @@ f_L2LDEMOSimple <- function(Simple, timeV, spatV,
   # delete rows that include the word "total" in the species name
   Final <- filter(Final, !grepl("total", SPECIES_NAME, ignore.case = TRUE))
 
+  # delete rows with 0 colonies
+  Final <- filter(Final, N_COLONIES > 0)
+
   return(Final)
+}
+
+# Detect the type of length codes (classes vs ranges) ----
+detect_code_type <- function(codes) {
+  if (any(grepl("c\\d+", codes, ignore.case=TRUE))) {
+    return("class")
+  } else if (any(grepl("^[0-9]+(-[0-9]+)?$", codes))) {
+    return("range")
+  } else {
+    stop("Unable to determine the length code type. Please check the data.")
+  }
 }
 
 # Function to summarize long data for coded Fish lengths ----
@@ -316,47 +276,50 @@ f_C2LFish <- function(InputDT, selected,
                       FT1 = NULL, FT2 = NULL,
                       type = "Wide"){
 
-
   Final <- if(type == "Wide"){
     # Routine to convert wide coded data into long data
     FT1_i <- which(names(InputDT) == FT1)
     FT2_i <- which(names(InputDT) == FT2)
 
+    length_cols <- names(InputDT)[FT1_i:FT2_i]
+    code_type <- detect_code_type(length_cols)  # Identify code type
+    renamed <- ifelse(code_type == "range", "Size", "Class")
+
     lengthData <- InputDT |>
-      dplyr::select(all_of(selected),
+      dplyr::select(any_of(selected),
+                    any_of(specV),
                     as.numeric(FT1_i:FT2_i))
     FT1_i <- which(names(lengthData) == FT1)
     FT2_i <- which(names(lengthData) == FT2)
 
-    lengthData |>
-      dplyr::mutate(index = rownames(InputDT)) |>
+    lengthData <- lengthData |>
       tidyr::pivot_longer(cols = c(as.numeric(FT1_i:FT2_i)),
-                          names_to = "SCIENTIFIC_NAME",
+                          names_to = "LENGTH",
                           values_to = "COUNT") |>
       dplyr::filter(!is.na(COUNT)) |>
-      dplyr::mutate(LengthCode = stringr::str_extract(SCIENTIFIC_NAME, "C[:digit:]+"),
-                    SCIENTIFIC_NAME = stringr::str_replace(SCIENTIFIC_NAME, "C[:digit:]+", ""),
-                    SCIENTIFIC_NAME = stringr::str_replace_all(SCIENTIFIC_NAME, "\\.", " "),
-                    SCIENTIFIC_NAME = stringr::str_replace(SCIENTIFIC_NAME, " $", ""),
-                    SCIENTIFIC_NAME = stringr::str_to_sentence(SCIENTIFIC_NAME)) |>
-      dplyr::mutate(Class = purrr::map2(LengthCode, COUNT, ~rep(.x, .y))) |>
-      dplyr::select(-COUNT, -LengthCode) |>
-      tidyr::unnest(Class) |>
-      dplyr::mutate(Class = stringr::str_to_lower(Class)) |>
-      dplyr::left_join(FishLengthClass) |>
-      dplyr::select(-index, -Class, -Size) |>
-      f_cBiomass(LEN = "Median", specV = "SCIENTIFIC_NAME") |>
-      f_L2LFish(timeV, spatV, coorV, tranV,
-                specV = "SCIENTIFIC_NAME",
-                lenV = "LENGTH",
-                biomV = "BIOMASS",
-                type = "simple")
+      tidyr::uncount(COUNT)
+
+      lengthData <- lengthData |>
+        dplyr::rename(!!renamed := "LENGTH") |>
+        dplyr::left_join(FishLengthClass) |>
+        dplyr::select(-Class, -Size) |>
+        f_cBiomass(LEN = "Median", specV = specV) |>
+        f_L2LFish(timeV, spatV, coorV, tranV,
+                  specV = "SCIENTIFIC_NAME",
+                  lenV = "LENGTH",
+                  biomV = "BIOMASS",
+                  type = "simple")
+
   } else if(type == "LongCalc") {
     # This is the routine to calculate biomass from the coded length
+    code_type <- detect_code_type(InputDT[[lenV]])
+    renamed <- ifelse(code_type == "range", "Size", "Class")
+    InputDT <- InputDT |>
+      dplyr::select(any_of(selected), any_of(specV), any_of(lenV)) |>
+      dplyr::rename(!!renamed := any_of(lenV))
+
     InputDT |>
-      dplyr::select(all_of(selected), all_of(specV), all_of(lenV)) |>
-      dplyr::rename("Class" = lenV) |>
-      dplyr::left_join(FishLengthClass) |>
+      dplyr::left_join(FishLengthClass, by = renamed) |>
       dplyr::select(-Class, -Size) |>
       f_cBiomass(LEN = "Median", specV = specV) |>
       f_L2LFish(timeV, spatV, coorV, tranV,
@@ -366,11 +329,14 @@ f_C2LFish <- function(InputDT, selected,
                 type = "simple")
   } else if(type == "LongSimple"){
     # This is the routine for when the length is coded and biomass is already supplied
+    code_type <- detect_code_type(InputDT[[lenV]])
+    renamed <- ifelse(code_type == "range", "Size", "Class")
+    InputDT <- InputDT |>
+      dplyr::select(any_of(selected), any_of(specV), any_of(lenV), any_of(biomV)) |>
+      dplyr::rename(!!renamed := any_of(lenV))
+
     InputDT |>
-      dplyr::select(all_of(selected), all_of(specV),
-                    all_of(lenV), all_of(biomV)) |>
-      dplyr::rename("Class" = lenV) |>
-      dplyr::left_join(FishLengthClass) |>
+      dplyr::left_join(FishLengthClass, by = renamed) |>
       dplyr::select(-Class, -Size) |>
       dplyr::rename("LENGTH" = Median) |>
       f_L2LFish(timeV, spatV, coorV, tranV,

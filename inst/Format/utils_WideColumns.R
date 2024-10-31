@@ -63,7 +63,7 @@ f_W2LFish <- function(dataLength, selected, FT1, FT2, BT1 = NULL, BT2 = NULL,
   }
 
   lengthData <- dataLength |>
-    dplyr::select(all_of(selected),
+    dplyr::select(any_of(selected),
                   as.numeric(FT1_i:FT2_i))
   FT1_i <- which(names(lengthData) == FT1)
   FT2_i <- which(names(lengthData) == FT2)
@@ -84,7 +84,7 @@ f_W2LFish <- function(dataLength, selected, FT1, FT2, BT1 = NULL, BT2 = NULL,
 
   almost <- if(type == "WFOneSheet"){
     weigthData <- dataLength |>
-      dplyr::select(all_of(selected),
+      dplyr::select(any_of(selected),
                     as.numeric(BT1_i:BT2_i))
     BT1_i <- which(names(weigthData) == BT1)
     BT2_i <- which(names(weigthData) == BT2)
@@ -112,7 +112,7 @@ f_W2LFish <- function(dataLength, selected, FT1, FT2, BT1 = NULL, BT2 = NULL,
       f_cBiomass(LEN = "LENGTH", specV = "SCIENTIFIC_NAME")
   } else if(type == "WFTwoSheets") {
     weigthData <- dataBiomass |>
-      dplyr::select(all_of(selected),
+      dplyr::select(any_of(selected),
                     as.numeric(BT1_i:BT2_i))
     BT1_i <- which(names(weigthData) == BT1)
     BT2_i <- which(names(weigthData) == BT2)
@@ -167,7 +167,8 @@ f_W2LBCGcount <- function(data, selected, FT1, FT2, timeV, spatV,
                         values_to = "COVER") |>
     dplyr::mutate(SPECIES_NAME = stringr::str_replace_all(SPECIES_NAME, "([.])", " "),
                   SPECIES_NAME = stringr::str_to_sentence(SPECIES_NAME)
-    )
+    ) |>
+    dplyr::filter(COVER > 0)
 
   FINAL <- f_L2LBCGSimple(almost, timeV, spatV,
                           coorV, compV, tranV,

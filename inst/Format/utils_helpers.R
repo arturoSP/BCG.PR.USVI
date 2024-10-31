@@ -143,10 +143,10 @@ biomassValues <- c("BIOMASS",
                    "TOTAL-BIOMASS")
 
 # Size class intervals and size class medians for fish length ----
-FishLengthClass <- data.frame(Class = c("c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7",
-                                        "c8", "c9", "c10", "c11", "c12", "c13",
-                                        "c14", "c15", "c16", "c17", "c18", "c19",
-                                        "c20", "c21"),
+FishLengthClass <- data.frame(Class = c("C0", "C1", "C2", "C3", "C4", "C5", "C6", "C7",
+                                        "C8", "C9", "C10", "C11", "C12", "C13",
+                                        "C14", "C15", "C16", "C17", "C18", "C19",
+                                        "C20", "C21"),
                               Size = c("0", "1-5", "6-10", "11-15", "16-20", "21-25",
                                        "26-30", "31-35", "36-40", "41-45", "46-50",
                                        "51-55", "56-60", "61-65", "66-70", "71-75",
